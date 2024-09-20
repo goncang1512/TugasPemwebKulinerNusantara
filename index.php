@@ -14,7 +14,7 @@
         <?php include_once("./layouts/navbar.php");?>
     </header>
     <h1>Hello World</h1>
-    <h1>Goncang</h1>
+    <h1>Goncang Samudera Nasution</h1>
     
     <?php include_once("./layouts/footer.php");?>
     <?php include_once("./layouts/script.php");?>
