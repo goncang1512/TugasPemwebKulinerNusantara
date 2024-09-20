@@ -14,9 +14,6 @@
         <?php include_once("./layouts/navbar.php");?>
     </header>
     <h1>Hello World</h1>
-
-    <h1>AMRIIIIIIIII</h1>
-    <h1>Samudera</h1>
     
     <?php include_once("./layouts/footer.php");?>
     <?php include_once("./layouts/script.php");?>
