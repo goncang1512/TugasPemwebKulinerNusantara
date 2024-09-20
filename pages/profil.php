@@ -10,8 +10,12 @@ include_once("../config/helper.php");
     <?php include_once("../layouts/head.php");?>
 </head>
 <body>
+    <header>
+        <?php include_once("../layouts/navbar.php");?>
+    </header>
     <h1>Profile</h1>
 
+    <?php include_once("../layouts/footer.php");?>
     <?php include_once("../layouts/script.php");?>
 </body>
 </html>
