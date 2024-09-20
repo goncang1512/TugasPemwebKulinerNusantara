@@ -14,7 +14,7 @@
         <?php include_once("./layouts/navbar.php");?>
     </header>
     <h1>Hello World</h1>
-    <h1>HOME PAGE DI SINI AJA</h1>
+    <h1>AMRI</h1>
     
     <?php include_once("./layouts/footer.php");?>
     <?php include_once("./layouts/script.php");?>
