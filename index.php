@@ -15,6 +15,7 @@
     </header>
     <h1>Hello World</h1>
     <h1>Samudera</h1>
+    <h1>AMRI</h1> <!-- Menyimpan kedua judul -->
     
     <?php include_once("./layouts/footer.php");?>
     <?php include_once("./layouts/script.php");?>
