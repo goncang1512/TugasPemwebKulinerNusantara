@@ -1,7 +1,7 @@
 <?php
     $pathname = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-    $excluded_paths = ["/resep_nusantara/pages/register/", "/resep_nusantara/pages/login/"]
+    $excluded_paths = ["/resep_nusantara/pages/register/", "/resep_nusantara/pages/login/"];
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- HEADER -->
-    <?php if(!in_array($pathname, $excluded_paths)) {?>
+    <?php if(!allowedComponent($pathname, $excluded_paths)) {?>
         <header>
             <?php include_once(APP_NAME."components/layouts/navbar.php")?>
         </header>
@@ -22,7 +22,7 @@
 
     <!-- MAIN CONTENT -->
     <main>
-        <?php include_once("$name.view.php")?>
+        <?php include_once("$name_path.view.php")?>
     </main>
 
     <?php include_once(APP_NAME."components/layouts/script.php")?>

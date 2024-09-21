@@ -1,3 +1,3 @@
 <main>
-    <h1>Hello World Di sini dan di sana</h1>
+    <h1>HOME PAGE</h1>
 </main>
