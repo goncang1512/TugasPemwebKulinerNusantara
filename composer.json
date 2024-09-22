@@ -1,0 +1,16 @@
+{
+  "name": "bungkarno/resep_nusantara",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "ResepNusantara\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "bungkarno",
+      "email": "samuderanst@gmail.com"
+    }
+  ],
+  "require": {}
+}
