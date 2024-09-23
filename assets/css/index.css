@@ -1,4 +1,97 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.main-content-project {
+  padding-top: 80px;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo-navbar {
+  width: 100px;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-search {
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  display: flex;
+  padding: 4px 3px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-search input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.form-search button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+
+.div-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item:not(:last-child) {
+  border-right: 1px solid black;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .form-search {
+    width: 100%;
+  }
+
+  .form-search input {
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .div-link {
+    align-items: center;
+    width: 100%;
+  }
+
+  .icon-profile {
+    display: none;
+  }
+
+  .nav-item:not(:last-child) {
+    border-right: none;
+  }
 }
