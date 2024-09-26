@@ -24,4 +24,4 @@
 
 <?php if ($pathname === "/TugasPemwebKulinerNusantara/" || $pathname === "/TugasPemwebKulinerNusantara/index.php"): ?>
     <link rel="stylesheet" href="<?= BASE_URL."assets/css/home.css"?>">
-<?php endif;?>
+<?php endif; ?>
