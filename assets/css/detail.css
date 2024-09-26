@@ -1,5 +1,132 @@
 
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
-  /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .atas {
+    flex-direction: column;
+  }
+  .gambar1 {
+    width: 100%;
+  }
+  .atas p {
+    width: 100%;
+  }
+  .container-timer {
+    margin: 0px 20px;
+  }
+}
+
+/* \judul */
+.judul-bika {
+  font-size: 40px;
+  font-weight: 800; /* Perbaiki font-weight tanpa px */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-left: 20px;
+}
+
+.atas {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 100px;
+  margin-left: 20px;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.gambar1 {
+  width: 35%;
+  height: 300px;
+}
+
+.atas p {
+  font-size: 20px;
+  background-color: #d9d9d9;
+  padding: 10px;
+  width: 65%;
+  border-radius: 10px;
+  color: black;
+}
+
+.container-timer {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 225px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid black;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.waktu1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.waktu2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-right: 60px;
+}
+
+.container2 {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f2fff2;
+  border: 2px solid #a9e5a9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #2f852f;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  color: #3a9d3a;
+  border-bottom: 2px solid #b2d8b2;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.instructions ol {
+  margin-left: 20px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.btn:hover {
+  background-color: grey;
+  color: white;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
 }
