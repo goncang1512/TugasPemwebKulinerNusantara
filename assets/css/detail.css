@@ -1,3 +1,19 @@
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+  .atas {
+    flex-direction: column;
+  }
+  .gambar1 {
+    width: 100%;
+  }
+  .atas p {
+    width: 100%;
+  }
+  .container-timer {
+    margin: 0px 20px;
+  }
+}
+
 /* \judul */
 .judul-bika {
   font-size: 40px;
@@ -112,20 +128,4 @@ ul {
   align-items: center;
   gap: 10px;
   padding-bottom: 15px;
-}
-
-/* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
-  .atas {
-    flex-direction: column;
-  }
-  .gambar1 {
-    width: 100%;
-  }
-  .atas p {
-    width: 100%;
-  }
-  .container-timer {
-    margin: 0px 20px;
-  }
 }
