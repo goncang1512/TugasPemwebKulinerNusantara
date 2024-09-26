@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="<?= BASE_URL . "assets/css/index.css" ?>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <!-- CSS PAGES -->
 <?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/detail/') === 0): ?>
     <link rel="stylesheet" href="<?= BASE_URL . "assets/css/detail.css" ?>">
