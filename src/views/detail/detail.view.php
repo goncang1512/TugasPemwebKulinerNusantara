@@ -1,5 +1,5 @@
 <main>
-    <h1>BIKA AMBON</h1>
+    <h1 class="judul-bika">BIKA AMBON</h1>
     <div class="atas">
         <img class="gambar1"src="https://c1.wallpaperflare.com/preview/428/552/953/bika-ambon-bika-plate-slice.jpg" alt="Bika Ambon">
         <p>Bika Ambon adalah kue tradisional Indonesia yang terkenal dengan tekstur berongga dan lembut di bagian dalam serta lapisan luar yang agak renyah. Kue ini terbuat dari bahan-bahan seperti tepung tapioka, santan, telur, gula, dan ragi. Rasa khasnya berasal dari perpaduan antara manis, gurih, dan aroma daun pandan atau jeruk yang sering digunakan dalam adonannya.
