@@ -1,6 +1,6 @@
 <?php
     $pathname = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $not_allowed_navbar = ["/resep_nusantara/pages/register/", "/resep_nusantara/pages/login/"];
+    $not_allowed_navbar = ["/TugasPemwebKulinerNusantara/pages/register/", "/TugasPemwebKulinerNusantara/pages/login/"];
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
     <?php }?>
 
     <!-- MAIN CONTENT -->
-    <main>
+    <main class="<?php echo allowedComponent($pathname, $not_allowed_navbar) ? '' : 'main-content-project'; ?>">
         <?php include_once("$name_path.view.php")?>
     </main>
 
