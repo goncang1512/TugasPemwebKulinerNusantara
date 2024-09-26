@@ -22,6 +22,6 @@
     <link rel="stylesheet" href="<?= BASE_URL . "assets/css/auth.css" ?>">
 <?php endif; ?>
 
-<?php if ($pathname === "/TugasPemwebKulinerNusantara/" || $pathname === "/TugasPemwebKulinerNusantara/index.php"): ?>
+<?php if ($pathname === "/TugasPemwebKulinerNusantara" || $pathname === "/TugasPemwebKulinerNusantara/index.php"): ?>
     <link rel="stylesheet" href="<?= BASE_URL."assets/css/home.css"?>">
 <?php endif; ?>
