@@ -10,7 +10,7 @@
     <div class="container-timer">
         <div style="height: 35px; width:100%; background-color: green;"></div>
         <div style="padding: 10px;">
-            <table style="width:100%">
+            <table style="width:100%;margin-left:40px">
                 <tr>
                     <th>Waktu Persiapan :</th>
                     <th>Waktu Memasak :</th>
