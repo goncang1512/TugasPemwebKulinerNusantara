@@ -1,5 +1,10 @@
 <?php
 include_once("../../src/app/app.php");
 
-view("profile/profile");
-?>
+use App\Connection;
+use Controller\ResepCtrl;
+
+$pdo = Connection::get()->connect();
+$resep = new ResepCtrl($pdo);
+
+view("profile/profile", ["resep" => $resep->getAll()]);

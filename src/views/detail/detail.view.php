@@ -1,9 +1,8 @@
 <main>
-    <h1 class="judul-bika">BIKA AMBON</h1>
+    <h1 class="judul-bika"><?= $data["resep"]["judul"]?></h1>
     <div class="atas">
         <img class="gambar1"src="https://c1.wallpaperflare.com/preview/428/552/953/bika-ambon-bika-plate-slice.jpg" alt="Bika Ambon">
-        <p>Bika Ambon adalah kue tradisional Indonesia yang terkenal dengan tekstur berongga dan lembut di bagian dalam serta lapisan luar yang agak renyah. Kue ini terbuat dari bahan-bahan seperti tepung tapioka, santan, telur, gula, dan ragi. Rasa khasnya berasal dari perpaduan antara manis, gurih, dan aroma daun pandan atau jeruk yang sering digunakan dalam adonannya.
-        </p>
+        <p><?= $data["resep"]["deskripsi"]?></p>
     </div>
     <div style="border-top: 2px solid black; width: 100%; margin: 20px 0;margin-top:50px"></div>
 
@@ -17,17 +16,17 @@
                     <th>Total Waktu :</th>
                 </tr>
                 <tr>
-                    <th>30mins</th>
-                    <th>30mins</th>
-                    <th>30mins</th>
+                    <th><?= $data["resep"]["waktu_persiapan"]?></th>
+                    <th><?= $data["resep"]["waktu_memasak"]?></th>
+                    <th><?= $data["resep"]["total_waktu"]?></th>
                 </tr>
                 <tr>
                     <th style="padding-top:50px">Porsi :</th>
                     <th style="padding-top:50px">Kesulitan :</th>
                 </tr>
                 <tr>
-                    <th>6</th>
-                    <th>Mudah</th>
+                    <th><?= $data["resep"]["porsi"]?></th>
+                    <th><?= $data["resep"]["kesulitan"]?></th>
                 </tr>
             </table>
         </div>
