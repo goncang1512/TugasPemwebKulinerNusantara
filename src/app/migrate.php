@@ -2,11 +2,9 @@
 
 include_once("./app.php");
 
-use App\Connection;
 use Model\Resep;
 
-$pdo = Connection::get()->connect();
-$resep = new Resep($pdo);
+$resep = new Resep();
 
 $resep->createTables();
 

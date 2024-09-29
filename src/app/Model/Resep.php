@@ -1,18 +1,20 @@
 <?php
 
 namespace Model;
+use App\Connection;
 
-class Resep {
+class Resep extends Connection {
     private $pdo;
 
-    public function __construct($pdo) {   
-        $this->pdo = $pdo;
+    public function __construct() {   
+        $this->pdo = Connection::get()->connect();
     }
 
     public function createTables() {
         $sql = 'CREATE TABLE IF NOT EXISTS  resep (
             id SERIAL PRIMARY KEY,
             judul VARCHAR(255) NOT NULL,
+            slug VARCHAR(255) NOT NULL,
             deskripsi TEXT NOT NULL,
             bahan_bahan TEXT NOT NULL,
             langkah_langkah TEXT NOT NULL,
@@ -32,6 +34,14 @@ class Resep {
         return $this;
     }
 
+    private function createSlug($title) {
+        $slug = strtolower($title);
+        $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
+        $slug = preg_replace('/[\s-]+/', '-', $slug);
+        $slug = trim($slug, '-');
+        return $slug;
+    }
+
     public function tableExists($tableName) {
         $stmt = $this->pdo->query("SELECT to_regclass('$tableName') as table_exists");
         $result = $stmt->fetch();
@@ -45,9 +55,18 @@ class Resep {
     }
 
     public function ambilSatu($resep_id) {
-        $sql = "SELECT * FROM resep WHERE id = :id";
+        $sql = "SELECT * FROM resep WHERE slug = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':id' => $resep_id]);
+        $result = $stmt->fetch();
+
+        return $result;
+    }
+
+    public function getByTitle($title) {
+        $sql = "SELECT * FROM resep WHERE judul = :title";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":title" => $title]);
         $result = $stmt->fetch();
 
         return $result;
@@ -66,12 +85,15 @@ class Resep {
     }
 
     public function uploadResep($data, $image) {
-        $sql = "INSERT INTO resep (judul, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, gambar) 
-        VALUES (:judul, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori, :gambar)";
+        $sql = "INSERT INTO resep (judul, slug, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, gambar) 
+        VALUES (:judul, :slug, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori, :gambar)";
 
         $stmt = $this->pdo->prepare($sql);
-        
+
+        $slug = $this->createSlug($data["judul"]);
+
         $stmt->bindParam(':judul', $data["judul"]);
+        $stmt->bindParam(':slug', $slug);
         $stmt->bindParam(':deskripsi', $data["deskripsi"]);
         $stmt->bindParam(':bahan_bahan', $data["bahan_bahan"]);
         $stmt->bindParam(':langkah_langkah', $data["langkah_langkah"]);
@@ -84,6 +106,10 @@ class Resep {
         $stmt->bindParam(':kategori', $data["kategori"]);
         $stmt->bindParam(':gambar', $image["nameFile"]);
 
-        return $stmt->execute(); 
+        return [
+            "status" => 201,
+            "message" => "Berhasil di upload",
+            "data" => $stmt->execute()
+            ]; 
     }
 }
