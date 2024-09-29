@@ -95,3 +95,186 @@
     border-right: none;
   }
 }
+/* navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.main-content-project {
+  padding-top: 80px;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo-navbar {
+  width: 100px;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-search {
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  display: flex;
+  padding: 4px 3px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-search input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.form-search button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+
+.div-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item:not(:last-child) {
+  border-right: 1px solid black;
+}
+/* footer */
+body {
+  font-family: "Lucida Sans", sans-serif; /* Jenis font untuk seluruh halaman */
+  margin: 0; /* Menghilangkan margin default */
+  padding: 0; /* Menghilangkan padding default */
+}
+
+footer {
+  background-color: #18d318; /* Warna latar belakang footer */
+  color: black; /* Warna teks */
+  padding: 20px 0; /* Jarak atas dan bawah */
+}
+
+.footer-container {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: space-between; /* Ruang antara elemen */
+  align-items: center; /* Menjaga elemen di tengah secara vertikal */
+  max-width: 1500px; /* Lebar maksimum */
+  margin: auto; /* Mengatur margin otomatis untuk tengah */
+  padding: 0 20px; /* Jarak horizontal */
+}
+
+.footer-logo .logo {
+  width: 10px; /* Atur lebar logo */
+}
+
+.footer-text {
+  display: flex; /* Menggunakan flexbox untuk item di dalamnya */
+  flex-direction: row; /* Mengatur arah kolom */
+  align-items: center; /* Teks di tengah */
+  gap: 230px;
+}
+
+.footer-item {
+  text-align: center; /* Teks di tengah untuk setiap item */
+  margin: 10px 0; /* Jarak antara item */
+}
+
+.footer-links {
+  margin-top: 5px; /* Jarak atas untuk tautan */
+}
+
+.footer-links a {
+  color: white; /* Warna tautan */
+  text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.footer-links a:hover {
+  text-decoration: dotted; /* Garis bawah saat hover */
+}
+
+.footer-social {
+  text-align: right; /* Teks di kanan */
+}
+
+.footer-social .social-logo {
+  width: 30px; /* Atur lebar logo Instagram */
+  vertical-align: middle; /* Mengatur posisi logo dengan teks */
+}
+
+.footer-social a {
+  color: white; /* Warna tautan */
+  text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.footer-social a:hover {
+  text-decoration: underline; /* Garis bawah saat hover */
+}
+.social-line {
+  position: absolute; /* Mengatur posisi absolute untuk garis */
+  left: 0; /* Menempel di sisi kiri */
+  right: 0; /* Menempel di sisi kanan */
+  height: 0.5px; /* Tinggi garis */
+  background-color: white; /* Warna garis */
+  margin-bottom: 10px; /* Jarak bawah untuk garis */
+  margin-left: 350px;
+}
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+  /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .form-search {
+    width: 100%;
+  }
+
+  .form-search input {
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .div-link {
+    align-items: center;
+    width: 100%;
+  }
+
+  .icon-profile {
+    display: none;
+  }
+
+  .nav-item:not(:last-child) {
+    border-right: none;
+  }
+  .footer-container {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom di layar kecil */
+    align-items: center; /* Menjaga elemen di tengah secara horizontal */
+  }
+
+  .footer-social {
+    text-align: center; /* Teks di tengah */
+    margin-top: 10px; /* Jarak atas untuk sosial */
+  }
+}
