@@ -2,21 +2,21 @@
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2015/10/28/19/32/bika-ambon-1011219_1280.jpg" class="d-block w-100" alt="Tahu Kok">
+      <img src="https://cdn.pixabay.com/photo/2015/10/28/19/32/bika-ambon-1011219_1280.jpg" class="imagecarausel d-block w-100" alt="Bika Ambon">
       <div class="carousel-caption">
       <h5><strong>Sumatera Utara</strong></h5>
       <p><strong>Bika Ambon</strong></p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://www.eatnow.id/wp-content/uploads/2022/12/mie-gomak-600x338.webp" class="d-block w-100" alt="Mie Gomak">
+      <img src="https://www.eatnow.id/wp-content/uploads/2022/12/mie-gomak-600x338.webp" class="imagecarausel d-block w-100" alt="Mie Gomak">
       <div class="carousel-caption">
         <h5><strong>Sumatera Utara</strong></h5>
         <p><strong>Mie Gomak</strong></p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://img.kurio.network/3-JhPtBQc5IixbndVJfAB1W9KWs=/1200x675/filters:quality(80)/https://kurio-img.kurioapps.com/21/05/30/d6b1df3f-84f1-47d1-9735-7cd480912996.jpe" class="d-block w-100" alt="Tumis Daun Pepaya Bali">
+      <img src="https://img.kurio.network/3-JhPtBQc5IixbndVJfAB1W9KWs=/1200x675/filters:quality(80)/https://kurio-img.kurioapps.com/21/05/30/d6b1df3f-84f1-47d1-9735-7cd480912996.jpe" class=" imagecarausel d-block w-100" alt="Tumis Daun Pepaya Bali">
       <div class="carousel-caption">
       <h5><strong>Bali</strong></h5>
       <p><strong>Tumis Daun Pepaya</strong></p>
