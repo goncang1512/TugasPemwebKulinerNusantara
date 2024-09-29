@@ -1,6 +1,29 @@
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
+.carousel-inner {
+  flex-direction: column;
+  }
+.Welcome {
+  flex-direction: column;
+}
+
+.daerah {
+  flex-direction: column;
+}
+
+.rekomendasi-makanan {
+  flex-direction: column;
+}
+
+.card {
+  flex-direction: column;
+}
+
+.rempah-rempah {
+  flex-direction: column;
+}
+
 }
 body {
   margin-left: 20px;
@@ -26,6 +49,7 @@ width: 150px;
 }
 
 .carousel-inner img {
+  width: 100%;
 height: 800px;
 object-fit: cover;
 }
@@ -42,8 +66,10 @@ display: flex;
 justify-content: space-around;
 margin-bottom: 30px;
 gap: 30px;
+width: 100%;
 }
 .daerah-item {
+  width: 100%;
 background-color: #eee;
 padding: 10px;
 border-radius: 10px;
@@ -51,6 +77,7 @@ text-align: center;
 }
 
 .daerah-item img {
+  width: 100%;
 width: 220px;
 height: 150px;
 border-radius: 5px;
@@ -58,6 +85,7 @@ margin-bottom: 10px;
 }
 
 .daerah-item p {
+  width: 100%;
 font-weight: bold;
 margin-bottom: 5px;
 }
@@ -105,7 +133,7 @@ line-height: 1px;
 }
 
 .card {
-width: 24.4%;
+width: 100%;
 }
 
 
