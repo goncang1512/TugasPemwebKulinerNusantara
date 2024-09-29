@@ -2,179 +2,180 @@
 @media (max-width: 800px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
 
-  .carousel-inner {
-    flex-direction: column;
+.carousel-inner {
+  flex-direction: column;
   }
-  .Welcome {
-    flex-direction: column;
-  }
+.Welcome {
+  flex-direction: column;
+}
 
-  .daerah {
-    flex-direction: column;
-  }
+.daerah {
+  flex-direction: column;
+}
 
-  .rekomendasi-makanan {
-    flex-direction: column;
-  }
+.rekomendasi-makanan {
+  flex-direction: column;
+}
 
-  .card {
-    flex-direction: column;
-  }
+.card {
+  flex-direction: column;
+}
 
-  .rempah-rempah {
-    flex-direction: column;
-  }
+.rempah-rempah {
+  flex-direction: column;
+}
+
 }
 
 .carousel-caption {
-  margin: 20px;
-  font-size: 16px;
-  background-color: rgb(253, 253, 253);
-  color: rgb(7, 7, 7);
-  padding: 5px;
-  border-radius: 10px;
-  display: inline-block;
-  box-shadow: 0 2px 10px rgba(253, 252, 252, 0.938);
-  width: 150px;
+margin: 20px;
+font-size: 16px;
+background-color: rgb(253, 253, 253);
+color: rgb(7, 7, 7);
+padding: 5px;
+border-radius: 10px;
+display: inline-block;
+box-shadow: 0 2px 10px rgba(253, 252, 252, 0.938);
+width: 150px;
 }
 .carousel-caption h5 {
-  font-size: 24px;
+  font-size: 24px; 
 }
 
 .carousel-caption p {
-  font-size: 18px;
+  font-size: 18px; 
 }
 
 .carousel-inner img {
   width: 100%;
-  height: 800px;
-  object-fit: cover;
+height: 800px;
+object-fit: cover;
 }
 
 .Welcome {
-  text-align: center;
-  margin-top: 70px;
-  margin-bottom: 70px;
+text-align: center;
+margin-top: 70px;
+margin-bottom: 70px;
 }
 
 /* Rekomendasi makanan */
 .daerah {
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 30px;
-  gap: 30px;
-  width: 100%;
+padding: 20px;
+display: flex;
+justify-content: space-around;
+margin-bottom: 30px;
+gap: 30px;
+width: 100%;
 }
 .daerah-item {
   width: 100%;
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
+background-color: #eee;
+padding: 10px;
+border-radius: 10px;
+text-align: center;
 }
 
 .daerah-item img {
   width: 100%;
-  width: 220px;
-  height: 150px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+width: 220px;
+height: 150px;
+border-radius: 5px;
+margin-bottom: 10px;
 }
 
 .daerah-item p {
   width: 100%;
-  font-weight: bold;
-  margin-bottom: 5px;
+font-weight: bold;
+margin-bottom: 5px;
 }
 
 /* rekomendasi makanan dan rating */
 .rekomendasi-makanan {
-  overflow-x: scroll;
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 30px;
-  gap: 50px;
+overflow-x: scroll;
+padding: 20px;
+display: flex;
+justify-content: space-around;
+margin-bottom: 30px;
+gap: 50px;
 }
 
 .title-body {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 5px;
 }
 
 .body-rating {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 10px;
+flex-wrap: wrap;
 }
 
 .button-go {
-  background-color: #22c55e;
-  width: max-content;
-  height: max-content;
-  text-decoration: none;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 8px;
-  border: 1px solid rgb(0, 0, 0, 0.3);
+background-color: #22c55e;
+width: max-content;
+height: max-content;
+text-decoration: none;
+color: white;
+padding: 3px 10px;
+border-radius: 8px;
+border: 1px solid rgb(0, 0, 0, 0.3);
 }
-.button-go:hover {
+.button-go:hover{
   background-color: rgb(112, 100, 100);
 }
 
+
 .body-star {
-  display: flex;
-  flex-direction: column;
-  line-height: 1px;
+display: flex;
+flex-direction: column;
+line-height: 1px;
 }
 
 .card {
-  width: 100%;
+width: 100%;
 }
+
 
 /* Rempah Rempah */
 .rempah-rempah {
-  text-align: center;
-  margin-top: 70px;
-  margin-bottom: 70px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+text-align: center;
+margin-top: 70px;
+margin-bottom: 70px;
+display: flex;
+flex-direction: column;
+gap: 20px;
 }
 
 .rempah {
   padding: 20px;
-  flex-wrap: wrap;
-  gap: 20px;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-bottom: 30px;
-  gap: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+flex-wrap: wrap;
+gap: 20px;
+flex-direction: column;
+justify-content: space-around;
+margin-bottom: 30px;
+gap: 30px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .daerah-item {
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
+background-color: #eee;
+padding: 10px;
+border-radius: 10px;
+text-align: center;
 }
 
 .daerah-item img {
-  width: 100%;
-  height: 150px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+width: 100%;
+height: 150px;
+border-radius: 5px;
+margin-bottom: 10px;
 }
 
 .daerah-item p {
-  font-weight: bold;
-  margin-bottom: 5px;
+font-weight: bold;
+margin-bottom: 5px;
 }
-
-/* PALING BARU */
