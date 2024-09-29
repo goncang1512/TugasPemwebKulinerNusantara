@@ -1,5 +1,8 @@
 <?php
 include_once("../../src/app/app.php");
 
-view("profile/profile");
-?>
+use Controller\ResepCtrl;
+
+$resep = new ResepCtrl();
+
+view("profile/profile", ["resep" => $resep->getAll()]);

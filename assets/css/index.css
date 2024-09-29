@@ -61,8 +61,9 @@
   gap: 20px;
 }
 
-.nav-item:not(:last-child) {
-  border-right: 1px solid black;
+.nav-link:hover {
+  text-decoration: underline;
+  transition: 300ms ease-in-out;
 }
 
 /* MEDIA RESPONSIVE */
@@ -89,10 +90,6 @@
 
   .icon-profile {
     display: none;
-  }
-
-  .nav-item:not(:last-child) {
-    border-right: none;
   }
 }
 /* navbar */

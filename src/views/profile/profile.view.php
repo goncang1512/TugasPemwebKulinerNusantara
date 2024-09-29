@@ -19,13 +19,15 @@
             <button id="button-simpan" type="button" class="button-prof">Simpan</button>
         </div>
         <div class="my-content-container">
+
+            <!-- CONTAINER RESEP MAKANAN -->
             <div class="container-resep">
-                <?php for($i = 1; $i <= 10; $i++) : ?>
+                <?php foreach($data["resep"] as $resep) : ?>
                     <div class="card">
-                        <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= BASE_URL.$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
-                                <h5 class="card-title">Tumis Daun Pepaya Bali</h5>
+                                <h5 class="card-title"><?= $resep["judul"]?></h5>
                                 <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
                             </div>
                             <div class="body-rating">
@@ -39,19 +41,21 @@
                                         <i class="bi bi-star-fill"></i>
                                     </div>
                                 </div>
-                                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
+                                <a href="<?= BASE_URL.'pages/detail/index.php?resep_id='.$resep["id"]?>" class="button-go">Lihat Selengkapnya</a>
                             </div>
                         </div>
                     </div>
-                <?php endfor ?>
+                <?php endforeach ?>
             </div>
+
+            <!-- CONTAINER SIMPAN RESEP -->
             <div class="container-simpan">
-                <?php for($i = 1; $i <= 5; $i++) : ?>
+                <?php foreach($data["resep"] as $resep) : ?>
                     <div class="card">
-                        <img src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= BASE_URL.$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
-                                <h5 class="card-title">Makanan Khas Indonesia</h5>
+                                <h5 class="card-title"><?= $resep["judul"]?></h5>
                                 <p style="font-size: 25px; color: red;"><i class="bi bi-heart-fill"></i></p>
                             </div>
                             <div class="body-rating">
@@ -65,11 +69,11 @@
                                         <i class="bi bi-star-fill"></i>
                                     </div>
                                 </div>
-                                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
+                                <a href="<?= BASE_URL.'pages/detail/index.php?resep_id='.$resep["id"]?>" class="button-go">Lihat Selengkapnya</a>
                             </div>
                         </div>
                     </div>
-                <?php endfor ?>
+                <?php endforeach; ?>
             </div>
         </div>
      </div>
