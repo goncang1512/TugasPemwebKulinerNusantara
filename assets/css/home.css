@@ -2,10 +2,7 @@
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
 }
-body {
-  margin-left: 20px;
-  margin-right: 20px;
-}
+
 .carousel-caption {
   margin: 20px;
   font-size: 16px;
@@ -17,6 +14,7 @@ body {
   box-shadow: 0 2px 10px rgba(253, 252, 252, 0.938);
   width: 150px;
 }
+
 .carousel-caption h5 {
   font-size: 24px;
 }

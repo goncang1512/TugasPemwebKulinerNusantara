@@ -20,7 +20,7 @@
     <?php }?>
 
     <!-- MAIN CONTENT -->
-    <main class="<?php echo allowedComponent($pathname, $not_allowed_navbar) ? '' : 'main-content-project'; ?>">
+    <main class="<?php echo allowedComponent($pathname, $not_allowed_navbar) ? '' : 'main-content-project'; ?> overflow-x-hidden">
         <?php include_once("$name_path.view.php")?>
     </main>
 

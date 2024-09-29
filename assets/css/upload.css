@@ -1,7 +1,3 @@
-.main-konten {
-  padding: 20px;
-}
-
 .input-img {
   flex: 1;
 }
@@ -40,12 +36,6 @@
   color: white;
 }
 
-.bi-photos {
-  font-size: 150px;
-  opacity: 1;
-  text-align: center;
-}
-
 .upload-food {
   width: 100%;
   min-height: 400px;
@@ -57,55 +47,7 @@
   position: relative;
 }
 
-.image-preview {
-  object-fit: cover;
-  display: none;
-  border: 1px solid rgba(168, 167, 167, 0.441);
-  border-radius: 10px;
-  max-height: 400px;
-}
-
-.table-input-judul {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.image-resep {
-  display: flex;
-  width: 100%;
-  gap: 30px;
-  flex-direction: row;
-}
-
-.container-bahan {
-  display: flex;
-  flex-direction: column;
-}
-
-.upload-food {
-  cursor: pointer;
-}
-
-.button-upload {
-  background-color: #22c55e;
-  border: 1px solid gray;
-  border-radius: 10px;
-  color: white;
-  &:hover {
-    background-color: #1d9a4b;
-  }
-}
-
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
-  .main-konten {
-    padding: 10px;
-  }
-
-  .image-resep {
-    flex-direction: column;
-  }
 }
