@@ -1,11 +1,31 @@
 /* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
+
+  .carousel-inner {
+    flex-direction: column;
+  }
+  .Welcome {
+    flex-direction: column;
+  }
+
+  .daerah {
+    flex-direction: column;
+  }
+
+  .rekomendasi-makanan {
+    flex-direction: column;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .rempah-rempah {
+    flex-direction: column;
+  }
 }
-body {
-  margin-left: 20px;
-  margin-right: 20px;
-}
+
 .carousel-caption {
   margin: 20px;
   font-size: 16px;
@@ -26,6 +46,7 @@ body {
 }
 
 .carousel-inner img {
+  width: 100%;
   height: 800px;
   object-fit: cover;
 }
@@ -38,12 +59,15 @@ body {
 
 /* Rekomendasi makanan */
 .daerah {
+  padding: 20px;
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
   gap: 30px;
+  width: 100%;
 }
 .daerah-item {
+  width: 100%;
   background-color: #eee;
   padding: 10px;
   border-radius: 10px;
@@ -51,6 +75,7 @@ body {
 }
 
 .daerah-item img {
+  width: 100%;
   width: 220px;
   height: 150px;
   border-radius: 5px;
@@ -58,17 +83,21 @@ body {
 }
 
 .daerah-item p {
+  width: 100%;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 /* rekomendasi makanan dan rating */
 .rekomendasi-makanan {
+  overflow-x: scroll;
+  padding: 20px;
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
   gap: 50px;
 }
+
 .title-body {
   display: flex;
   align-items: center;
@@ -80,7 +109,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .button-go {
@@ -104,7 +134,7 @@ body {
 }
 
 .card {
-  width: 24.4%;
+  width: 100%;
 }
 
 /* Rempah Rempah */
@@ -118,6 +148,7 @@ body {
 }
 
 .rempah {
+  padding: 20px;
   flex-wrap: wrap;
   gap: 20px;
   flex-direction: column;
