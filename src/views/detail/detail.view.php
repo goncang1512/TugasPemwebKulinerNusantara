@@ -1,11 +1,11 @@
-<main>
+<main class="body">
     <h1 class="judul-bika">BIKA AMBON</h1>
     <div class="atas">
         <img class="gambar1"src="https://c1.wallpaperflare.com/preview/428/552/953/bika-ambon-bika-plate-slice.jpg" alt="Bika Ambon">
         <p>Bika Ambon adalah kue tradisional Indonesia yang terkenal dengan tekstur berongga dan lembut di bagian dalam serta lapisan luar yang agak renyah. Kue ini terbuat dari bahan-bahan seperti tepung tapioka, santan, telur, gula, dan ragi. Rasa khasnya berasal dari perpaduan antara manis, gurih, dan aroma daun pandan atau jeruk yang sering digunakan dalam adonannya.
         </p>
     </div>
-    <div style="border-top: 2px solid black; width: 100%; margin: 20px 0;margin-top:50px"></div>
+    <div style="border-top: 2px solid #a9e5a9; width: 100%; margin: 20px 0;margin-top:50px"></div>
 
     <div class="container-timer">
         <div style="height: 35px; width:100%; background-color: green;"></div>
@@ -32,7 +32,7 @@
             </table>
         </div>
         <div style="padding:20px 50px">
-            <div style="border-top: 2px solid black; width: 100%;"></div>
+            <div style="border-top: 2px solid #a9e5a9; width: 100%;"></div>
         </div>
         <div class="button">
             <h6 style="font-size:20px">00:30:05</h6>
@@ -77,4 +77,5 @@
     <video src="RESEP BIKA AMBON BESARANG DAN ANTI GAGAL.mp4"></video>
 </div>
 
+<?php include_once(APP_PATH . 'includes/footer.php')?>
 </main>
