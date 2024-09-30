@@ -41,7 +41,7 @@
                                         <i class="bi bi-star-fill"></i>
                                     </div>
                                 </div>
-                                <a href="<?= BASE_URL.'pages/detail/index.php?resep_id='.$resep["id"]?>" class="button-go">Lihat Selengkapnya</a>
+                                <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
                             </div>
                         </div>
                     </div>

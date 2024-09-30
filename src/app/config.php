@@ -13,5 +13,4 @@ const CONFIG = [
             'password' => 'samudera1512'
         ]
     ];
-
 ?>

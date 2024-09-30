@@ -7,7 +7,8 @@ class Connection {
 
     public function connect() {
         try {
-            $dsn = "pgsql:host=" . CONFIG['db']['host'] . ";port=" . CONFIG['db']['port'] . ";dbname=" . CONFIG['db']['dbname'] . ";user=" . CONFIG['db']['user'] . ";password=" . CONFIG['db']['password'];
+            $dsn = "pgsql:host=" . getenv("HOST") . ";port=" . getenv("PORT") . ";dbname=" . getenv("DBNAME") . ";user=" . getenv("USER") . ";password=" . getenv("PASSWORD");
+
             $conn = new \PDO($dsn);
             $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             return $conn;

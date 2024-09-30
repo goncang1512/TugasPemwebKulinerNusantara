@@ -4,8 +4,8 @@ namespace Controller;
 use Model\Resep;
 
 class ResepCtrl extends Resep {
-    public function __construct($pdo) {   
-        parent::__construct($pdo); 
+    public function __construct() {   
+        parent::__construct();  
     }
 
     public function unggahResep($data, $image) {
