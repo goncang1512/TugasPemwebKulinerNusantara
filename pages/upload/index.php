@@ -24,9 +24,11 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
 
         $hasil = $resep->unggahResep($_POST, $image);
 
-        if ($hasil) {
+        if ($hasil["status"] == 201) {
             header("location: " . BASE_URL . "pages/profile/");
             exit();
+        } else if($hasil["status"] == 422) {
+            $msgError = $hasil["message"];
         } else {
             echo "Gagal mengunggah resep. Silakan coba lagi.";
         }
