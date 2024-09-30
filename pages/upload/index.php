@@ -2,12 +2,10 @@
 
 include_once("../../src/app/app.php");
 
-use App\Connection;
 use Controller\ResepCtrl;
 use Middleware\ResepWare;
 
-$pdo = Connection::get()->connect();
-$resep = new ResepCtrl($pdo);
+$resep = new ResepCtrl();
 $resepWr = new ResepWare();
 
 $msgError = "";
