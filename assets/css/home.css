@@ -60,6 +60,7 @@ margin-bottom: 70px;
 
 /* Rekomendasi makanan */
 .daerah {
+overflow-x: scroll;
 padding: 20px;
 display: flex;
 justify-content: space-around;
@@ -68,25 +69,28 @@ gap: 30px;
 width: 100%;
 }
 .daerah-item {
-  width: 100%;
-background-color: #eee;
+  background-color: white;
+padding: 10px;
+border-radius: 10px;
+text-align: center;
+border: 1px solid rgb(0, 0, 0, 0.3);
+line-height: 1px;
+width: 100%;
 padding: 10px;
 border-radius: 10px;
 text-align: center;
 }
 
 .daerah-item img {
-  width: 100%;
+width: 100%;
+height: 150px;
+border-radius: 5px;
+margin-bottom: 10px;
+width: 100%;
 width: 220px;
 height: 150px;
 border-radius: 5px;
 margin-bottom: 10px;
-}
-
-.daerah-item p {
-  width: 100%;
-font-weight: bold;
-margin-bottom: 5px;
 }
 
 /* rekomendasi makanan dan rating */
@@ -160,22 +164,4 @@ margin-bottom: 30px;
 gap: 30px;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-.daerah-item {
-background-color: #eee;
-padding: 10px;
-border-radius: 10px;
-text-align: center;
-}
-
-.daerah-item img {
-width: 100%;
-height: 150px;
-border-radius: 5px;
-margin-bottom: 10px;
-}
-
-.daerah-item p {
-font-weight: bold;
-margin-bottom: 5px;
 }
