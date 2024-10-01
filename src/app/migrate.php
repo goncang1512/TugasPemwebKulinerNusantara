@@ -6,11 +6,10 @@ use Model\Resep;
 
 $resep = new Resep();
 
-$resep->createTables();
+$result = $resep->createTables();
 
-if ($resep->tableExists('resep')) {
+if ($result) {
     echo "Tabel 'resep' berhasil dibuat.";
-    header("location:".BASE_URL."pages/profile");
 } else {
     echo "Gagal membuat tabel 'resep'.";
 }

@@ -46,6 +46,20 @@
   text-align: center;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#upload-form input:focus,
+#upload-form select:focus,
+#upload-form textarea:focus {
+  border: 2px solid #22c55e;
+  box-shadow: none;
+  /* box-shadow: 0 0 3px 2px #22c55e75; */
+}
+
 .upload-food {
   width: 100%;
   min-height: 400px;
@@ -55,6 +69,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  background-color: white;
 }
 
 .image-preview {

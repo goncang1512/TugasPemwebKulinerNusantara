@@ -8,5 +8,5 @@
             <input type="password" placeholder="Konfirmasi password">
             <button type="submit">Daftar</button>
         </form> 
-    </div> 
+    </div>
 </main>
