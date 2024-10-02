@@ -24,7 +24,7 @@
             <div class="container-resep">
                 <?php foreach($data["resep"] as $resep) : ?>
                     <div class="card">
-                        <img src="<?= BASE_URL.$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= BASE_URL."assets/images/".$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>
@@ -41,7 +41,12 @@
                                         <i class="bi bi-star-fill"></i>
                                     </div>
                                 </div>
-                                <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
+                                <div class="d-flex align-items-center gap-2">
+                                    <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
+                                    <a class="fs-4" href="index.php?q=delete&resep_id=<?= $resep["id"]?>">
+                                        <i class="bi bi-trash3"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -52,7 +57,7 @@
             <div class="container-simpan">
                 <?php foreach($data["resep"] as $resep) : ?>
                     <div class="card">
-                        <img src="<?= BASE_URL.$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= BASE_URL."assets/images/".$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>

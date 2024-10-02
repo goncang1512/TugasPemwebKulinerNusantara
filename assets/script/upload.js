@@ -15,6 +15,7 @@ document
         imagePreview.style.display = "block";
         logoImg.style.opacity = "0";
         labelImg.style.border = "none";
+        labelImg.style.backgroundColor = "transparent";
         logoGambar.classList.add("logo-image");
       };
 
@@ -24,6 +25,7 @@ document
       imagePreview.style.display = "none";
       labelImg.style.border = "1px dashed black";
       logoImg.style.opacity = "0.4";
+      labelImg.style.backgroundColor = "white";
       logoGambar.classList.remove("logo-image");
     }
   });

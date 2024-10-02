@@ -1,5 +1,5 @@
 <main class="main-konten">
-    <p id="error-message" style="color: red; font-style: italic;"><?= $data["errMsg"]?></p>
+    <p id="error-message" class="d-flex justify-content-center" style="color: red; font-style: italic;"><?= $data["errMsg"]?></p>
     <form id="upload-form" method="POST" action="" enctype="multipart/form-data" >
         <div class="image-resep">
             <div class="input-img">
@@ -31,7 +31,7 @@
                 <tr>
                     <td>Waktu persiapan</td>
                     <td>
-                        <input name="waktu_persiapan" type="text" id="judul" class="form-control" placeholder="Waktu persiapan" aria-label="Waktu persiapan" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
+                        <input name="waktu_persiapan" type="number" id="judul" class="form-control" placeholder="Waktu persiapan" aria-label="Waktu persiapan" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
                         value="<?php echo isset($data['post']['waktu_persiapan']) ? $data['post']['waktu_persiapan'] : '' ?>"
                         >
                     </td>
@@ -39,7 +39,7 @@
                 <tr>
                     <td>Waktu Memasak</td>
                     <td>
-                        <input name="waktu_memasak" type="text" id="judul" class="form-control" placeholder="Waktu Memasak" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
+                        <input name="waktu_memasak" type="number" id="judul" class="form-control" placeholder="Waktu Memasak" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
                         value="<?php echo isset($data['post']['waktu_memasak']) ? $data['post']['waktu_memasak'] : '' ?>"
                         >
                     </td>
@@ -47,7 +47,7 @@
                 <tr>
                     <td>Total Waktu</td>
                     <td>
-                        <input name="total_waktu" type="text" inputmode="numeric" accept="numeric" id="judul" class="form-control" placeholder="Total Waktu" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
+                        <input name="total_waktu" type="number" inputmode="numeric" accept="numeric" id="judul" class="form-control" placeholder="Total Waktu" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
                         value="<?php echo isset($data['post']['total_waktu']) ? $data['post']['total_waktu'] : '' ?>">
                     </td>
                 </tr>
