@@ -38,8 +38,8 @@
     </div>
 
     <!-- Makanan makanan rekomendasi -->
-    <div class="container-scroll">
-    <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
+    <div data-aos="fade-up"data-aos-duration="3000" class="container-scroll">
+    <section class="daerah">
     <div class="daerah-item">
         <img src="https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/11/1.-Batagor.webp" alt="Makanan khas Bandung">
         <h5>Sumatera Barat</h5>
