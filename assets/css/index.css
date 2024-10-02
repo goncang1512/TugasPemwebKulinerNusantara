@@ -1,3 +1,7 @@
+body {
+  background-color: #f9fafb;
+}
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -28,7 +32,7 @@
   border: 1px solid rgb(0, 0, 0, 0.3);
   display: flex;
   padding: 4px 3px;
-  border-radius: 5px;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
 }
@@ -100,7 +104,7 @@
 }
 
 .main-content-project {
-  padding-top: 80px;
+  padding-top: 70px;
 }
 
 .navbar-nav {
@@ -156,18 +160,8 @@
   gap: 20px;
 }
 
-.nav-item:not(:last-child) {
-  border-right: 1px solid black;
-}
-/* footer */
-body {
-  font-family: "Lucida Sans", sans-serif; /* Jenis font untuk seluruh halaman */
-  margin: 0; /* Menghilangkan margin default */
-  padding: 0; /* Menghilangkan padding default */
-}
-
 footer {
-  background-color: #18d318; /* Warna latar belakang footer */
+  background-color: #22c55e; /* Warna latar belakang footer */
   color: black; /* Warna teks */
   padding: 20px 0; /* Jarak atas dan bawah */
 }
@@ -236,6 +230,19 @@ footer {
   margin-bottom: 10px; /* Jarak bawah untuk garis */
   margin-left: 350px;
 }
+
+.nav-item a {
+  color: black;
+}
+
+.in-link a {
+  color: #22c55e;
+}
+
+.in-link a:hover {
+  color: #22c55e;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
@@ -262,9 +269,6 @@ footer {
     display: none;
   }
 
-  .nav-item:not(:last-child) {
-    border-right: none;
-  }
   .footer-container {
     flex-direction: column; /* Mengubah arah flex menjadi kolom di layar kecil */
     align-items: center; /* Menjaga elemen di tengah secara horizontal */
@@ -273,5 +277,30 @@ footer {
   .footer-social {
     text-align: center; /* Teks di tengah */
     margin-top: 10px; /* Jarak atas untuk sosial */
+  }
+
+  .navbar-nav {
+    background-color: #e5e7eb;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+
+  .nav-item {
+    padding-left: 10px;
+  }
+
+  .bg-nav-item {
+    background-color: #22c55e;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .bg-nav-item:hover a {
+    color: white;
+  }
+
+  .bg-nav-item a {
+    color: white;
   }
 }

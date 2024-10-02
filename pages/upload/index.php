@@ -33,6 +33,6 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
             echo "Gagal mengunggah resep. Silakan coba lagi.";
         }
     }
-}
+} 
 
 view("upload/upload", ["post" => $_POST, "errMsg" => $msgError]);

@@ -33,12 +33,15 @@
   </button>
 </div>
 
-    <div class="Welcome">
+    <div data-aos="fade-up"data-aos-duration="3000"class="Welcome">
         <h2><strong>SELAMAT DATANG DI KULINER NUSANTARA</strong></h2>
     </div>
 
     <!-- Makanan makanan rekomendasi -->
+<<<<<<< HEAD
     <div class="container-scroll">
+=======
+>>>>>>> 1715c7ad05bfbaf3e4ea3a674a69e749a4af6c82
     <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
     <div class="daerah-item">
         <img src="https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/11/1.-Batagor.webp" alt="Makanan khas Bandung">
@@ -90,6 +93,24 @@
                         </div>
                     </div>
                     <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
+<div data-aos="fade-up"data-aos-duration="3000"class="rekomendasi-makanan">
+    <div class="card">
+        <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-Garang-Asem-Ayam-Tanpa-Santan-Makanan-Tradisional-Indonesia.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
+        <div class="card-body">
+            <div class="title-body">
+                <h5 class="card-title">Garang Asem</h5>
+                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
+            </div>
+            <div class="body-rating">
+                <div class="body-star">
+                    <p>Rating 5</p>
+                    <div style="font-size: 15px; color: #F4E212;">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -206,10 +227,10 @@
     </div>
 </div>
 
-<div class="rempah-rempah">
+<div data-aos="fade-up"data-aos-duration="3000" class="rempah-rempah">
       <h3><strong>Rempah Rempah Khas Indonesia</strong></h3>
-    </div>
-    <section class="rempah">
+</div>
+    <section data-aos="fade-up"data-aos-duration="3000" class="rempah">
     <div class="daerah-item">
         <img src="https://cdn.idntimes.com/content-images/community/2018/08/f7b5dc860236de94e93b595f5d4ecab3.jpg" alt="Rempah Rempah Indonesia">
         <h5>Cengkih</h5>
