@@ -39,7 +39,8 @@
 
     <!-- Makanan makanan rekomendasi -->
     <div data-aos="fade-up"data-aos-duration="3000" class="container-scroll">
-    <section class="daerah">
+        <section class="daerah">
+    <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
     <div class="daerah-item">
         <img src="https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/11/1.-Batagor.webp" alt="Makanan khas Bandung">
         <h5>Sumatera Barat</h5>
@@ -70,10 +71,10 @@
 
     <!-- Makanan dan rating makanan -->
 <div data-aos="fade-up"data-aos-duration="3000" class="container-scroll">
-    <div class="rekomendasi-makanan">
+    <div data-aos="fade-up"data-aos-duration="3000" class="rekomendasi-makanan">
         <div class="card">
             <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-Garang-Asem-Ayam-Tanpa-Santan-Makanan-Tradisional-Indonesia.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
-            <div class="card-body">
+            <div class="card-body">""
                 <div class="title-body">
                     <h5 class="card-title">Garang Asem</h5>
                     <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
