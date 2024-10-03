@@ -12,20 +12,20 @@ $save = new SaveCtrl();
 $session = getSession();
 
 if(!$session) {
-    header("location:".getenv("BASE_URL")."pages/login");
+    header("location:".$_ENV["BASE_URL"]."pages/login");
 }
 
 if(isset($_GET["q"]) && $_GET["q"] == "delete") {
     $result = $resep->deleteOne($_GET["resep_id"]);
 
-    header("location:".getenv("BASE_URL")."pages/profile/");
+    header("location:".$_ENV["BASE_URL"]."pages/profile/");
     exit();
 } else if(isset($_GET["q"]) && $_GET["q"] == "logout") {
     $user->logOut();
-    header("location:".getenv("BASE_URL")."pages/login");
+    header("location:".$_ENV["BASE_URL"]."pages/login");
 } else if(isset($_GET["q"]) && $_GET["q"] == "save") {
     $save->saveResep($_GET);
-    header("location:".getenv("BASE_URL")."pages/profile/");
+    header("location:".$_ENV["BASE_URL"]."pages/profile/");
 }
 
 view("profile/profile", [

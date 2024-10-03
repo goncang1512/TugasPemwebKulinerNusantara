@@ -15,7 +15,7 @@
         <ul class="navbar-nav">
             <li class="nav-item <?= $pathname === "/TugasPemwebKulinerNusantara/" || $pathname === "/TugasPemwebKulinerNusantara/index.php" ? "bg-nav-item in-link" : "" ?>">
                 <a class="nav-link fw-semibold fs-6" aria-current="page" href="<?= BASE_URL?>">
-                    Home
+                    Beranda
                 </a>
             </li>
             <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/upload/') === 0 ? "bg-nav-item in-link" : "" ?>">
