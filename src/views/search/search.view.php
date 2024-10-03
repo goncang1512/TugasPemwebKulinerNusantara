@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <div class="title-body">
                         <h5 class="card-title"><?= $resep["judul"]?></h5>
-                        <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
+                        <p style="font-size: 25px; color: red;"><i class="bi bi-heart-fill"></i></p>
                     </div>
                     <div class="body-rating">
                         <div class="body-star">
@@ -19,7 +19,14 @@
                                 <i class="bi bi-star-fill"></i>
                             </div>
                         </div>
-                        <a href="<?= BASE_URL.'pages/detail/index.php?resep_id='.$resep["id"]?>" class="button-go">Lihat Selengkapnya</a>
+                        <div class="d-flex align-items-center gap-2">
+                            <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
+                            <?php if(isset($data["user"]["id"]) && $data["user"]["id"] == $resep["user_id"]):?>
+                                <a class="fs-4" href="index.php?q=delete&resep_id=<?= $resep["id"]?>">
+                                    <i class="bi bi-trash3"></i>
+                                </a>
+                            <?php endif;?>
+                        </div>
                     </div>
                 </div>
             </div>

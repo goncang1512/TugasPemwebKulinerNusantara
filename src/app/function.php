@@ -20,3 +20,17 @@ function allowedComponent($pathname, $excluded_paths) {
 
     return $should_exclude;
 }
+
+function getSession() {
+    session_start();
+
+    if (isset($_SESSION['session_user'])) {
+        return $_SESSION['session_user'];
+    } else if (isset($_COOKIE['session_user'])) {
+        $cookieData = json_decode($_COOKIE['session_user'], true);
+        $_SESSION['session_user'] = $cookieData;
+        return $cookieData;
+    } else {
+        return null;
+    }
+}

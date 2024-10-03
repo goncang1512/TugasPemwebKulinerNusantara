@@ -20,6 +20,12 @@ class ResepCtrl extends Resep {
         return $data;
     }
 
+    public function getByUser($user_id) {
+        $data = $this->findByUserId($user_id);
+
+        return $data;
+    }
+
     public function getOne($resep_id) {
         $data = $this->ambilSatu($resep_id);
 

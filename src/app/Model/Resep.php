@@ -26,9 +26,11 @@ class Resep extends Connection {
             asal_makanan VARCHAR(255) NOT NULL,
             kategori VARCHAR(255) NOT NULL,
             gambar VARCHAR(255) NOT NULL,
+            user_id INT NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );' ;
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+        )';
 
         $this->pdo->exec($sql);
         return $this;
@@ -95,11 +97,12 @@ class Resep extends Connection {
     }
 
     public function uploadResep($data, $image) {
-        $sql = "INSERT INTO resep (judul, slug, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, gambar) 
-        VALUES (:judul, :slug, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori, :gambar)";
+        $sql = "INSERT INTO resep (judul, slug, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, user_id, gambar) 
+        VALUES (:judul, :slug, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori,:user_id, :gambar)";
 
         $stmt = $this->pdo->prepare($sql);
         $slug = $this->createSlug($data["judul"]);
+
         $stmt->execute([
                 ':judul' => $data["judul"],
                 ':slug' => $slug,
@@ -113,6 +116,7 @@ class Resep extends Connection {
                 ':kesulitan' => $data["kesulitan"],
                 ':asal_makanan' => $data["asal_makanan"],
                 ':kategori' => $data["kategori"],
+                ':user_id' => $_POST['user_id'],
                 ':gambar' => $image["nameFile"]
             ]);
 
@@ -132,5 +136,14 @@ class Resep extends Connection {
         $stmt->execute([':pattern' => $pattern]);
 
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function findByUserId($user_id) {
+        $sql = "SELECT * FROM resep WHERE user_id = :user_id";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':user_id' => $user_id]);
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
     }
 }

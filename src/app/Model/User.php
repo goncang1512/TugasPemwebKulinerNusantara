@@ -55,4 +55,12 @@ class User extends Connection {
         $result = $stmt->fetch();
         return $result;
     }
+
+    public function findEmail(string $email) {
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);  
+        $stmt->execute([":email" => $email]);
+        $result = $stmt->fetch();
+        return $result;
+    } 
 }

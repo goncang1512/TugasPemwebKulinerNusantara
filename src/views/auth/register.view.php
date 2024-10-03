@@ -13,5 +13,6 @@
             value="<?= isset($data["value"]["re-password"]) ? $data["value"]["re-password"] : '' ?>" required/>
             <button name="submit" value="register" type="submit">Daftar</button>
         </form> 
+        <p class="pt-2">Sudah punya <a href="<?= BASE_URL."pages/login"?>">akun</a></p>
     </div>
 </main>
