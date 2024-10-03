@@ -5,13 +5,13 @@
             </div>
             <div style="margin-right:100px"class="footer-text">
                 <div class="footer-item">
-                    <h2 style="font-size:20px">Resep</h2>
+                    <h2 style="font-size:20px;color:white">Resep</h2>
                     <div class="footer-links">
                         <a style="font-size:10px;margin-left:10px" href="#">Unggah Resep</a>
                     </div>
                 </div>
                 <div class="footer-item">
-                    <h2 style="font-size:20px">Pemberitahuan Privasi</h2>
+                    <h2 style="font-size:20px;color:white">Pemberitahuan Privasi</h2>
                     <div class="footer-links">
                         <a style="font-size:10px;margin-right:168px" href="#">Kontak Kami</a>
                     </div>

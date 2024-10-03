@@ -1,3 +1,10 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+  font-family:  "Poppins", sans-serif;;
+}
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -160,14 +167,9 @@
   border-right: 1px solid black;
 }
 /* footer */
-body {
-  font-family: "Lucida Sans", sans-serif; /* Jenis font untuk seluruh halaman */
-  margin: 0; /* Menghilangkan margin default */
-  padding: 0; /* Menghilangkan padding default */
-}
 
 footer {
-  background-color: #18d318; /* Warna latar belakang footer */
+  background-color: #2f852f; /* Warna latar belakang footer */
   color: black; /* Warna teks */
   padding: 20px 0; /* Jarak atas dan bawah */
 }
