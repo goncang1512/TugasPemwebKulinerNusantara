@@ -10,7 +10,7 @@
                 <input id="remember-me" type="checkbox" name="remember" value="1">
                 <label for="remember-me" style="color: white;">Ingat aku</label>
             </div>
-            <button type="submit" name="submit" value="login">Daftar</button>
+            <button type="submit" name="submit" value="login">Masuk</button>
         </form> 
         <p class="pt-2">Belum punya <a href="<?= BASE_URL."pages/register"?>">akun</a></p>
     </div> 
