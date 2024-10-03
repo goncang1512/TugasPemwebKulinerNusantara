@@ -1,15 +1,4 @@
 <main class="main-profile">
-    <?php 
-        function isRecipeSaved(array $saves, int $user_id, int $resep_id): bool {
-            foreach ($saves as $entry) {
-                if ($entry["user_id"] === $user_id && $entry["resep_id"] === $resep_id) {
-                    return true;
-                }
-            }
-            return false;
-        }
-    ?>
-
     <div class="top-profile">
         <div>
             <img class="avatar-profile" src="<?= BASE_URL?>assets/avatar/<?= $data["user"]["avatar"]?>" alt="">
@@ -22,7 +11,7 @@
     </div>
 
     <!-- Content USER -->
-     <div class="container-content">
+    <div class="container-content">
         <div>
             <button id="button-resep" type="button" class="button-prof">Resep</button>
             <button id="button-simpan" type="button" class="button-prof">Simpan</button>
@@ -38,13 +27,13 @@
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>
                                 <?php if(isRecipeSaved($data["save"], $data["user"]["id"], $resep["id"])):?> 
-                                    <a href="index.php?q=save&user_id=<?= $data["user"]["id"]?>&resep_id=<?= $resep["id"]?>" style="font-size: 25px; color: red;">
+                                    <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['id']?>')" style="color: red;">
                                         <i class="bi bi-heart-fill"></i>
-                                    </a>
+                                    </button>
                                 <?php else : ?>
-                                    <a href="index.php?q=save&user_id=<?= $data["user"]["id"]?>&resep_id=<?= $resep["id"]?>" style="font-size: 25px; color: black;">
+                                    <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['id']?>')">
                                         <i class="bi bi-heart"></i>
-                                    </a>
+                                    </button>
                                 <?php endif;?>
                             </div>
                             <div class="body-rating">
@@ -60,9 +49,9 @@
                                 </div>
                                 <div class="d-flex align-items-center gap-2">
                                     <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
-                                    <a class="fs-4" href="index.php?q=delete&resep_id=<?= $resep["id"]?>">
+                                    <button class="button-save" onclick="handleRouter('index.php?q=delete&resep_id=<?= $resep['id']?>')" style="color: black;">
                                         <i class="bi bi-trash3"></i>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -72,15 +61,13 @@
 
             <!-- CONTAINER SIMPAN RESEP -->
             <div class="container-simpan">
-                <?php foreach($data["resep"] as $resep) : ?>
+                <?php foreach($data["mysave"] as $resep) : ?>
                     <div class="card">
                         <img src="<?= BASE_URL."assets/images/".$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>
-                                <a href="index.php?q=save&user_id=<?= $data["user"]["id"]?>&resep_id=<?= $resep["id"]?>" style="font-size: 25px; color: red;">
-                                    <i class="bi bi-heart-fill"></i>
-                                </a>
+                                <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['resep_id']?>')"style="color: red;"><i class="bi bi-heart-fill"></i></button>
                             </div>
                             <div class="body-rating">
                                 <div class="body-star">
@@ -95,9 +82,11 @@
                                 </div>
                                 <div class="d-flex align-items-center gap-2">
                                     <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
-                                    <a class="fs-4" href="index.php?q=delete&resep_id=<?= $resep["id"]?>">
-                                        <i class="bi bi-trash3"></i>
-                                    </a>
+                                    <?php if($data["user"]["id"] == $resep["make_id"]):?>
+                                        <button class="button-save" onclick="handleRouter('index.php?q=delete&resep_id=<?= $resep['resep_id']?>')" style="color: black;">
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    <?php endif;?>
                                 </div>
                             </div>
                         </div>
@@ -105,5 +94,5 @@
                 <?php endforeach; ?>
             </div>
         </div>
-     </div>
+    </div>
 </main>

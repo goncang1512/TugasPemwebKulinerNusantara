@@ -90,7 +90,7 @@
                     <label for="deskripsi">Langkah langkah</label>
                     <textarea name="langkah_langkah" id="deskripsi" type="text" class="form-control" placeholder="Langkah langkah" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['langkah_langkah']) ? $data['post']['langkah_langkah'] : ""?></textarea>
                 </div>
-                <input type="number" name="user_id" value="<?= $data["user"]["id"]?>" readonly>
+                <input type="number" name="user_id" value="<?= $data["user"]["id"]?>" readonly hidden>
             </div>
         </div>
 

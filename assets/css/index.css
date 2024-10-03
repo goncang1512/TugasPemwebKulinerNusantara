@@ -304,3 +304,10 @@ footer {
     color: white;
   }
 }
+
+.button-save {
+  font-size: 25px;
+  color: black;
+  background: transparent;
+  border: none;
+}
