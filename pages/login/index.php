@@ -6,7 +6,7 @@ use Controller\UserCtrl;
 $user = new UserCtrl();
 
 if(getSession()) {
-    header("location: ".getenv("BASE_URL")."pages/profile");
+    header("location: ".$_ENV["BASE_URL"]."pages/profile");
 }
 
 $errMsg = "";
@@ -17,7 +17,7 @@ if(isset($_POST["submit"]) && $_POST["submit"] == "login" ) {
     if($res["status"] == 422) {
         $errMsg = $res["message"];
     } else {
-        header("location: ".getenv("BASE_URL")."pages/profile");
+        header("location: ".$_ENV["BASE_URL"]."pages/profile");
     }
 }
 

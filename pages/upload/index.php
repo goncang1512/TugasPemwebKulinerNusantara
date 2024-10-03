@@ -11,7 +11,7 @@ $resepWr = new ResepWare();
 $session = getSession();
 
 if(!$session) {
-    header("location:".getenv("BASE_URL")."pages/login");
+    header("location:".$_ENV["BASE_URL"]."pages/login");
 }
 
 $msgError = "";
