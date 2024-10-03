@@ -9,4 +9,4 @@ if(isset($_GET["keyword"])) {
     $result = $resep->searchResep($_GET["keyword"]);
 }
 
-view("search/search", ["resep" => $result, "keyword" => $_GET["keyword"]]);
+view("search/search", ["resep" => $result, "keyword" => $_GET["keyword"], "user" => getSession()]);

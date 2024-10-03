@@ -8,6 +8,12 @@ use Middleware\ResepWare;
 $resep = new ResepCtrl();
 $resepWr = new ResepWare();
 
+$session = getSession();
+
+if(!$session) {
+    header("location:".getenv("BASE_URL")."pages/login");
+}
+
 $msgError = "";
 
 if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
@@ -35,4 +41,4 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
     }
 } 
 
-view("upload/upload", ["post" => $_POST, "errMsg" => $msgError]);
+view("upload/upload", ["post" => $_POST, "errMsg" => $msgError, "user" => $session]);

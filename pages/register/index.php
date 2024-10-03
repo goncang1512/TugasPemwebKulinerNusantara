@@ -7,6 +7,10 @@ $user = new UserCtrl();
 
 $errMsg = "";
 
+if(getSession()) {
+    header("location: ".getenv("BASE_URL")."pages/profile");
+}
+
 if(isset($_POST["submit"]) && $_POST["submit"] == "register") {
     $res = $user->createAccount($_POST);
 
