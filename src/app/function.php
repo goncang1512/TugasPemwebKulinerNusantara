@@ -34,3 +34,12 @@ function getSession() {
         return null;
     }
 }
+
+function isRecipeSaved(array $saves, int $user_id, int $resep_id): bool {
+    foreach ($saves as $entry) {
+        if ($entry["user_id"] === $user_id && $entry["resep_id"] === $resep_id) {
+            return true;
+        }
+    }
+    return false;
+}

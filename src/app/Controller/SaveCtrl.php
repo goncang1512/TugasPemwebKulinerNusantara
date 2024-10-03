@@ -37,4 +37,10 @@ class SaveCtrl extends Save {
 
         return $res;
     }
+
+    public function getBySaveUser($user_id) {
+        $res = $this->getSave($user_id);
+
+        return $res;
+    }
 }

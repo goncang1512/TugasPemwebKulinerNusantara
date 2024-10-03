@@ -18,18 +18,18 @@ if(!$session) {
 if(isset($_GET["q"]) && $_GET["q"] == "delete") {
     $result = $resep->deleteOne($_GET["resep_id"]);
 
-    header("location:".$_ENV["BASE_URL"]."pages/profile/");
-    exit();
+    header("location:".$_SERVER['HTTP_REFERER']);
 } else if(isset($_GET["q"]) && $_GET["q"] == "logout") {
     $user->logOut();
     header("location:".$_ENV["BASE_URL"]."pages/login");
 } else if(isset($_GET["q"]) && $_GET["q"] == "save") {
     $save->saveResep($_GET);
-    header("location:".$_ENV["BASE_URL"]."pages/profile/");
+    header("location:".$_SERVER['HTTP_REFERER']);
 }
 
 view("profile/profile", [
     "resep" => $resep->getByUser($session["id"]), 
     "user" => $session, 
-    "save" => $save->byUser($session["id"])
+    "save" => $save->byUser($session["id"]),
+    "mysave" => $save->getBySaveUser($session["id"])
 ]);
