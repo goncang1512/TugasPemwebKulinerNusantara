@@ -47,7 +47,7 @@ class ResepWare {
             return [
                 "status" => true,
                 "message" => "Berhasil upload image",
-                "nameFile" => "assets/images/".$newName
+                "nameFile" => $newName
             ];
         } else {
             return [
@@ -144,7 +144,7 @@ class ResepWare {
             ];
         }
 
-    return ["status" => true, "message" => ""]; // Jika semua data valid
-}
+        return ["status" => true, "message" => ""]; // Jika semua data valid
+    }
 
 }

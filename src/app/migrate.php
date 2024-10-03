@@ -3,14 +3,19 @@
 include_once("./app.php");
 
 use Model\Resep;
+use Model\Save;
+use Model\User;
 
 $resep = new Resep();
+$user = new User();
+$save = new Save();
 
-$resep->createTables();
+$result = $resep->createTables();
+$resUser = $user->tableUser();
+$resSave = $save->tableSave();
 
-if ($resep->tableExists('resep')) {
-    echo "Tabel 'resep' berhasil dibuat.";
-    header("location:".BASE_URL."pages/profile");
+if ($result && $resUser && $resSave) {
+    echo "Tabel berhasil dibuat.";
 } else {
-    echo "Gagal membuat tabel 'resep'.";
+    echo "Gagal membuat tabel.";
 }
