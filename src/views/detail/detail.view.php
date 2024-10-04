@@ -34,10 +34,15 @@
         <div style="padding:20px 50px">
             <div style="border-top: 2px solid #a9e5a9; width: 100%;"></div>
         </div>
+
         <div class="button">
-            <h6 id="timer"style="font-size:20px">00:30:05</h6>
+        <h6 id="displayWaktumemasak" style="font-size:20px">
+         <?= isset($data["resep"]["waktu_memasak"]) ? $data["resep"]["waktu_memasak"] : "Waktu Memasak Tidak Ditemukan"; ?>
+        </h6>
             <button id="startButton"class="btn"><i class="bi bi-stopwatch"></i>Mulai Waktu</button>
         </div>
+        <div id="countdown" style="font-size: 2em; margin-top: 20px;display: none;">00:00:00</div>
+        
         
     </div>
 
