@@ -17,18 +17,13 @@ if(!$session) {
 $msgError = "";
 
 if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
+    $_POST["waktu_memasak"] = $_POST["jam"] . ":" . $_POST["menit"] . ":" . $_POST["detik"];
     $result = $resepWr->cekData($_POST, $_FILES);
 
     if ($result && !$result["status"]) {
         $msgError = $result["message"];
     } else {
-        $image = $resepWr->uploadFoto($_FILES);
-
-        if(!$image["status"]) {
-            $msgError = $image["message"];
-        }
-
-        $hasil = $resep->unggahResep($_POST, $image);
+        $hasil = $resep->unggahResep($_POST, $_FILES["gambar"]["tmp_name"]);
 
         if ($hasil["status"] == 201) {
             header("location: " . BASE_URL . "pages/profile/");

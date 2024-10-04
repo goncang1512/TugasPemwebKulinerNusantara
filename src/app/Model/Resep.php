@@ -26,6 +26,7 @@ class Resep extends Connection {
             asal_makanan VARCHAR(255) NOT NULL,
             kategori VARCHAR(255) NOT NULL,
             gambar VARCHAR(255) NOT NULL,
+            gambar_id VARCHAR(255) NOT NULL,
             user_id INT NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -97,8 +98,8 @@ class Resep extends Connection {
     }
 
     public function uploadResep($data, $image) {
-        $sql = "INSERT INTO resep (judul, slug, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, user_id, gambar) 
-        VALUES (:judul, :slug, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori,:user_id, :gambar)";
+        $sql = "INSERT INTO resep (judul, slug, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, user_id, gambar, gambar_id) 
+        VALUES (:judul, :slug, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori,:user_id, :gambar, :gambar_id)";
 
         $stmt = $this->pdo->prepare($sql);
         $slug = $this->createSlug($data["judul"]);
@@ -117,7 +118,8 @@ class Resep extends Connection {
                 ':asal_makanan' => $data["asal_makanan"],
                 ':kategori' => $data["kategori"],
                 ':user_id' => $_POST['user_id'],
-                ':gambar' => $image["nameFile"]
+                ':gambar' => $image["url_secure"],
+                ':gambar_id' => $image["public_id"],
             ]);
 
         $publisher_id = $this->pdo->lastInsertId();
@@ -131,7 +133,7 @@ class Resep extends Connection {
 
     public function search(string $keyword) {
         $pattern = "%".$keyword."%";
-        $sql = "SELECT * FROM resep WHERE judul ILIKE :pattern OR kategori ILIKE :pattern";
+        $sql = "SELECT * FROM resep WHERE judul ILIKE :pattern OR kategori ILIKE :pattern OR asal_makanan ILIKE :pattern";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':pattern' => $pattern]);
 

@@ -6,7 +6,7 @@
         <div class="data-user">
             <h1 class="name-user">Selamat datang, <?= $data["user"]["username"]?>!</h1>
             <h6>email: <?= $data["user"]["email"]?></h6>
-            <a href="index.php?q=logout" class="btn btn-danger">Logout</a>
+            <button onclick="handleRouter('index.php?q=logout')" class="btn btn-danger">Logout</button>
         </div>
     </div>
 
@@ -22,7 +22,7 @@
             <div class="container-resep">
                 <?php foreach($data["resep"] as $resep) : ?>
                     <div class="card">
-                        <img src="<?= BASE_URL."assets/images/".$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>
@@ -63,7 +63,7 @@
             <div class="container-simpan">
                 <?php foreach($data["mysave"] as $resep) : ?>
                     <div class="card">
-                        <img src="<?= BASE_URL."assets/images/".$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>
