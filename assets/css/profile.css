@@ -71,9 +71,9 @@
 
 .body-rating {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   gap: 5px;
 }
 
@@ -125,12 +125,6 @@
 
   .card {
     width: 48.5%;
-  }
-
-  .body-rating {
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
   }
 
   .name-user {

@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="<?= BASE_URL."assets/image/logo_web_kuliner-removebg-preview.png"?>">
     <?php include_once(APP_PATH . 'includes/head.php')?>
     <title>Resep Nusantara</title>
 </head>

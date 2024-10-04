@@ -2,13 +2,21 @@
 namespace Controller;
 
 use Model\Resep;
+use App\Cloudinary;
 
 class ResepCtrl extends Resep {
+    private $cloud;
     public function __construct() {   
-        parent::__construct();  
+        parent::__construct();
+        $this->cloud = new Cloudinary();  
     }
 
     public function unggahResep($data, $image) {
+        $image = $this->cloud->unggah($image);
+        $image = [
+            "public_id" => $image["public_id"],
+            "url_secure" => $image["secure_url"]
+            ];
         $hasil = $this->uploadResep($data, $image);
 
         return $hasil;
@@ -36,14 +44,9 @@ class ResepCtrl extends Resep {
         $oneData = $this->getOneById($resep_id);
 
         if($oneData) {
-            $imagePath = $oneData['gambar'];
+            $public_id = $oneData['gambar_id'];
 
-            if ($imagePath) {
-                $fullImagePath = __DIR__ . "/../../../assets/images/" . $imagePath;
-                if (file_exists($fullImagePath)) {
-                    unlink($fullImagePath);
-                }
-            }
+            $this->cloud->delete($public_id);
 
             $data = $this->deleteOneData($resep_id);
             return $data;

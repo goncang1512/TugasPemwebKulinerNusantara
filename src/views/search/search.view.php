@@ -2,7 +2,7 @@
     <div class="container-resep" style="padding: 10px;">
         <?php foreach($data["resep"] as $resep) : ?>
             <div class="card">
-                <img src="<?= BASE_URL."assets/images/".$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+                <img src="<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                 <div class="card-body">
                     <div class="title-body">
                         <h5 class="card-title"><?= $resep["judul"]?></h5>
