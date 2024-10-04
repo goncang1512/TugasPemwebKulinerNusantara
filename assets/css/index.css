@@ -1,101 +1,10 @@
-body {
-  background-color: #f9fafb;
+ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+  font-family:  "Poppins", sans-serif;;
 }
 
-.navbar {
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-}
-
-.main-content-project {
-  padding-top: 80px;
-}
-
-.navbar-nav {
-  display: flex;
-  align-items: center;
-}
-
-.logo-navbar {
-  width: 100px;
-}
-
-.navbar-collapse {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-}
-
-.form-search {
-  border: 1px solid rgb(0, 0, 0, 0.3);
-  display: flex;
-  padding: 4px 3px;
-  border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-search input {
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-
-.form-search button {
-  border: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  width: 100%;
-}
-
-.div-link {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-  transition: 300ms ease-in-out;
-}
-
-/* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
-  /* Untuk Style Responsive Mobile Tulis di dalam sini */
-  .form-search {
-    width: 100%;
-  }
-
-  .form-search input {
-    width: 100%;
-  }
-
-  .navbar-collapse {
-    flex-direction: column;
-    justify-content: start;
-    width: 100%;
-  }
-
-  .div-link {
-    align-items: center;
-    width: 100%;
-  }
-
-  .icon-profile {
-    display: none;
-  }
-}
 /* navbar */
 .navbar {
   position: fixed;
@@ -160,8 +69,10 @@ body {
   gap: 20px;
 }
 
+/* footer */
+
 footer {
-  background-color: #22c55e; /* Warna latar belakang footer */
+  background-color: #2f852f; /* Warna latar belakang footer */
   color: black; /* Warna teks */
   padding: 20px 0; /* Jarak atas dan bawah */
 }

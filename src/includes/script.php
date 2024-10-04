@@ -18,4 +18,4 @@
 
 <?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/detail/') === 0): ?>
     <script src="<?= BASE_URL."assets/script/detail.js"?>"></script>
-<?php endif; ?>
+<?php endif;?>
