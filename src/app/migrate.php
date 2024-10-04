@@ -10,8 +10,8 @@ $resep = new Resep();
 $user = new User();
 $save = new Save();
 
-$result = $resep->createTables();
 $resUser = $user->tableUser();
+$result = $resep->createTables();
 $resSave = $save->tableSave();
 
 if ($result && $resUser && $resSave) {
