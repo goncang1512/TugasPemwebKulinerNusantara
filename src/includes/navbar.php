@@ -7,24 +7,24 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="form-search">
+      <form action="<?= getenv("BASE_URL")."pages/search/index.php"?>" method="GET" class="form-search">
         <button class="button-search" type="submit"><i class="bi bi-search"></i></button>
-        <input class="input-search" type="search" placeholder="Search" aria-label="Search">
+        <input class="input-search" name="keyword" type="search" placeholder="Search" aria-label="Search" value="<?php echo isset($data['keyword']) ? $data['keyword'] : '' ?>">
       </form>
       <div class="div-link">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link fw-semibold fs-6 active" aria-current="page" href="<?= BASE_URL?>">
-                    Home
+            <li class="nav-item <?= $pathname === "/TugasPemwebKulinerNusantara/" || $pathname === "/TugasPemwebKulinerNusantara/index.php" ? "bg-nav-item in-link" : "" ?>">
+                <a class="nav-link fw-semibold fs-6" aria-current="page" href="<?= BASE_URL?>">
+                    Beranda
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link fw-semibold fs-6 active" href="<?= BASE_URL."pages/upload"?>">
+            <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/upload/') === 0 ? "bg-nav-item in-link" : "" ?>">
+                <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/upload"?>">
                     Unggah Resep
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link fw-semibold fs-6 active" href="<?= BASE_URL."pages/profile"?>">
+            <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/profile/') === 0 ? "bg-nav-item in-link" : "" ?>"">
+                <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/profile"?>">
                     Profil
                 </a>
             </li>

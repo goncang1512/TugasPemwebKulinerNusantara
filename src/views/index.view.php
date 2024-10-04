@@ -33,11 +33,12 @@
   </button>
 </div>
 
-    <div data-aos="fade-up"data-aos-duration="3000"class="Welcome">
+    <div class="Welcome">
         <h2><strong>SELAMAT DATANG DI KULINER NUSANTARA</strong></h2>
     </div>
 
     <!-- Makanan makanan rekomendasi -->
+    <div class="container-scroll">
     <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
     <div class="daerah-item">
         <img src="https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/11/1.-Batagor.webp" alt="Makanan khas Bandung">
@@ -64,148 +65,43 @@
         <h5>Kalimantan Timur</h5>
     </div>
     </section>
+    </div>
 
 
     <!-- Makanan dan rating makanan -->
-<div data-aos="fade-up"data-aos-duration="3000"class="rekomendasi-makanan">
-    <div class="card">
-        <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-Garang-Asem-Ayam-Tanpa-Santan-Makanan-Tradisional-Indonesia.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
-        <div class="card-body">
-            <div class="title-body">
-                <h5 class="card-title">Garang Asem</h5>
-                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
-            </div>
-            <div class="body-rating">
-                <div class="body-star">
-                    <p>Rating 5</p>
-                    <div style="font-size: 15px; color: #F4E212;">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
+<div data-aos="fade-up"data-aos-duration="3000" class="container-scroll">
+    <div class="rekomendasi-makanan">
+        <?php foreach ($data["resep"] as $resep) : ?>
+        <div class="card">
+            <img src="assets/Images/<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+            <div class="card-body">
+                <div class="title-body">
+                    <h5 class="card-title"><?= $resep["judul"]?></h5>
+                    <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
                 </div>
-                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
+                <div class="body-rating">
+                    <div class="body-star">
+                        <p>Rating 5</p>
+                        <div style="font-size: 15px; color: #F4E212;">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                    <a href="<?= BASE_URL."pages/detail/index.php?resep=".$resep['slug']?>" class="button-go">Lihat Selengkapnya</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-Bika-Ambon-Lembut-dan-Bersarang-Makanan-Tradisional-Indonesia.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
-        <div class="card-body">
-            <div class="title-body">
-                <h5 class="card-title">Bika Ambon</h5>
-                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
-            </div>
-            <div class="body-rating">
-                <div class="body-star">
-                    <p>Rating 5</p>
-                    <div style="font-size: 15px; color: #F4E212;">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                </div>
-                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-Gudeg-Jogja-Merah-Tanpa-Daun-Jati-Makanan-Tradisional-Indonesia.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
-        <div class="card-body">
-            <div class="title-body">
-                <h5 class="card-title">Gudeg</h5>
-                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
-            </div>
-            <div class="body-rating">
-                <div class="body-star">
-                    <p>Rating 5</p>
-                    <div style="font-size: 15px; color: #F4E212;">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                </div>
-                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-Rujak-Cingur-Makanan-Tradisional-Khas-Surabaya.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
-        <div class="card-body">
-            <div class="title-body">
-                <h5 class="card-title">Rujak Cingur</h5>
-                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
-            </div>
-            <div class="body-rating">
-                <div class="body-star">
-                    <p>Rating 5</p>
-                    <div style="font-size: 15px; color: #F4E212;">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                </div>
-                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-coto-makassar-kuah-kental-Makanan-Tradisional-Indonesia.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
-        <div class="card-body">
-            <div class="title-body">
-                <h5 class="card-title">Coto Makasar</h5>
-                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
-            </div>
-            <div class="body-rating">
-                <div class="body-star">
-                    <p>Rating 5</p>
-                    <div style="font-size: 15px; color: #F4E212;">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                </div>
-                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <img src="https://lingkar.news/wp-content/uploads/2023/03/Aneka-Resep-Pempek-Makanan-Tradisional-Khas-Palembang.jpg" class="card-img-top" alt="..." style="max-height: 18rem;">
-        <div class="card-body">
-            <div class="title-body">
-                <h5 class="card-title">Pempek</h5>
-                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
-            </div>
-            <div class="body-rating">
-                <div class="body-star">
-                    <p>Rating 5</p>
-                    <div style="font-size: 15px; color: #F4E212;">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                </div>
-                <a href="<?= BASE_URL."pages/detail/index.php?=$i"?>" class="button-go">Lihat Selengkapnya</a>
-            </div>
-        </div>
+        <?php endforeach;?>
     </div>
 </div>
 
-<div data-aos="fade-up"data-aos-duration="3000" class="rempah-rempah">
+<div class="rempah-rempah">
       <h3><strong>Rempah Rempah Khas Indonesia</strong></h3>
-</div>
-    <section data-aos="fade-up"data-aos-duration="3000" class="rempah">
+    </div>
+    <section class="rempah">
     <div class="daerah-item">
         <img src="https://cdn.idntimes.com/content-images/community/2018/08/f7b5dc860236de94e93b595f5d4ecab3.jpg" alt="Rempah Rempah Indonesia">
         <h5>Cengkih</h5>

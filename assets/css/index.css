@@ -5,100 +5,6 @@ body{
   font-family:  "Poppins", sans-serif;;
 }
 
-.navbar {
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-}
-
-.main-content-project {
-  padding-top: 80px;
-}
-
-.navbar-nav {
-  display: flex;
-  align-items: center;
-}
-
-.logo-navbar {
-  width: 100px;
-}
-
-.navbar-collapse {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-}
-
-.form-search {
-  border: 1px solid rgb(0, 0, 0, 0.3);
-  display: flex;
-  padding: 4px 3px;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-search input {
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-
-.form-search button {
-  border: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  width: 100%;
-}
-
-.div-link {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-  transition: 300ms ease-in-out;
-}
-
-/* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
-  /* Untuk Style Responsive Mobile Tulis di dalam sini */
-  .form-search {
-    width: 100%;
-  }
-
-  .form-search input {
-    width: 100%;
-  }
-
-  .navbar-collapse {
-    flex-direction: column;
-    justify-content: start;
-    width: 100%;
-  }
-
-  .div-link {
-    align-items: center;
-    width: 100%;
-  }
-
-  .icon-profile {
-    display: none;
-  }
-}
 /* navbar */
 .navbar {
   position: fixed;
@@ -163,9 +69,6 @@ body{
   gap: 20px;
 }
 
-.nav-item:not(:last-child) {
-  border-right: 1px solid black;
-}
 /* footer */
 
 footer {
@@ -238,6 +141,19 @@ footer {
   margin-bottom: 10px; /* Jarak bawah untuk garis */
   margin-left: 350px;
 }
+
+.nav-item a {
+  color: black;
+}
+
+.in-link a {
+  color: #22c55e;
+}
+
+.in-link a:hover {
+  color: #22c55e;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
@@ -264,9 +180,6 @@ footer {
     display: none;
   }
 
-  .nav-item:not(:last-child) {
-    border-right: none;
-  }
   .footer-container {
     flex-direction: column; /* Mengubah arah flex menjadi kolom di layar kecil */
     align-items: center; /* Menjaga elemen di tengah secara horizontal */
@@ -276,4 +189,36 @@ footer {
     text-align: center; /* Teks di tengah */
     margin-top: 10px; /* Jarak atas untuk sosial */
   }
+
+  .navbar-nav {
+    background-color: #e5e7eb;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+
+  .nav-item {
+    padding-left: 10px;
+  }
+
+  .bg-nav-item {
+    background-color: #22c55e;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .bg-nav-item:hover a {
+    color: white;
+  }
+
+  .bg-nav-item a {
+    color: white;
+  }
+}
+
+.button-save {
+  font-size: 25px;
+  color: black;
+  background: transparent;
+  border: none;
 }

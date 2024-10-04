@@ -1,19 +1,17 @@
 <main class="main-profile">
     <div class="top-profile">
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-            </svg>
+            <img class="avatar-profile" src="<?= BASE_URL?>assets/avatar/<?= $data["user"]["avatar"]?>" alt="">
         </div>
         <div class="data-user">
-            <h1>Selamat datang, Goncang!</h1>
-            <h6>email: amri@gmail.com</h6>
+            <h1 class="name-user">Selamat datang, <?= $data["user"]["username"]?>!</h1>
+            <h6>email: <?= $data["user"]["email"]?></h6>
+            <button onclick="handleRouter('index.php?q=logout')" class="btn btn-danger">Logout</button>
         </div>
     </div>
 
     <!-- Content USER -->
-     <div class="container-content">
+    <div class="container-content">
         <div>
             <button id="button-resep" type="button" class="button-prof">Resep</button>
             <button id="button-simpan" type="button" class="button-prof">Simpan</button>
@@ -24,11 +22,19 @@
             <div class="container-resep">
                 <?php foreach($data["resep"] as $resep) : ?>
                     <div class="card">
-                        <img src="<?= BASE_URL.$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>
-                                <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
+                                <?php if(isRecipeSaved($data["save"], $data["user"]["id"], $resep["id"])):?> 
+                                    <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['id']?>')" style="color: red;">
+                                        <i class="bi bi-heart-fill"></i>
+                                    </button>
+                                <?php else : ?>
+                                    <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['id']?>')">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                <?php endif;?>
                             </div>
                             <div class="body-rating">
                                 <div class="body-star">
@@ -41,7 +47,12 @@
                                         <i class="bi bi-star-fill"></i>
                                     </div>
                                 </div>
-                                <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
+                                <div class="d-flex align-items-center gap-2">
+                                    <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
+                                    <button class="button-save" onclick="handleRouter('index.php?q=delete&resep_id=<?= $resep['id']?>')" style="color: black;">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -50,13 +61,13 @@
 
             <!-- CONTAINER SIMPAN RESEP -->
             <div class="container-simpan">
-                <?php foreach($data["resep"] as $resep) : ?>
+                <?php foreach($data["mysave"] as $resep) : ?>
                     <div class="card">
-                        <img src="<?= BASE_URL.$resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+                        <img src="<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
                         <div class="card-body">
                             <div class="title-body">
                                 <h5 class="card-title"><?= $resep["judul"]?></h5>
-                                <p style="font-size: 25px; color: red;"><i class="bi bi-heart-fill"></i></p>
+                                <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['resep_id']?>')"style="color: red;"><i class="bi bi-heart-fill"></i></button>
                             </div>
                             <div class="body-rating">
                                 <div class="body-star">
@@ -69,12 +80,19 @@
                                         <i class="bi bi-star-fill"></i>
                                     </div>
                                 </div>
-                                <a href="<?= BASE_URL.'pages/detail/index.php?resep_id='.$resep["id"]?>" class="button-go">Lihat Selengkapnya</a>
+                                <div class="d-flex align-items-center gap-2">
+                                    <a href="<?= BASE_URL.'pages/detail/index.php?resep='.$resep["slug"]?>" class="button-go">Lihat Selengkapnya</a>
+                                    <?php if($data["user"]["id"] == $resep["make_id"]):?>
+                                        <button class="button-save" onclick="handleRouter('index.php?q=delete&resep_id=<?= $resep['resep_id']?>')" style="color: black;">
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    <?php endif;?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </div>
-     </div>
+    </div>
 </main>

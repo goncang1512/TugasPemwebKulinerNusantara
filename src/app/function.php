@@ -20,3 +20,26 @@ function allowedComponent($pathname, $excluded_paths) {
 
     return $should_exclude;
 }
+
+function getSession() {
+    session_start();
+
+    if (isset($_SESSION['session_user'])) {
+        return $_SESSION['session_user'];
+    } else if (isset($_COOKIE['session_user'])) {
+        $cookieData = json_decode($_COOKIE['session_user'], true);
+        $_SESSION['session_user'] = $cookieData;
+        return $cookieData;
+    } else {
+        return null;
+    }
+}
+
+function isRecipeSaved(array $saves, int $user_id, int $resep_id): bool {
+    foreach ($saves as $entry) {
+        if ($entry["user_id"] === $user_id && $entry["resep_id"] === $resep_id) {
+            return true;
+        }
+    }
+    return false;
+}
