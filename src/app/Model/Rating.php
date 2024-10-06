@@ -26,4 +26,19 @@ class Rating extends Connection {
         $this->pdo->exec($sql);
         return $this;
     }
+
+    public function addRating() {
+        $sql = "INSERT INTO rating (user_id, resep_id, rating) VALUES (:user_id, :resep_id, :rating)";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([
+                ":user_id" => $_GET["user_id"],
+                ":resep_id" => $_GET["resep_id"],
+                ":rating" => $_GET["rating"]
+            ]);
+
+        $publisher_id = $this->pdo->lastInsertId();
+
+        return $publisher_id;
+    }
 }

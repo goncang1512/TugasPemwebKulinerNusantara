@@ -23,8 +23,10 @@ if(isset($_GET["q"]) && $_GET["q"] == "delete") {
     $user->logOut();
     header("location:".$_ENV["BASE_URL"]."pages/login");
 } else if(isset($_GET["q"]) && $_GET["q"] == "save") {
-    $save->saveResep($_GET);
-    header("location:".$_SERVER['HTTP_REFERER']);
+    $res = $save->saveResep($_GET);
+
+    echo json_encode(["result" => $res]);
+    exit();
 }
 
 view("profile/profile", [
@@ -33,3 +35,4 @@ view("profile/profile", [
     "save" => $save->byUser($session["id"]),
     "mysave" => $save->getBySaveUser($session["id"])
 ]);
+?>

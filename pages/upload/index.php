@@ -36,4 +36,8 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
     }
 } 
 
-view("upload/upload", ["post" => $_POST, "errMsg" => $msgError, "user" => $session]);
+view("upload/upload", [
+    "post" => $_POST, 
+    "errMsg" => $msgError, 
+    "user" => $session
+]);

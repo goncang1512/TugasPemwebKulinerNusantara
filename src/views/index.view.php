@@ -73,7 +73,7 @@
     <div class="rekomendasi-makanan">
         <?php foreach ($data["resep"] as $resep) : ?>
         <div class="card">
-            <img src="assets/Images/<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
+            <img src="<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
             <div class="card-body">
                 <div class="title-body">
                     <h5 class="card-title"><?= $resep["judul"]?></h5>
@@ -81,13 +81,15 @@
                 </div>
                 <div class="body-rating">
                     <div class="body-star">
-                        <p>Rating 5</p>
+                        <div class="d-flex gap-4">
+                            <p>Rating 5</p>
+                        </div>
                         <div style="font-size: 15px; color: #F4E212;">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                            <?php for($i = 1; $i <= 5; $i++):?>
+                                <button onclick='save(`index.php?user_id=<?= $data["user"]["id"]?>&resep_id=<?= $resep["id"]?>&rating=<?= $i?>&req=addrating`)' style="text-decoration: none; color: yellow;">
+                                    <i class="bi bi-star-fill"></i>
+                                </button>
+                            <?php endfor;?>
                         </div>
                     </div>
                     <a href="<?= BASE_URL."pages/detail/index.php?resep=".$resep['slug']?>" class="button-go">Lihat Selengkapnya</a>

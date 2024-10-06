@@ -6,15 +6,9 @@
                 <div class="card-body">
                     <div class="title-body">
                         <h5 class="card-title"><?= $resep["judul"]?></h5>
-                        <?php if(isRecipeSaved($data["save"], $data["user"]["id"], $resep["id"])):?> 
-                            <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['id']?>')" style="color: red;">
-                                <i class="bi bi-heart-fill"></i>
-                            </button>
-                        <?php else : ?>
-                            <button class="button-save" onclick="handleRouter('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['id']?>')">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                        <?php endif;?>
+                        <button class="button-save" onclick="save('index.php?q=save&user_id=<?= $data['user']['id']?>&resep_id=<?= $resep['id']?>', <?= $resep['id']?>)">
+                            <i id="heart-save-<?= $resep['id']?>" class="bi <?= isRecipeSaved($data["save"], $data["user"]["id"], $resep["id"]) ? "bi-heart-fill text-danger" : "bi-heart"?>"></i>
+                        </button>
                     </div>
                     <div class="body-rating">
                         <div class="body-star">

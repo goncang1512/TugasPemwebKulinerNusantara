@@ -16,13 +16,22 @@ class SaveCtrl extends Save {
             $this->deleteSave($exists["id"]);
             return [
                 "status" => 200,
-                "message" => "Resep dihapus"
-            ];
-        } else {
+                "message" => "Resep dihapus",
+                "data" => $exists,
+                "req" => "delete"
+                ];
+            } else {
             $res = $this->post($data["user_id"], $data["resep_id"]);
-    
+            
+            $save = $this->getOne($res["data"]);
+            
             if($res["status"] == 201) {
-                return $res;
+                return [
+                    "status" => $res["status"],
+                    "message" => $res["message"],
+                    "data" => $save,
+                    "req" => "save"
+                    ];
             } else {
                 return [
                     "status" => 422,
