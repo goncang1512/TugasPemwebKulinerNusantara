@@ -55,7 +55,7 @@ class Save extends Connection {
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([":user_id" => $user_id, ":resep_id" => $resep_id]);
-        $result = $stmt->fetch();
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
         return $result;
     }
 
@@ -64,6 +64,17 @@ class Save extends Connection {
 
         $stmt = $this->pdo->prepare($sql);
         $result = $stmt->execute([":save_id" => $save_id]);
+        return $result;
+    }
+
+    public function getOne($save_id) {
+        $sql = "SELECT * FROM saves WHERE id = :id";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":id" => $save_id]);
+
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
         return $result;
     }
 

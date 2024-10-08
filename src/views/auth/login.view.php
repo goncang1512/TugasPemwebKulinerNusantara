@@ -1,7 +1,7 @@
-<main>
+<main class="main-container">
     <!-- LOGIN PAGE -->
     <div class="container">
-        <img class="image" src="<?= BASE_URL."assets/image/logo_web_kuliner-removebg-preview.png"?>" alt="Logo Resep Nusantara">
+        <img class="image" src="<?= BASE_URL."assets/images/logo-width.png"?>" alt="Logo Resep Nusantara">
         <p class="d-flex w-100 justify-content-center" style="color: red;"><?= $data["errMsg"]?></p>
         <form action="" method="POST" class="registrasi">
             <input name="email" type="email" placeholder="Email">

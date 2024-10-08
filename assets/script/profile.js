@@ -1,3 +1,19 @@
+$("document").ready(function () {
+  $(document).on("click", "#button-simpan", function () {
+    getSaves();
+  });
+});
+
+function getSaves() {
+  $.ajax({
+    url: "index.php?q=getsave",
+    type: "GET",
+    success: function (res) {
+      $(".container-simpan").html(res);
+    },
+  });
+}
+
 const buttonResep = document.getElementById("button-resep");
 const buttonSimpan = document.getElementById("button-simpan");
 const containerResep = document.querySelector(".container-resep");

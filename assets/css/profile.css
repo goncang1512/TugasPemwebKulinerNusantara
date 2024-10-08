@@ -61,49 +61,6 @@
   display: none;
 }
 
-/* CARD STYLE */
-.title-body {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5px;
-}
-
-.body-rating {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.button-go {
-  background-color: #22c55e;
-  width: max-content;
-  height: max-content;
-  text-decoration: none;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 8px;
-  border: 1px solid rgb(0, 0, 0, 0.3);
-}
-
-.button-go:hover {
-  background-color: #3a975c;
-}
-
-.body-star {
-  display: flex;
-  flex-direction: column;
-  line-height: 1px;
-}
-
-.card {
-  width: 24.4%;
-}
-
-/* AKHIR CARD STYLE */
-
 .avatar-profile {
   width: 200px;
   height: 200px;
@@ -119,15 +76,13 @@
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
+
   .main-profile {
     padding: 10px 10px;
   }
 
-  .card {
-    width: 48.5%;
-  }
-
   .name-user {
     font-size: 20px;
+    margin-right: 10px;
   }
 }

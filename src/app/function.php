@@ -9,6 +9,10 @@ function view($name_path, $data = []) {
     include_once(APP_NAME."views/layout.view.php");
 }
 
+function component($component, $props = []) {
+    include(APP_NAME."views/components/".$component.".component.php");
+}
+
 function allowedComponent($pathname, $excluded_paths) {
     $should_exclude = false;
     foreach ($excluded_paths as $excluded_path) {
