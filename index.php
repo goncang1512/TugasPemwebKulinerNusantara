@@ -4,7 +4,9 @@ include_once("./src/app/app.php");
 
 use App\Connection;
 use Model\Rating;
+use Controller\SaveCtrl;
 
+$save = new SaveCtrl();
 $pdo = Connection::get()->connect();
 $rating = new Rating();
 
@@ -26,7 +28,16 @@ if($pdo){
             echo json_encode(['success' => false]);
         }
         exit();
+    } else if(isset($_GET["q"]) && $_GET["q"] == "save") {
+        $res = $save->saveResep($_GET);
+
+        echo json_encode(["result" => $res]);
+        exit();
     }
 }
 
-view("index", ["resep" => $resep, "user" => $session]);
+view("index", [
+    "resep" => $resep, 
+    "user" => $session, 
+    "save" => $save->byUser($session["id"])
+]);

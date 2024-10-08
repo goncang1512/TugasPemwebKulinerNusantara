@@ -6,7 +6,7 @@ $("document").ready(function () {
 
 function getSaves() {
   $.ajax({
-    url: "save.component.php",
+    url: "index.php?q=getsave",
     type: "GET",
     success: function (res) {
       $(".container-simpan").html(res);

@@ -27,6 +27,14 @@ if(isset($_GET["q"]) && $_GET["q"] == "delete") {
 
     echo json_encode(["result" => $res]);
     exit();
+} else if(isset($_GET["q"]) && $_GET["q"] == "getsave") {
+    $saveData = $save->getBySaveUser($session["id"]); 
+
+    foreach($saveData as $resep){
+        component("card", ["resep" => $resep, "user" => $session, "status" => "save"]);
+    }
+
+    exit();
 }
 
 view("profile/profile", [
