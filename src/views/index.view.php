@@ -74,7 +74,7 @@
         <?php
             foreach($data["resep"] as $resep) {
                 component("card", [
-                    "status" => "card",
+                    "status" => $data["user"] ? "card" : "notlogin",
                     "resep" => $resep,
                     "save" => $data["save"],
                     "user" => $data["user"]

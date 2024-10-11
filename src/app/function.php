@@ -26,7 +26,9 @@ function allowedComponent($pathname, $excluded_paths) {
 }
 
 function getSession() {
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
     if (isset($_SESSION['session_user'])) {
         return $_SESSION['session_user'];
