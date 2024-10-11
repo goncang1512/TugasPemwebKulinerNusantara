@@ -39,5 +39,5 @@ if($pdo){
 view("index", [
     "resep" => $resep, 
     "user" => $session, 
-    "save" => $save->byUser($session["id"])
+    "save" => isset($session) ? $save->byUser($session["id"]) : []
 ]);

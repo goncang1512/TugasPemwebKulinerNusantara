@@ -3,10 +3,10 @@
         <?php
             foreach($data["resep"] as $resep) {
                 component("card", [
-                "resep" => $resep, 
-                "user" => $data["user"], 
-                "status" => "card", 
-                "save" => $data["save"]
+                    "status" => $data["user"] ? "card" : "notlogin", 
+                    "resep" => $resep, 
+                    "user" => $data["user"], 
+                    "save" => $data["save"]
                 ]);
             }
         ?>

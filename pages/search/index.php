@@ -22,5 +22,5 @@ view("search/search", [
     "resep" => $result, 
     "keyword" => $_GET["keyword"], 
     "user" => $session,
-    "save" => $save->byUser($session["id"])
+    "save" => isset($session) ? $save->byUser($session["id"]) : []
 ]);

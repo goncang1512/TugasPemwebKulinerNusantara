@@ -124,3 +124,42 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
   }
 }
+
+/* From Uiverse.io by akshat-patel28 */
+.loader {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  border-right: 3px solid;
+  width: 0px;
+  animation: typewriter 2s steps(10) infinite alternate,
+    blink 0.5s steps(10) infinite;
+}
+
+.loader-text {
+  font-size: 16px;
+  font-weight: 700;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 100px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
+}
