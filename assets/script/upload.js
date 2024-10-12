@@ -3,6 +3,23 @@ const logoImg = document.querySelector(".logo-foto");
 const labelImg = document.querySelector(".upload-food");
 const logoGambar = document.getElementById("logo-gambar");
 
+const srcImage = imagePreview.getAttribute("src");
+
+if (srcImage) {
+  imagePreview.style.display = "block";
+  logoImg.style.opacity = "0";
+  labelImg.style.border = "none";
+  labelImg.style.backgroundColor = "transparent";
+  logoGambar.classList.add("logo-image");
+} else {
+  imagePreview.src = "";
+  imagePreview.style.display = "none";
+  labelImg.style.border = "1px dashed black";
+  logoImg.style.opacity = "0.4";
+  labelImg.style.backgroundColor = "white";
+  logoGambar.classList.remove("logo-image");
+}
+
 document
   .getElementById("upload-food")
   .addEventListener("change", function (event) {
@@ -67,14 +84,47 @@ const uploadResep = async (data) => {
   }
 };
 
+const updateResep = async (data, resep_id) => {
+  try {
+    const response = await fetch(`index.php?resep_id=${resep_id}`, {
+      method: "POST",
+      body: data,
+    });
+
+    const res = await response.json();
+
+    if (!response.ok) {
+      throw new Error(res.message);
+    }
+
+    window.location.href = `/TugasPemwebKulinerNusantara/pages/profile`;
+    buttonText.style.display = "block";
+    buttonLoading.style.display = "none";
+  } catch (error) {
+    console.log(error);
+    errMsg.innerText = error.message;
+    buttonText.style.display = "block";
+    buttonLoading.style.display = "none";
+  }
+};
+
 const formSubmit = document.getElementById("upload-form");
+const updateForm = document.getElementById("update-form");
 
-formSubmit.addEventListener("submit", async (e) => {
-  e.preventDefault();
+if (formSubmit) {
+  formSubmit.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(formSubmit);
+    formData.append("upload", "unggah");
+    await uploadResep(formData);
+  });
+}
 
-  const form = e.target;
-  const formData = new FormData(form);
-  formData.append("upload", "unggah");
-
-  await uploadResep(formData);
-});
+if (updateForm) {
+  updateForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(updateForm);
+    formData.append("upload", "update");
+    await updateResep(formData, formData.get("resep_id"));
+  });
+}

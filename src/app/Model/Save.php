@@ -80,12 +80,18 @@ class Save extends Connection {
 
     public function getSave($user_id) {
         $sql = "SELECT s.id AS save_id, 
-                r.id AS resep_id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
-                u.id AS user_id, u.username, u.email, u.avatar
+                r.id AS resep_id, r.judul, r.gambar, r.slug, r.user_id AS make_id, 
+                u.username, u.email, u.avatar,
+                COALESCE(SUM(rating.rating), 0) AS total_rating
                 FROM saves s
-                JOIN resep r ON s.resep_id = r.id
-                JOIN users u ON s.user_id = u.id
-                WHERE s.user_id = :user_id";
+                JOIN users u ON u.id = s.user_id
+                JOIN resep r ON r.id = s.resep_id
+                LEFT JOIN rating ON rating.resep_id = r.id
+                WHERE s.user_id = :user_id
+                GROUP BY s.id, 
+                r.id, r.judul, r.gambar, r.slug,
+                u.id, u.username, u.email
+                ORDER BY r.updated_at DESC";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([":user_id" => $user_id]);

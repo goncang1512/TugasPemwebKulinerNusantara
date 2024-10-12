@@ -60,4 +60,10 @@ class ResepCtrl extends Resep {
 
         return $result;
     }
+
+    public function updateResep($data, $resep_id) {
+        $result = $this->update($data, $resep_id);
+
+        return $result;
+    }
 }

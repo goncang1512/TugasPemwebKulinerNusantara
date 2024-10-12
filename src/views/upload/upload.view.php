@@ -1,6 +1,6 @@
 <main class="main-konten">
     <p id="error-message" class="d-flex justify-content-center" style="color: red; font-style: italic;"><?= $data["errMsg"]?></p>
-    <form id="upload-form" enctype="multipart/form-data" >
+    <form id="<?= isset($_GET["resep_id"]) ? "update-form" : "upload-form" ?>" enctype="multipart/form-data" >
         <div class="image-resep">
             <div class="input-img">
                 <label class="upload-food" for="upload-food">
@@ -106,6 +106,9 @@
             </div>
         </div>
 
+        <?php if(isset($_GET["resep_id"])):?>
+            <input type="text" name="resep_id" value="<?= $_GET["resep_id"] ?>" readonly>
+        <?php endif;?>
         <div class="d-flex justify-content-center pt-4">
             <button type="submit" class="button-upload p-2">
                 <div class="loader">

@@ -48,7 +48,18 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
     }
 
     exit();
-} 
+} else if(isset($_POST["upload"]) && $_POST["upload"] == "update") {
+    header('Content-Type: application/json');
+
+    $_POST["waktu_memasak"] = $_POST["jam"] . ":" . $_POST["menit"] . ":" . $_POST["detik"];
+
+    $res = $resep->updateResep($_POST, $_GET["resep_id"]);
+    echo json_encode([
+        "status" => $res["status"],
+        "message" => $res["message"]
+    ]);
+    exit();
+}
 
 if(isset($_GET["resep_id"])) {
     $resep = $resep->getOneById($_GET["resep_id"]);
