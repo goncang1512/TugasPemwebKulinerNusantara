@@ -130,3 +130,22 @@ ul {
   gap: 10px;
   padding-bottom: 15px;
 }
+.container3 {
+  max-width: 1480px;
+  margin: 0;
+  background-color: #f2fff2;
+  border: 2px solid #a9e5a9;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.bintang{
+  font-size: 50px;
+  color: #F4E212;
+  margin-left: 560px;
+}
+.bintang :hover{
+  color: grey;
+}
