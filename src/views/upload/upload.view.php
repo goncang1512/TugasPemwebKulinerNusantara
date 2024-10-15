@@ -96,11 +96,11 @@
             <div class="container-bahan flex-column gap-3" style="flex:1;">
                 <div class="input-group flex-nowrap" style="display: flex; flex-direction: column; gap: 10px; height: 100%;">
                     <label for="bahan_bahan">Bahan bahan</label>
-                    <textarea name="bahan_bahan" id="bahan_bahan" type="text" class="form-control" placeholder="Bahan bahan" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['bahan_bahan']) ? $data['post']['bahan_bahan'] : ""?></textarea>
+                    <textarea name="bahan_bahan" id="bahan_bahan" type="text" class="form-control" placeholder="Bahan bahan" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['bahan_bahan']) ? htmlspecialchars($data['post']['bahan_bahan']) : ""?></textarea>
                 </div>
                 <div class="input-group flex-nowrap" style="display: flex; flex-direction: column; gap: 10px; height: 100%;">
                     <label for="langkah-langkah">Langkah langkah</label>
-                    <textarea name="langkah_langkah" id="langkah-langkah" type="text" class="form-control" placeholder="Langkah langkah" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['langkah_langkah']) ? $data['post']['langkah_langkah'] : ""?></textarea>
+                    <textarea name="langkah_langkah" id="langkah-langkah" type="text" class="form-control" placeholder="Langkah langkah" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['langkah_langkah']) ? htmlspecialchars($data['post']['langkah_langkah']) : ""?></textarea>
                 </div>
                 <input type="number" name="user_id" value="<?= $data["user"]["id"]?>" readonly hidden>
             </div>
