@@ -35,13 +35,13 @@ $asal_makanan = [
       <img src="<?= BASE_URL. "assets/images/beranda/11web.png"?>" class="imagecarausel d-block w-100" alt="">
     </div>
     <div class="carousel-item">
-    <img src="<?= BASE_URL. "assets/images/beranda/12web'.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
+        <img src="<?= BASE_URL. "assets/images/beranda/12web'.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
     </div>
     <div class="carousel-item">
-    <img src="<?= BASE_URL. "assets/images/beranda/13web.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
+        <img src="<?= BASE_URL. "assets/images/beranda/13web.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
     </div>
     <div class="carousel-item">
-    <img src="<?= BASE_URL. "assets/images/beranda/14web.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
+        <img src="<?= BASE_URL. "assets/images/beranda/14web.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

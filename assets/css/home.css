@@ -38,11 +38,6 @@
   font-size: 18px;
 }
 
-.carousel-item {
-  width: 100%;
-  height: 92.8vh;
-  object-fit: cover;
-}
 .Welcome {
   color: #2f852f;
   text-align: center;
