@@ -23,14 +23,6 @@ if($pdo){
 		JOIN users u ON u.id = r.user_id
 		GROUP BY r.id, r.judul, r.gambar, r.slug, u.id, u.username, u.email, u.avatar
         ORDER BY r.updated_at DESC';
-    $sql = 'SELECT 
-    resep.*, 
-    users.*, 
-    SUM(rating.rating) AS total_rating
-FROM rating
-JOIN resep ON resep.id = rating.resep_id
-JOIN users ON users.id = rating.user_id
-GROUP BY resep.id, users.id';
 
     $statement = $pdo->query($sql);
     $resep = $statement->fetchAll(PDO::FETCH_ASSOC);
