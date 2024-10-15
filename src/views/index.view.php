@@ -32,25 +32,16 @@ $asal_makanan = [
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2015/10/28/19/32/bika-ambon-1011219_1280.jpg" class="imagecarausel d-block w-100" alt="Bika Ambon">
-      <div class="carousel-caption">
-      <h5><strong>Sumatera Utara</strong></h5>
-      <p><strong>Bika Ambon</strong></p>
-      </div>
+      <img src="<?= BASE_URL. "assets/images/beranda/11web.png"?>" class="imagecarausel d-block w-100" alt="">
     </div>
     <div class="carousel-item">
-      <img src="https://stikeshb.ac.id/wp-content/uploads/2022/12/chicken-skewers-with-slices-apples-chili-top-view_2829-19996.webp" class="imagecarausel d-block w-100" alt="Sate Payau">
-      <div class="carousel-caption">
-        <h5><strong>Kalimantan Timur</strong></h5>
-        <p><strong>Sate Payau</strong></p>
-      </div>
+    <img src="<?= BASE_URL. "assets/images/beranda/12web'.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.idntimes.com/content-images/post/20230531/327322908-910497166646868-9037267819073300417-n-23feb037917a6421400623be88cef9fe-ebc8f9b86766afb41666002db562553c.jpg" class=" imagecarausel d-block w-100" alt="Pecel Tumpang">
-      <div class="carousel-caption">
-      <h5><strong>Jawa Timur</strong></h5>
-      <p><strong>Pecel Tumpang</strong></p>
-      </div>
+    <img src="<?= BASE_URL. "assets/images/beranda/13web.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
+    </div>
+    <div class="carousel-item">
+    <img src="<?= BASE_URL. "assets/images/beranda/14web.png"?>" class="imagecarausel d-block w-100" alt="Bika Ambon">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -70,15 +61,12 @@ $asal_makanan = [
     <!-- Makanan makanan rekomendasi -->
     <div class="container-scroll">
     <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
-        <?php foreach($asal_makanan as $makanan) : ?>
-            <div class="daerah-item">
-                <img src="<?= $makanan["gambar"]?>" alt="Makanan khas Bandung">
-                <h5><?= $makanan["asal"]?></h5>
-            </div>
-        <?php endforeach;?>
     </section>
     </div>
 
+    <div class="resep-kuliner">
+        <h2><strong>Resep Kuliner Nusantara</strong></h2>
+    </div>
 
     <!-- Makanan dan rating makanan -->
 <div data-aos="fade-up"data-aos-duration="3000" class="container-scroll">
@@ -99,7 +87,7 @@ $asal_makanan = [
 <div class="rempah-rempah">
       <h3><strong>Rempah Rempah Khas Indonesia</strong></h3>
     </div>
-    <section class="rempah">
+    <section data-aos="fade-up"data-aos-duration="3000" class="rempah">
     <div class="daerah-item">
         <img src="https://cdn.idntimes.com/content-images/community/2018/08/f7b5dc860236de94e93b595f5d4ecab3.jpg" alt="Rempah Rempah Indonesia">
         <h5>Cengkih</h5>
