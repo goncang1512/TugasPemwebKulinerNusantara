@@ -6,9 +6,9 @@ $session = getSession();
 
 <nav class="navbar shadow-sm navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <div class="navbar-brand">
       <img src="<?= BASE_URL."assets/images/logo-width.png"?>" alt="" class="logo-navbar">
-    </a>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

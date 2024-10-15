@@ -12,7 +12,7 @@
     <?php include_once(APP_PATH . 'includes/head.php')?>
     <title>Resep Nusantara</title>
 </head>
-<body>
+<body style="background-color: #f3f4f6;">
     <!-- HEADER -->
     <?php if(!allowedComponent($pathname, $not_allowed_navbar)) :?>
         <header>

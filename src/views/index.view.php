@@ -1,3 +1,33 @@
+<?php
+
+$asal_makanan = [
+    [
+        "asal" => "Sumatra Barat",
+        "gambar" => "https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/11/1.-Batagor.webp"
+    ],
+    [
+        "asal" => "Sulawesi Selatan",
+        "gambar" => "https://tribratanews.polri.go.id/web/image/blog.post/70892/image"
+    ],
+    [
+        "asal" => "Papua Barat",
+        "gambar" => "https://images.tokopedia.net/blog-tokopedia-com/uploads/2018/09/makanan-khas-Papua-Barat-3-Tribunnews.jpg"
+    ],
+    [
+        "asal" => "Kalimantan Barat",
+        "gambar" => "https://images.bisnis.com/posts/2023/05/07/1653214/2._10_makanan_khas_kalimantan_barat,_apa_saja__-_chai_kwe_(instagram.com_kulinerkalimantanbarat).jpg"
+    ],
+    [
+        "asal" => "Jawa Barat",
+        "gambar" => "https://www.eatnow.id/wp-content/uploads/2022/12/nagasari-600x400.webp"
+    ],
+    [
+        "asal" => "Kalimantan Timur",
+        "gambar" => "https://www.eatnow.id/wp-content/uploads/2022/12/ayam-cincane-600x400.webp"
+    ]
+];
+?>
+
 <main class="utama">
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -31,30 +61,6 @@
     <!-- Makanan makanan rekomendasi -->
     <div class="container-scroll">
     <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
-    <div class="daerah-item">
-        <img src="https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/11/1.-Batagor.webp" alt="Makanan khas Bandung">
-        <h5>Sumatera Barat</h5>
-    </div>
-    <div class="daerah-item">
-        <img src="https://tribratanews.polri.go.id/web/image/blog.post/70892/image" alt="Makanan khas Sulawesi Selatan">
-        <h5>Sulawesi Selatan</h5>
-    </div>
-    <div class="daerah-item">
-        <img src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2018/09/makanan-khas-Papua-Barat-3-Tribunnews.jpg" alt="Makanan khas Papua Barat">
-        <h5>Papua Barat</h5>
-    </div>
-    <div class="daerah-item">
-        <img src="https://images.bisnis.com/posts/2023/05/07/1653214/2._10_makanan_khas_kalimantan_barat,_apa_saja__-_chai_kwe_(instagram.com_kulinerkalimantanbarat).jpg" alt="Makanan khas Kalimantan Barat">
-        <h5>Kalimantan Barat</h5>
-    </div>
-    <div class="daerah-item">
-        <img src="https://www.eatnow.id/wp-content/uploads/2022/12/nagasari-600x400.webp" alt="Makanan khas Jawa Barat">
-        <h5>Jawa Barat</h5>
-    </div>
-    <div class="daerah-item">
-        <img src="https://www.eatnow.id/wp-content/uploads/2022/12/ayam-cincane-600x400.webp" alt="Makanan khas Kalimantan Timur">
-        <h5>Kalimantan Timur</h5>
-    </div>
     </section>
     </div>
 

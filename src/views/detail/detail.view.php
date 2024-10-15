@@ -55,8 +55,13 @@
         </div>
         <div class="section instructions">
             <h2>Cara Membuat</h2>
-            <ol><?=$data["resep"]["langkah_langkah"]?>
-            </ol>
+            <?php
+                $langkahLangkah = explode("\n", $data["resep"]["langkah_langkah"]);
+
+                foreach ($langkahLangkah as $langkah) {
+                    echo "<p>" . htmlspecialchars($langkah) . "</p>";
+                }
+            ?>
         </div>
     </div>
 
