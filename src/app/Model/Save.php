@@ -66,4 +66,19 @@ class Save extends Connection {
         $result = $stmt->execute([":save_id" => $save_id]);
         return $result;
     }
+
+    public function getSave($user_id) {
+        $sql = "SELECT s.id AS save_id, 
+                r.id AS resep_id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
+                u.id AS user_id, u.username, u.email, u.avatar
+                FROM saves s
+                JOIN resep r ON s.resep_id = r.id
+                JOIN users u ON s.user_id = u.id
+                WHERE s.user_id = :user_id";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":user_id" => $user_id]);
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

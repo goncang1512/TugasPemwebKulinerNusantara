@@ -8,14 +8,14 @@ $user = new UserCtrl();
 $errMsg = "";
 
 if(getSession()) {
-    header("location: ".getenv("BASE_URL")."pages/profile");
+    header("location: ".$_ENV["BASE_URL"]."pages/profile");
 }
 
 if(isset($_POST["submit"]) && $_POST["submit"] == "register") {
     $res = $user->createAccount($_POST);
 
     if($res["status"] == 201) {
-        header("location:".getenv("BASE_URL")."pages/login");
+        header("location:".$_ENV["BASE_URL"]."pages/login");
     } else {
         $errMsg = $res["message"];
     }

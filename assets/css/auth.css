@@ -28,15 +28,18 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 12px 20px;
+  padding: 5px 2px;
   margin: 8px 0;
   box-sizing: border-box;
+  font-size: 12px;
+  
+  
 }
 
 button {
   background-color: white;
   color: black;
-  padding: 14px 20px;
+  padding: 14px 15px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
@@ -44,5 +47,5 @@ button {
 }
 
 button:hover {
-  background-color: #3e8e41;
+  background-color: #3fa242;
 }

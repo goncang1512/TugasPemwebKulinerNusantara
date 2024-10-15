@@ -81,11 +81,10 @@
                 </div>
                 <div class="body-rating">
                     <div class="body-star">
-                    <p>Rating <?= $resep['rating'] ?></p>
-                        <p>Rating 5</p>
+                    <p>Rating <?= $resep["total_rating"] / 5?></p>
                         <div style="font-size: 15px; color: #F4E212;">
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
-                            <i class="bi bi-star-fill"></i>
+                        <?php for ($i = 1; $i <= 5; ++$i) : ?>
+                            <i class="bi bi-star-fill" style='color: <?= $resep["total_rating"] / 5 >= $i ? "yellow" : "gray" ?>;'></i>
                         <?php endfor; ?>
                         </div>
                     </div>
