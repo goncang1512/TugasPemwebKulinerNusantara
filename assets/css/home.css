@@ -1,18 +1,11 @@
 
-.carousel-item {
-  height: 92vh; /* Tinggi container sesuai dengan 92% dari tinggi viewport */
-  width: 100%; /* Lebar container 100% */
-}
-
 .carousel {
   height: 92vh;
 }
 
 .carousel-item img {
-  width: 100%; /* Lebar gambar 100% */
-    height: 100%; /* Tinggi gambar akan menyesuaikan container */
-    object-fit: cover; /* Gambar menutupi container tanpa distorsi */
-    object-position: center;
+  height: 92vh;
+  object-fit: cover;
 }
 
 .Welcome {
