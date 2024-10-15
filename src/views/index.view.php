@@ -61,6 +61,12 @@ $asal_makanan = [
     <!-- Makanan makanan rekomendasi -->
     <div class="container-scroll">
     <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
+        <?php foreach($asal_makanan as $makanan): ?>
+            <div class="daerah-item">
+                <img src="<?= $makanan["gambar"]?>" alt="Makanan khas Sulawesi Selatan">
+                <h5><?= $makanan["asal"]?></h5>
+            </div>
+        <?php endforeach; ?>
     </section>
     </div>
 
