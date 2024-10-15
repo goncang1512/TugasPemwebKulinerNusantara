@@ -82,7 +82,8 @@ class Save extends Connection {
         $sql = "SELECT s.id AS save_id, 
                 r.id AS resep_id, r.judul, r.gambar, r.slug, r.user_id AS make_id, 
                 u.username, u.email, u.avatar,
-                COALESCE(SUM(rating.rating), 0) AS total_rating
+                COALESCE(SUM(rating.rating), 0) AS total_rating,
+                COUNT(rating.id) AS jumlah_rating
                 FROM saves s
                 JOIN users u ON u.id = s.user_id
                 JOIN resep r ON r.id = s.resep_id

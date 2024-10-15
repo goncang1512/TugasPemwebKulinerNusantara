@@ -135,7 +135,8 @@ class Resep extends Connection {
         $pattern = "%".$keyword."%";
         $sql = "SELECT r.id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
                 u.id AS user_id, u.username, u.email, u.avatar,
-                COALESCE(SUM(rating.rating), 0) AS total_rating
+                COALESCE(SUM(rating.rating), 0) AS total_rating,
+                COUNT(rating.id) AS jumlah_rating
                 FROM resep r
                 LEFT JOIN rating ON rating.resep_id = r.id
                 JOIN users u ON u.id = r.user_id
@@ -151,7 +152,8 @@ class Resep extends Connection {
     public function findByUserId($user_id) {
         $sql = "SELECT r.id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
                 u.id AS user_id, u.username, u.email, u.avatar,
-                COALESCE(SUM(rating.rating), 0) AS total_rating
+                COALESCE(SUM(rating.rating), 0) AS total_rating,
+                COUNT(rating.id) AS jumlah_rating
                 FROM resep r
                 LEFT JOIN rating ON rating.resep_id = r.id
                 JOIN users u ON u.id = r.user_id
@@ -209,6 +211,27 @@ class Resep extends Connection {
             http_response_code(400);
             return [
                     "status" => 400,
+                    "message" => "Gagal update resep"
+                ];
+        }
+    }
+
+    public function updateGambar($gambar, $gambar_id, $resep_id) {
+        $sql = "UPDATE resep SET gambar = :gambar, gambar_id = :gambar_id WHERE id = :resep_id";
+
+        $stmt = $this->pdo->prepare($sql);
+        $result = $stmt->execute([":gambar" => $gambar, ":gambar_id" => $gambar_id, ":resep_id" => $resep_id]);
+
+        if($result) {
+            http_response_code(200);
+            return [
+                    "status" => 200,
+                    "message" => "Berhasil update resep"
+                ];
+        } else {
+            http_response_code(422);
+            return [
+                    "status" => 422,
                     "message" => "Gagal update resep"
                 ];
         }

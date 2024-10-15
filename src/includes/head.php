@@ -1,7 +1,7 @@
 <?php
     $pathname = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-    $excluded_paths = ["/TugasPemwebKulinerNusantara/pages/register/", "/TugasPemwebKulinerNusantara/pages/login/"];
+    $excluded_paths = [$_ENV["BASE_URL"]."pages/register/", $_ENV["BASE_URL"]."pages/login/"];
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -10,15 +10,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <!-- CSS PAGES -->
-<?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/detail/') === 0): ?>
+<?php if (strpos($pathname, $_ENV["BASE_URL"].'pages/detail/') === 0): ?>
     <link rel="stylesheet" href="<?= BASE_URL . "assets/css/detail.css" ?>">
 <?php endif; ?>
 
-<?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/profile/') === 0): ?>
+<?php if (strpos($pathname, $_ENV["BASE_URL"].'pages/profile/') === 0): ?>
     <link rel="stylesheet" href="<?= BASE_URL . "assets/css/profile.css" ?>">
 <?php endif; ?>
 
-<?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/search/') === 0): ?>
+<?php if (strpos($pathname,$_ENV["BASE_URL"].'pages/search/') === 0): ?>
     <link rel="stylesheet" href="<?= BASE_URL . "assets/css/profile.css" ?>">
 <?php endif; ?>
 
@@ -26,10 +26,10 @@
     <link rel="stylesheet" href="<?= BASE_URL . "assets/css/auth.css" ?>">
 <?php endif; ?>
 
-<?php if ($pathname === "/TugasPemwebKulinerNusantara/" || $pathname === "/TugasPemwebKulinerNusantara/index.php"): ?>
+<?php if ($pathname === $_ENV["BASE_URL"]."" || $pathname === $_ENV["BASE_URL"]."index.php"): ?>
     <link rel="stylesheet" href="<?= BASE_URL."assets/css/home.css"?>">
 <?php endif;?>
 
-<?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/upload/') === 0):?>
+<?php if (strpos($pathname, $_ENV["BASE_URL"].'pages/upload/') === 0):?>
     <link rel="stylesheet" href="<?= BASE_URL."assets/css/upload.css"?>">
 <?php endif?>

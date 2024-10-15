@@ -54,10 +54,12 @@ input::-webkit-inner-spin-button {
 
 #upload-form input:focus,
 #upload-form select:focus,
-#upload-form textarea:focus {
+#upload-form textarea:focus,
+#update-form input:focus,
+#update-form select:focus,
+#update-form textarea:focus {
   border: 2px solid #22c55e;
   box-shadow: none;
-  /* box-shadow: 0 0 3px 2px #22c55e75; */
 }
 
 .upload-food {

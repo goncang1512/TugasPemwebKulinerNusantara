@@ -22,7 +22,9 @@ if(isset($_GET["q"]) && $_GET["q"] == "delete") {
 } else if(isset($_GET["q"]) && $_GET["q"] == "logout") {
     $user->logOut();
     header("location:".$_ENV["BASE_URL"]."pages/login");
+    exit();
 } else if(isset($_GET["q"]) && $_GET["q"] == "save") {
+    header('Content-Type: application/json');
     $res = $save->saveResep($_GET);
 
     echo json_encode(["result" => $res]);

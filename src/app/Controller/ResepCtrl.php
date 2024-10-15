@@ -61,7 +61,17 @@ class ResepCtrl extends Resep {
         return $result;
     }
 
-    public function updateResep($data, $resep_id) {
+    public function updateResep($data, $resep_id, $file) {
+        $resep = $this->getOneById($resep_id);
+
+        if (!empty($file["gambar"]["tmp_name"])) {
+            if (isset($resep["gambar_id"])) {
+                $this->cloud->delete($resep["gambar_id"]);
+            }
+            $image = $this->cloud->unggah($file["gambar"]["tmp_name"]);
+            $this->updateGambar($image["secure_url"], $image["public_id"], $resep_id);
+        }
+
         $result = $this->update($data, $resep_id);
 
         return $result;

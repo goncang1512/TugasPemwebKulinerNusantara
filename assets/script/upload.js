@@ -74,7 +74,7 @@ const uploadResep = async (data) => {
       throw new Error(res.message);
     }
 
-    window.location.href = `/TugasPemwebKulinerNusantara/pages/profile`;
+    window.location.href = `${BASE_URL}pages/profile`;
     buttonText.style.display = "block";
     buttonLoading.style.display = "none";
   } catch (error) {
@@ -85,11 +85,18 @@ const uploadResep = async (data) => {
 };
 
 const updateResep = async (data, resep_id) => {
+  buttonText.style.display = "none";
+  buttonLoading.style.display = "block";
   try {
     const response = await fetch(`index.php?resep_id=${resep_id}`, {
       method: "POST",
       body: data,
     });
+
+    if (!response.ok) {
+      const errorText = await response.text(); // Read response as text
+      throw new Error(errorText); // Throw error with response message
+    }
 
     const res = await response.json();
 
@@ -97,11 +104,11 @@ const updateResep = async (data, resep_id) => {
       throw new Error(res.message);
     }
 
-    window.location.href = `/TugasPemwebKulinerNusantara/pages/profile`;
+    window.location.href = `${BASE_URL}pages/profile`;
     buttonText.style.display = "block";
     buttonLoading.style.display = "none";
   } catch (error) {
-    console.log(error);
+    console.error(error);
     errMsg.innerText = error.message;
     buttonText.style.display = "block";
     buttonLoading.style.display = "none";

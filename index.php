@@ -16,7 +16,8 @@ if($pdo){
 
     $sql = 'SELECT r.id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
         u.id AS user_id, u.username, u.email, u.avatar,
-        COALESCE(SUM(rating.rating), 0) AS total_rating
+        COALESCE(SUM(rating.rating), 0) AS total_rating,
+        COUNT(rating.id) AS jumlah_rating
 	 	FROM resep r
 		LEFT JOIN rating ON rating.resep_id = r.id
 		JOIN users u ON u.id = r.user_id

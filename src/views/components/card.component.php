@@ -12,13 +12,13 @@
             </div>
             <div class="body-rating">
             <div class="body-star">
-                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? $props["resep"]["total_rating"]/5 : 5?>/5</p>
+                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? floor($props["resep"]["total_rating"]/ $props["resep"]["jumlah_rating"]) : 5?>/5</p>
                     <div style="font-size: 15px;">
                         <?php 
                         $rating = round($props["resep"]["total_rating"]);
                         for ($i = 1; $i <= 5; ++$i) : 
                             $hasil = $props["resep"]["total_rating"] > 0 
-                                    ? (floor($rating / 5) >= $i ? "#F4E212" : "#94a3b8") 
+                                    ? (floor($rating / $props["resep"]["jumlah_rating"]) >= $i ? "#F4E212" : "#94a3b8") 
                                     : "#F4E212";
                         ?>
                             <i class="bi bi-star-fill" style='color: <?= $hasil ?>;'></i>
@@ -58,13 +58,13 @@
             </div>
             <div class="body-rating">
             <div class="body-star">
-                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? $props["resep"]["total_rating"]/5 : 5?>/5</p>
+                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? floor($props["resep"]["total_rating"]/ $props["resep"]["jumlah_rating"]) : 5?>/5</p>
                     <div style="font-size: 15px;">
                         <?php 
                         $rating = round($props["resep"]["total_rating"]);
                         for ($i = 1; $i <= 5; ++$i) : 
                             $hasil = $props["resep"]["total_rating"] > 0 
-                                    ? (floor($rating / 5) >= $i ? "#F4E212" : "#94a3b8") 
+                                    ? (floor($rating / $props["resep"]["jumlah_rating"]) >= $i ? "#F4E212" : "#94a3b8") 
                                     : "#F4E212";
                         ?>
                             <i class="bi bi-star-fill" style='color: <?= $hasil ?>;'></i>
@@ -104,13 +104,13 @@
             </div>
             <div class="body-rating">
             <div class="body-star">
-                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? $props["resep"]["total_rating"]/5 : 5?>/5</p>
+                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? floor($props["resep"]["total_rating"]/ $props["resep"]["jumlah_rating"]) : 5?>/5</p>
                     <div style="font-size: 15px;">
                         <?php 
                         $rating = round($props["resep"]["total_rating"]);
                         for ($i = 1; $i <= 5; ++$i) : 
                             $hasil = $props["resep"]["total_rating"] > 0 
-                                    ? (floor($rating / 5) >= $i ? "#F4E212" : "#94a3b8") 
+                                    ? (floor($rating / $props["resep"]["jumlah_rating"]) >= $i ? "#F4E212" : "#94a3b8") 
                                     : "#F4E212";
                         ?>
                             <i class="bi bi-star-fill" style='color: <?= $hasil ?>;'></i>

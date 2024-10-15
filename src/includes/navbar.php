@@ -19,29 +19,29 @@ $session = getSession();
       </form>
       <div class="div-link">
         <ul class="navbar-nav">
-            <li class="nav-item <?= $pathname === "/TugasPemwebKulinerNusantara/" || $pathname === "/TugasPemwebKulinerNusantara/index.php" ? "bg-nav-item in-link" : "" ?>">
+            <li class="nav-item <?= $pathname === $_ENV["BASE_URL"] || $pathname === $_ENV["BASE_URL"]."index.php" ? "bg-nav-item in-link" : "" ?>">
                 <a class="nav-link fw-semibold fs-6" aria-current="page" href="<?= BASE_URL?>">
                     Beranda
                 </a>
             </li>
             <?php if(isset($session)):?>
-            <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/upload/') === 0 ? "bg-nav-item in-link" : "" ?>">
-                <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/upload"?>">
-                    Unggah Resep
-                </a>
-            </li>
-            <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/profile/') === 0 ? "bg-nav-item in-link" : "" ?>"">
-                <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/profile"?>">
-                    Profil
-                </a>
-            </li>
+              <li class="nav-item <?= strpos($pathname, $_ENV["BASE_URL"].'pages/upload/') === 0 && empty($_GET["resep_id"]) ? "bg-nav-item in-link" : "" ?>">
+                  <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/upload"?>">
+                      Unggah Resep
+                  </a>
+              </li>
+              <li class="nav-item <?= strpos($pathname, $_ENV["BASE_URL"].'pages/profile/') === 0 ? "bg-nav-item in-link" : "" ?>">
+                  <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/profile"?>">
+                      Profil
+                  </a>
+              </li>
             <?php else : ?>
-              <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/register/') === 0 ? "bg-nav-item in-link" : "" ?>">
+              <li class="nav-item <?= strpos($pathname, $_ENV["BASE_URL"].'pages/register/') === 0 ? "bg-nav-item in-link" : "" ?>">
                   <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/register"?>">
                       Register
                   </a>
               </li>
-              <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/login/') === 0 ? "bg-nav-item in-link" : "" ?>"">
+              <li class="nav-item <?= strpos($pathname, $_ENV["BASE_URL"].'pages/login/') === 0 ? "bg-nav-item in-link" : "" ?>"">
                   <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/login"?>">
                       Login
                   </a>

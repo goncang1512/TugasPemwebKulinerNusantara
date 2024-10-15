@@ -269,6 +269,10 @@ footer {
   justify-content: space-between;
 }
 
+.dropdown-item:active {
+  background-color: #22c55e;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */

@@ -1,3 +1,7 @@
+AOS.init();
+
+const BASE_URL = "/TugasPemwebKulinerNusantara/";
+
 const handleRouter = (link) => {
   window.location.href = link;
 };

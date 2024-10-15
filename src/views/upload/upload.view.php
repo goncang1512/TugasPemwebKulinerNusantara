@@ -107,7 +107,7 @@
         </div>
 
         <?php if(isset($_GET["resep_id"])):?>
-            <input type="text" name="resep_id" value="<?= $_GET["resep_id"] ?>" readonly>
+            <input type="text" name="resep_id" value="<?= $_GET["resep_id"] ?>" readonly hidden>
         <?php endif;?>
         <div class="d-flex justify-content-center pt-4">
             <button type="submit" class="button-upload p-2">
