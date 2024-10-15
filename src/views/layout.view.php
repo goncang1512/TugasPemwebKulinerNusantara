@@ -1,6 +1,6 @@
 <?php
     $pathname = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $not_allowed_navbar = ["/TugasPemwebKulinerNusantara/pages/register/", "/TugasPemwebKulinerNusantara/pages/login/"];
+    $not_allowed_navbar = [$_ENV["BASE_URL"]."pages/register/", $_ENV["BASE_URL"]."pages/login/"];
 ?>
 
 <!DOCTYPE html>

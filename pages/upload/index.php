@@ -48,10 +48,40 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
     }
 
     exit();
-} 
+} else if(isset($_POST["upload"]) && $_POST["upload"] == "update") {
+    header('Content-Type: application/json');
+
+    $_POST["waktu_memasak"] = $_POST["jam"] . ":" . $_POST["menit"] . ":" . $_POST["detik"];
+    try {
+        $res = $resep->updateResep($_POST, $_GET["resep_id"], isset($_FILES["gambar"]) ?$_FILES : null);
+        echo json_encode([
+            "status" => $res["status"],
+            "message" => $res["message"],
+            "file" => $_FILES
+        ]);
+        exit();
+    } catch (Exception $e) {
+        http_response_code(400);
+        echo json_encode([
+            "status" => 400,
+            "message" => $e->getMessage()
+        ]);
+        exit();
+    }
+    exit();
+}
 
 if(isset($_GET["resep_id"])) {
+
     $resep = $resep->getOneById($_GET["resep_id"]);
+
+    if(empty($resep)) {
+        if (!empty($_SERVER['HTTP_REFERER'])) {
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+        } else {
+            header("Location: " . $_ENV["BASE_URL"] . "pages/upload");
+        }
+    }
 
     list($jam, $menit, $detik) = explode(':', $resep["waktu_memasak"]);
 
