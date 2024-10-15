@@ -1,3 +1,9 @@
+<?php 
+
+$session = getSession();
+
+?>
+
 <nav class="navbar shadow-sm navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -18,6 +24,7 @@
                     Beranda
                 </a>
             </li>
+            <?php if(isset($session)):?>
             <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/upload/') === 0 ? "bg-nav-item in-link" : "" ?>">
                 <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/upload"?>">
                     Unggah Resep
@@ -28,13 +35,27 @@
                     Profil
                 </a>
             </li>
+            <?php else : ?>
+              <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/register/') === 0 ? "bg-nav-item in-link" : "" ?>">
+                  <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/register"?>">
+                      Register
+                  </a>
+              </li>
+              <li class="nav-item <?= strpos($pathname, '/TugasPemwebKulinerNusantara/pages/login/') === 0 ? "bg-nav-item in-link" : "" ?>"">
+                  <a class="nav-link fw-semibold fs-6" href="<?= BASE_URL."pages/login"?>">
+                      Login
+                  </a>
+              </li>
+            <?php endif;?>
         </ul>
-        <a href="<?= BASE_URL."pages/profile"?>" class="icon-profile text-dark">
+        <?php if($session):?>
+          <a href="<?= BASE_URL."pages/profile"?>" class="icon-profile text-dark">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
             </svg>
-        </a>
+          </a>
+        <?php endif;?>
       </div>
     </div>
   </div>

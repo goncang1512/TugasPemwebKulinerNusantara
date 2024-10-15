@@ -71,28 +71,16 @@
     <!-- Makanan dan rating makanan -->
 <div data-aos="fade-up"data-aos-duration="3000" class="container-scroll">
     <div class="rekomendasi-makanan">
-        <?php foreach ($data["resep"] as $resep) : ?>
-        <div class="card">
-            <img src="<?= $resep["gambar"]?>" class="card-img-top" alt="..." style="max-height: 18rem;">
-            <div class="card-body">
-                <div class="title-body">
-                    <h5 class="card-title"><?= $resep["judul"]?></h5>
-                    <p style="font-size: 25px;"><i class="bi bi-heart"></i></p>
-                </div>
-                <div class="body-rating">
-                    <div class="body-star">
-                    <p>Rating <?= $resep["total_rating"] / 5?></p>
-                        <div style="font-size: 15px; color: #F4E212;">
-                        <?php for ($i = 1; $i <= 5; ++$i) : ?>
-                            <i class="bi bi-star-fill" style='color: <?= $resep["total_rating"] / 5 >= $i ? "yellow" : "gray" ?>;'></i>
-                        <?php endfor; ?>
-                        </div>
-                    </div>
-                    <a href="<?= BASE_URL."pages/detail/index.php?resep=".$resep['slug']?>" class="button-go">Lihat Selengkapnya</a>
-                </div>
-            </div>
-        </div>
-        <?php endforeach;?>
+        <?php
+            foreach($data["resep"] as $resep) {
+                component("card", [
+                    "status" => $data["user"] ? "card" : "notlogin",
+                    "resep" => $resep,
+                    "save" => $data["save"],
+                    "user" => $data["user"]
+                ]); 
+            }
+        ?>
     </div>
 </div>
 

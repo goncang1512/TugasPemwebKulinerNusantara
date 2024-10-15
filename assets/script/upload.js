@@ -38,3 +38,43 @@ if (errMsg.innerText) {
     errMsg.innerHTML = "";
   }, 3000);
 }
+
+const buttonText = document.querySelector(".button-text");
+const buttonLoading = document.querySelector(".loader");
+
+const uploadResep = async (data) => {
+  buttonText.style.display = "none";
+  buttonLoading.style.display = "block";
+  try {
+    const response = await fetch("index.php", {
+      method: "POST",
+      body: data,
+    });
+
+    const res = await response.json();
+
+    if (!response.ok) {
+      throw new Error(res.message);
+    }
+
+    window.location.href = `/TugasPemwebKulinerNusantara/pages/profile`;
+    buttonText.style.display = "block";
+    buttonLoading.style.display = "none";
+  } catch (error) {
+    errMsg.innerText = error.message;
+    buttonText.style.display = "block";
+    buttonLoading.style.display = "none";
+  }
+};
+
+const formSubmit = document.getElementById("upload-form");
+
+formSubmit.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  formData.append("upload", "unggah");
+
+  await uploadResep(formData);
+});
