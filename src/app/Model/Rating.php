@@ -26,6 +26,25 @@ class Rating extends Connection {
         $this->pdo->exec($sql);
         return $this;
     }
+    function createRating($resepId, $rating) {
+        $userId = getCurrentUserId();
+    
+        try {
+            $sql = "INSERT INTO ratings (resep_id, user_id, rating) VALUES (:resep_id, :user_id, :rating)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':resep_id' => $resepId,
+                ':user_id' => $userId,
+                ':rating' => $rating
+            ]);
+    
+            return true; 
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
 
     public function addRating() {
         $sql = "INSERT INTO rating (user_id, resep_id, rating) VALUES (:user_id, :resep_id, :rating)";
@@ -42,3 +61,4 @@ class Rating extends Connection {
         return $publisher_id;
     }
 }
+

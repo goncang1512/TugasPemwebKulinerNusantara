@@ -9,17 +9,17 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://www.eatnow.id/wp-content/uploads/2022/12/mie-gomak-600x338.webp" class="imagecarausel d-block w-100" alt="Mie Gomak">
+      <img src="https://stikeshb.ac.id/wp-content/uploads/2022/12/chicken-skewers-with-slices-apples-chili-top-view_2829-19996.webp" class="imagecarausel d-block w-100" alt="Sate Payau">
       <div class="carousel-caption">
-        <h5><strong>Sumatera Utara</strong></h5>
-        <p><strong>Mie Gomak</strong></p>
+        <h5><strong>Kalimantan Timur</strong></h5>
+        <p><strong>Sate Payau</strong></p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://img.kurio.network/3-JhPtBQc5IixbndVJfAB1W9KWs=/1200x675/filters:quality(80)/https://kurio-img.kurioapps.com/21/05/30/d6b1df3f-84f1-47d1-9735-7cd480912996.jpe" class=" imagecarausel d-block w-100" alt="Tumis Daun Pepaya Bali">
+      <img src="https://cdn.idntimes.com/content-images/post/20230531/327322908-910497166646868-9037267819073300417-n-23feb037917a6421400623be88cef9fe-ebc8f9b86766afb41666002db562553c.jpg" class=" imagecarausel d-block w-100" alt="Pecel Tumpang">
       <div class="carousel-caption">
-      <h5><strong>Bali</strong></h5>
-      <p><strong>Tumis Daun Pepaya</strong></p>
+      <h5><strong>Jawa Timur</strong></h5>
+      <p><strong>Pecel Tumpang</strong></p>
       </div>
     </div>
   </div>
