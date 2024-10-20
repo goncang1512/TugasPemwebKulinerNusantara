@@ -14,6 +14,10 @@
   "routes": [
     {
       "src": "/(.*)",
+      "dest": "/assets/*"
+    },
+    {
+      "src": "/(.*)",
       "dest": "/api/index.php"
     }
   ],
