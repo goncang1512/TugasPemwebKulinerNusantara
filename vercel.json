@@ -20,9 +20,6 @@
   "build": {
     "env": {
       "COMPOSER_CACHE_DIR": ".vercel/cache/composer"
-    },
-    "commands": {
-      "install": "composer install --no-dev --optimize-autoloader"
     }
   }
 }
