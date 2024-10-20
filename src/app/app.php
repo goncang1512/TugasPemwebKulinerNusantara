@@ -12,8 +12,8 @@ include_once(APP_PATH  . 'app/env.php');
 
 use App\DotEnv;
 
-if ($pathname === BASE_URL || $pathname === BASE_URL."index.php") {
-    (new DotEnv('./.env'))->load();
+if ($pathname === BASE_URL."api/" || $pathname === BASE_URL."api/index.php") {
+    (new DotEnv('../.env'))->load();
 } else {
     (new DotEnv('../../.env'))->load();
 }
