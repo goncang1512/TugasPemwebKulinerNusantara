@@ -14,6 +14,8 @@ use App\DotEnv;
 
 if ($pathname === BASE_URL || $pathname === BASE_URL."index.php") {
     (new DotEnv('./.env'))->load();
+} else if($pathname === BASE_URL."api/" || $pathname === BASE_URL."api/index.php") {
+    (new DotEnv('../.env'))->load();
 } else {
     (new DotEnv('../../.env'))->load();
 }
