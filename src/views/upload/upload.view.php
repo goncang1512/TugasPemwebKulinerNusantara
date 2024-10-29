@@ -1,10 +1,10 @@
 <main class="main-konten">
     <p id="error-message" class="d-flex justify-content-center" style="color: red; font-style: italic;"><?= $data["errMsg"]?></p>
-    <form id="upload-form" method="POST" action="" enctype="multipart/form-data" >
+    <form id="<?= isset($_GET["resep_id"]) ? "update-form" : "upload-form" ?>" enctype="multipart/form-data" >
         <div class="image-resep">
             <div class="input-img">
                 <label class="upload-food" for="upload-food">
-                    <img class="w-100 image-preview" src="" alt="">
+                    <img class="w-100 image-preview" src="<?= isset($data["post"]["gambar"]) ? $data["post"]["gambar"] : "" ?>" alt="">
                     <div id="logo-gambar" class="logo-foto">
                         <span class="bi-photos"><i class="bi bi-image"></i></span>
                         <p>Input gambar makanan di sini.</p>
@@ -46,11 +46,11 @@
                             >
                             <label for="menit">Menit:</label>
                             <input name="menit" type="number" id="menit" class="form-control" placeholder="Menit" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
-                            value="<?php echo isset($data['post']['waktu_memasak']) ? $data['post']['waktu_memasak'] : '00' ?>"
+                            value="<?php echo isset($data['post']['menit']) ? $data['post']['menit'] : '00' ?>"
                             >
                             <label for="detik">Detik:</label>
                             <input name="detik" type="number" id="detik" class="form-control" placeholder="Detik" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;"
-                            value="<?php echo isset($data['post']['waktu_memasak']) ? $data['post']['waktu_memasak'] : '00' ?>"
+                            value="<?php echo isset($data['post']['detik']) ? $data['post']['detik'] : '00' ?>"
                             >
                         </div>
                     </td>
@@ -96,19 +96,27 @@
             <div class="container-bahan flex-column gap-3" style="flex:1;">
                 <div class="input-group flex-nowrap" style="display: flex; flex-direction: column; gap: 10px; height: 100%;">
                     <label for="bahan_bahan">Bahan bahan</label>
-                    <textarea name="bahan_bahan" id="bahan_bahan" type="text" class="form-control" placeholder="Bahan bahan" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['bahan_bahan']) ? $data['post']['bahan_bahan'] : ""?></textarea>
+                    <textarea name="bahan_bahan" id="bahan_bahan" type="text" class="form-control" placeholder="Bahan bahan" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['bahan_bahan']) ? htmlspecialchars($data['post']['bahan_bahan']) : ""?></textarea>
                 </div>
                 <div class="input-group flex-nowrap" style="display: flex; flex-direction: column; gap: 10px; height: 100%;">
                     <label for="langkah-langkah">Langkah langkah</label>
-                    <textarea name="langkah_langkah" id="langkah-langkah" type="text" class="form-control" placeholder="Langkah langkah" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['langkah_langkah']) ? $data['post']['langkah_langkah'] : ""?></textarea>
+                    <textarea name="langkah_langkah" id="langkah-langkah" type="text" class="form-control" placeholder="Langkah langkah" aria-label="Username" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;min-height: 150px;"><?= isset($data['post']['langkah_langkah']) ? htmlspecialchars($data['post']['langkah_langkah']) : ""?></textarea>
                 </div>
                 <input type="number" name="user_id" value="<?= $data["user"]["id"]?>" readonly hidden>
             </div>
         </div>
 
+        <?php if(isset($_GET["resep_id"])):?>
+            <input type="text" name="resep_id" value="<?= $_GET["resep_id"] ?>" readonly hidden>
+        <?php endif;?>
         <div class="d-flex justify-content-center pt-4">
-            <button type="submit" name="upload" value="unggah" class="button-upload p-2">
-                Unggah Resep
+            <button type="submit" class="button-upload p-2">
+                <div class="loader">
+                    <span class="loader-text">Loading...</span>
+                </div>
+                <span class="button-text">
+                    Submit
+                </span>
             </button>
         </div>
     </form>

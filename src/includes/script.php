@@ -4,21 +4,17 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
-    AOS.init();
-</script>
-
 <script src="<?= BASE_URL."assets/script/script.js"?>"></script>
 
-<?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/profile/') === 0): ?>
+<?php if (strpos($pathname, $_ENV["BASE_URL"].'pages/profile/') === 0): ?>
     <script src="<?= BASE_URL."assets/script/profile.js"?>"></script>
 <?php endif; ?>
 
-<?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/upload/') === 0): ?>
+<?php if (strpos($pathname, $_ENV["BASE_URL"].'pages/upload/') === 0): ?>
     <script src="<?= BASE_URL."assets/script/upload.js"?>"></script>
 <?php endif; ?>
 
-<?php if (strpos($pathname, '/TugasPemwebKulinerNusantara/pages/detail/') === 0): ?>
+<?php if (strpos($pathname, $_ENV["BASE_URL"].'pages/detail/') === 0): ?>
     <script src="<?= BASE_URL."assets/script/detail.js"?>"></script>
 <?php endif;?>
 

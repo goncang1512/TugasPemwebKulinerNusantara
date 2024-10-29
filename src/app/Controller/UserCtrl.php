@@ -35,7 +35,7 @@ class UserCtrl extends User {
         if(!$user) {
             return [
                 "status" => 422,
-                "message" => "User tidak terdaftar"
+                "message" => "Pengguna tidak terdaftar"
             ];
         }
 
@@ -52,7 +52,17 @@ class UserCtrl extends User {
 
             if($remember == 1) {
                 $cookie_time = time() + (60 * 60 * 24 * 30);
-                setcookie("session_user", json_encode($dataUser), $cookie_time, "/"); 
+                setcookie(
+                    "session_user", 
+                    json_encode($dataUser), 
+                    [
+                        'expires' => $cookie_time,
+                        'path' => '/',
+                        'secure' => isset($_SERVER["HTTPS"]), 
+                        'httponly' => true, 
+                        'samesite' => 'Strict'
+                    ]
+                );
             }
 
             return [
@@ -69,11 +79,10 @@ class UserCtrl extends User {
     }
 
     public function logOut() {
-        unset($_SESSION["session_user"]);
-        session_destroy();
-
         if (isset($_COOKIE['session_user'])) {
-            setcookie("session_user", "", time() - 3600, "/");
+            setcookie("session_user", "", time() - 3600, "/", "", false, true);
         }
+
+        session_destroy();
     }
 }

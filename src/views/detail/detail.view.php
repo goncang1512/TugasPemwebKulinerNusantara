@@ -41,6 +41,7 @@
         </h6>
             <button id="startButton"class="btn"><i class="bi bi-stopwatch"></i>Mulai Waktu</button>
         </div>
+        
         <div id="countdown" style="font-size: 2em; margin-top: 20px;display: none;">00:00:00</div>
         
         
@@ -54,10 +55,32 @@
         </div>
         <div class="section instructions">
             <h2>Cara Membuat</h2>
-            <ol><?=$data["resep"]["langkah_langkah"]?>
-            </ol>
+            <?php
+                $langkahLangkah = explode("\n", $data["resep"]["langkah_langkah"]);
+
+                foreach ($langkahLangkah as $langkah) {
+                    echo "<p>" . htmlspecialchars($langkah) . "</p>";
+                }
+            ?>
         </div>
     </div>
+
+        <div class="container3">
+            <h2>Kamu menyukai resep ini ?</h1>
+            <div class="bintang">
+                <a style="color:yellow"href="index.php?resep=<?= $data["resep"]["slug"] ?>&resep_id=<?=$data["resep"]["id"] ?>&user_id=<?=$data["user"]["id"]?>&rating=1"><i class="bi bi-star-fill"></i></a>
+
+                <a style="color:yellow"href="index.php?resep=<?= $data["resep"]["slug"] ?>&resep_id=<?=$data["resep"]["id"] ?>&user_id=<?=$data["user"]["id"]?>&rating=2"><i class="bi bi-star-fill"></i></a>
+
+                <a style="color:yellow"href="index.php?resep=<?= $data["resep"]["slug"] ?>&resep_id=<?=$data["resep"]["id"] ?>&user_id=<?=$data["user"]["id"]?>&rating=3"><i class="bi bi-star-fill"></i></a>
+
+                <a style="color:yellow"href="index.php?resep=<?= $data["resep"]["slug"] ?>&resep_id=<?=$data["resep"]["id"] ?>&user_id=<?=$data["user"]["id"]?>&rating=4"><i class="bi bi-star-fill"></i></a>
+
+                <a style="color:yellow"href="index.php?resep=<?= $data["resep"]["slug"] ?>&resep_id=<?=$data["resep"]["id"] ?>&user_id=<?=$data["user"]["id"]?>&rating=5"><i class="bi bi-star-fill"></i></a>
+                
+                
+            </div>
+        </div>
 
 <?php include_once(APP_PATH . 'includes/footer.php')?>
 </main>

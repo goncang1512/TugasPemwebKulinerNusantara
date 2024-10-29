@@ -54,10 +54,12 @@ input::-webkit-inner-spin-button {
 
 #upload-form input:focus,
 #upload-form select:focus,
-#upload-form textarea:focus {
+#upload-form textarea:focus,
+#update-form input:focus,
+#update-form select:focus,
+#update-form textarea:focus {
   border: 2px solid #22c55e;
   box-shadow: none;
-  /* box-shadow: 0 0 3px 2px #22c55e75; */
 }
 
 .upload-food {
@@ -122,5 +124,44 @@ input::-webkit-inner-spin-button {
 
   .image-resep {
     flex-direction: column;
+  }
+}
+
+/* From Uiverse.io by akshat-patel28 */
+.loader {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  border-right: 3px solid;
+  width: 0px;
+  animation: typewriter 2s steps(10) infinite alternate,
+    blink 0.5s steps(10) infinite;
+}
+
+.loader-text {
+  font-size: 16px;
+  font-weight: 700;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 100px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+
+  100% {
+    border-right-color: transparent;
   }
 }

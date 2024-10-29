@@ -2,8 +2,11 @@
 include_once("../../src/app/app.php");
 
 use App\Connection;
+use Model\Rating;
 
 $resep_id = $_GET['resep'] ?? null;
+$resep = new Rating();
+
 
 if(!isset($resep_id)){
     header("location:".BASE_URL);
@@ -18,32 +21,34 @@ if ($pdo) {
         $statement->bindParam(':resep_id', $resep_id, PDO::PARAM_INT);
         $statement->execute();
 
-        $resep = $statement->fetch();
+        $resepMenu = $statement->fetch();
 
+        if (isset($_POST['waktu_memasak'])) {
+            $waktuMemasak = filter_var($_POST['waktu_memasak'], FILTER_SANITIZE_NUMBER_INT);
+            
+            
+            if ($waktuMemasak && $waktu_memasak > 0) {
+                
+                $jam = floor($waktu_memasak / 60);
+                $menit = $waktu_memasak % 60;
+                $detik = "00"; 
+            
+            
+                $waktuFormatted = sprintf("%02d:%02d:%02d", $jam, $menit, $detik);
+            
+                
+                echo $waktuFormatted;
+            } else {
+                echo "Waktu memasak tidak valid!";
+            } 
+        } else if (isset($_GET["rating"])) {
+            $resep->addRating();
+        }
 }
 
-if (isset($_POST['waktu_memasak'])) {
-    // Validasi dan sanitasi input
-    $waktuMemasak = filter_var($_POST['waktu_memasak'], FILTER_SANITIZE_NUMBER_INT);
 
-    // Cek apakah input valid
-    if ($waktuMemasak && $waktu_memasak > 0) {
-        // Kembalikan waktu memasak dalam format yang diinginkan
-        // Misalnya, konversi menit ke jam:menit:detik jika perlu
-        $jam = floor($waktu_memasak / 60);
-        $menit = $waktu_memasak % 60;
-        $detik = "00";  // Tetapkan detik ke 00 atau sesuaikan sesuai kebutuhan
+$session = getSession();
 
-        // Format hasil menjadi jam:menit:detik
-        $waktuFormatted = sprintf("%02d:%02d:%02d", $jam, $menit, $detik);
 
-        // Kirim respon ke AJAX (JavaScript)
-        echo $waktuFormatted;
-    } else {
-        // Jika input tidak valid, kembalikan pesan error
-        echo "Waktu memasak tidak valid!";
-    }
-}
-
-view("detail/detail",['resep'=>$resep]);
+view("detail/detail",['resep'=>$resepMenu, 'user' => $session]);
 ?>

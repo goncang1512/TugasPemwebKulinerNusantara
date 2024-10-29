@@ -14,7 +14,15 @@ $session = getSession();
 
 if($pdo){
 
-    $sql = 'SELECT * FROM resep';
+    $sql = 'SELECT r.id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
+        u.id AS user_id, u.username, u.email, u.avatar,
+        COALESCE(SUM(rating.rating), 0) AS total_rating,
+        COUNT(rating.id) AS jumlah_rating
+	 	FROM resep r
+		LEFT JOIN rating ON rating.resep_id = r.id
+		JOIN users u ON u.id = r.user_id
+		GROUP BY r.id, r.judul, r.gambar, r.slug, u.id, u.username, u.email, u.avatar
+        ORDER BY r.updated_at DESC';
 
     $statement = $pdo->query($sql);
     $resep = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -39,5 +47,5 @@ if($pdo){
 view("index", [
     "resep" => $resep, 
     "user" => $session, 
-    "save" => $save->byUser($session["id"])
+    "save" => isset($session) ? $save->byUser($session["id"]) : []
 ]);

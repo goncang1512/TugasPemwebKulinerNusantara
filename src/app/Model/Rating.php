@@ -42,3 +42,4 @@ class Rating extends Connection {
         return $publisher_id;
     }
 }
+
