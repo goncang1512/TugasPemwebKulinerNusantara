@@ -7,10 +7,17 @@
             value="<?= isset($data["value"]["username"]) ? $data["value"]["username"] : '' ?>" required/>
             <input name="email" type="email" placeholder="Email"
             value="<?= isset($data["value"]["email"]) ? $data["value"]["email"] : '' ?>" required/>
-            <input name="password" type="password" placeholder="Password"
-            value="<?= isset($data["value"]["password"]) ? $data["value"]["password"] : '' ?>" required/>
-            <input name="re-password" type="password" placeholder="Konfirmasi password"
-            value="<?= isset($data["value"]["re-password"]) ? $data["value"]["re-password"] : '' ?>" required/>
+            <div class ="mata">
+                <input id="inputpassword" name="password" type="password" placeholder="Password"
+                value="<?= isset($data["value"]["password"]) ? $data["value"]["password"] : '' ?>" required/>
+                <img src="https://cdn-icons-png.flaticon.com/128/159/159604.png" alt="" id="mata">
+                <!-- https://cdn-icons-png.flaticon.com/128/10812/10812267.png -->
+            </div>
+            <div class ="mata">
+                <input id="inputpassword-re" name="re-password" type="password" placeholder="Konfirmasi password"
+                value="<?= isset($data["value"]["re-password"]) ? $data["value"]["re-password"] : '' ?>" required/>
+                <img id="mata-re" src="https://cdn-icons-png.flaticon.com/128/159/159604.png" alt="">
+            </div>
             <button name="submit" value="register" type="submit">Daftar</button>
         </form> 
         <p class="pt-2">Sudah punya <a href="<?= BASE_URL."pages/login"?>">akun</a></p>
