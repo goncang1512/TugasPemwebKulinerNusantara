@@ -29,7 +29,10 @@ $asal_makanan = [
 ?>
 
 <main class="utama">
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div style="overflow-x: hidden;">
+        <img style="width: 100vw" src="<?= BASE_URL."assets/images/home.png"?>" alt="">
+    </div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="display: none;">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="<?= BASE_URL. "assets/images/beranda/11web.png"?>" class="imagecarausel d-block w-100" alt="">
