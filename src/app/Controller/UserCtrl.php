@@ -35,7 +35,7 @@ class UserCtrl extends User {
         if(!$user) {
             return [
                 "status" => 422,
-                "message" => "User tidak terdaftar"
+                "message" => "Pengguna tidak terdaftar"
             ];
         }
 
