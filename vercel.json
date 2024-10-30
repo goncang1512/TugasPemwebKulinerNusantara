@@ -1,15 +1,19 @@
 {
-    "version": 2,
-    "functions": {
-        "index.php": {
-        "runtime": "vercel-php"
-        }
-    },
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "index.php"
-      }
-    ]
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "build": {
+    "env": {
+      "COMPOSER_CACHE_DIR": ".vercel/cache/composer"
+    }
   }
-  
+}

@@ -1,7 +1,7 @@
 <main class="body">
     <h1 class="judul-bika"><?= $data["resep"]["judul"]?></h1>
     <div class="atas">
-        <img class="gambar1"src="https://c1.wallpaperflare.com/preview/428/552/953/bika-ambon-bika-plate-slice.jpg" alt="Bika Ambon">
+        <img class="gambar1"src="<?= $data["resep"]['gambar']?>" alt="Bika Ambon">
         <p><?= $data["resep"]["deskripsi"]?>
         </p>
     </div>
@@ -50,8 +50,26 @@
     <div class="container2">
         <div class="section">
             <h2>Bahan-Bahan</h2>
-            <ul><?=$data["resep"]["bahan_bahan"]?>
-            </ul>
+            <div class="bahan-bahan-resep-bahan">
+                <?php 
+                    $bahanBahan = explode("\n", $data['resep']['bahan_bahan']);
+                    $half = ceil(count($bahanBahan) / 2);
+                    $leftColumn = array_slice($bahanBahan, 0, $half);
+                    $rightColumn = array_slice($bahanBahan, $half);
+                ?>
+
+                <div class="column-resep">
+                    <?php foreach($leftColumn as $bahan): ?>
+                        <p><?php echo htmlspecialchars($bahan); ?></p>
+                    <?php endforeach; ?>
+                </div>
+
+                <div class="column-resep">
+                    <?php foreach($rightColumn as $bahan): ?>
+                        <p><?php echo htmlspecialchars($bahan); ?></p>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
         <div class="section instructions">
             <h2>Cara Membuat</h2>

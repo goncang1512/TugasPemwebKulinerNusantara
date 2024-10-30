@@ -149,3 +149,13 @@ ul {
 .bintang :hover{
   color: grey;
 }
+
+.bahan-bahan-resep-bahan {
+  display: flex;
+  gap: 20px; /* Jarak antara kolom */
+  width: 100%;
+}
+
+.column-resep {
+  flex: 1;
+}
