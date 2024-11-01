@@ -94,8 +94,8 @@ const updateResep = async (data, resep_id) => {
     });
 
     if (!response.ok) {
-      const errorText = await response.text(); // Read response as text
-      throw new Error(errorText); // Throw error with response message
+      const errorText = await response.text(); 
+      throw new Error(errorText); 
     }
 
     const res = await response.json();

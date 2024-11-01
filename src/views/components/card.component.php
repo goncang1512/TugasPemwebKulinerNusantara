@@ -12,7 +12,7 @@
             </div>
             <div class="body-rating">
             <div class="body-star">
-                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? floor($props["resep"]["total_rating"]/ $props["resep"]["jumlah_rating"]) : 5?>/5</p>
+                    <p>Ulasan <?= $props["resep"]["total_rating"] > 0 ? floor($props["resep"]["total_rating"]/ $props["resep"]["jumlah_rating"]) : 5?>/5</p>
                     <div style="font-size: 15px;">
                         <?php 
                         $rating = round($props["resep"]["total_rating"]);
@@ -58,7 +58,7 @@
             </div>
             <div class="body-rating">
             <div class="body-star">
-                    <p>Rating <?= $props["resep"]["total_rating"] > 0 ? floor($props["resep"]["total_rating"]/ $props["resep"]["jumlah_rating"]) : 5?>/5</p>
+                    <p>Ulasan <?= $props["resep"]["total_rating"] > 0 ? floor($props["resep"]["total_rating"]/ $props["resep"]["jumlah_rating"]) : 5?>/5</p>
                     <div style="font-size: 15px;">
                         <?php 
                         $rating = round($props["resep"]["total_rating"]);
@@ -85,7 +85,7 @@
                                     </button>
                                 <?php endif;?>
                             </li>
-                            <li><a class="dropdown-item" href="<?= $_ENV["BASE_URL"].'pages/upload/index.php?resep_id='.$props["resep"]["id"]?>">Edit</a></li>
+                            <li><a class="dropdown-item" href="<?= $_ENV["BASE_URL"].'pages/upload/index.php?resep_id='.$props["resep"]["id"]?>">Ubah</a></li>
                         </ul>
                     </div>
                 </div>

@@ -115,7 +115,7 @@
                     <span class="loader-text">Loading...</span>
                 </div>
                 <span class="button-text">
-                    Submit
+                    Unggah
                 </span>
             </button>
         </div>

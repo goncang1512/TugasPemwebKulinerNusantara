@@ -63,7 +63,7 @@ $asal_makanan = [
 
     <!-- Makanan makanan rekomendasi -->
     <div class="container-scroll">
-    <section data-aos="fade-up"data-aos-duration="3000" class="daerah">
+    <section data-aos="fade-up"data-aos-duration="1000" class="daerah">
         <?php foreach($asal_makanan as $makanan): ?>
             <div class="daerah-item">
                 <img src="<?= $makanan["gambar"]?>" alt="Makanan khas Sulawesi Selatan">
@@ -78,7 +78,7 @@ $asal_makanan = [
     </div>
 
     <!-- Makanan dan rating makanan -->
-<div data-aos="fade-up"data-aos-duration="3000" class="container-scroll">
+<div data-aos="fade-up"data-aos-duration="1000" class="container-scroll">
     <div class="rekomendasi-makanan">
         <?php
             foreach($data["resep"] as $resep) {
@@ -96,7 +96,7 @@ $asal_makanan = [
 <div class="rempah-rempah">
       <h3><strong>Rempah Rempah Khas Indonesia</strong></h3>
     </div>
-    <section data-aos="fade-up"data-aos-duration="3000" class="rempah">
+    <section data-aos="fade-up"data-aos-duration="1000" class="rempah" style="margin-bottom: 20px;">
     <div class="daerah-item">
         <img src="https://cdn.idntimes.com/content-images/community/2018/08/f7b5dc860236de94e93b595f5d4ecab3.jpg" alt="Rempah Rempah Indonesia">
         <h5>Cengkih</h5>
@@ -154,4 +154,6 @@ $asal_makanan = [
         <h5>Jahe</h5>
     </div>
     </section>
+
+    <?php include_once(APP_PATH . 'includes/footer.php')?>
 </main>
