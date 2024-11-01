@@ -6,16 +6,16 @@ $session = getSession();
 
 <nav class="navbar shadow-sm navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <div class="navbar-brand">
+    <a href="<?= BASE_URL?>" class="navbar-brand">
       <img src="<?= BASE_URL."assets/images/logo-width.png"?>" alt="" class="logo-navbar">
-    </div>
+</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <form action="<?= getenv("BASE_URL")."pages/search/index.php"?>" method="GET" class="form-search">
         <button class="button-search" type="submit"><i class="bi bi-search"></i></button>
-        <input class="input-search" name="keyword" type="search" placeholder="Search" aria-label="Search" value="<?php echo isset($data['keyword']) ? $data['keyword'] : '' ?>">
+        <input class="input-search" name="keyword" type="search" placeholder="Telusuri" aria-label="Search" value="<?php echo isset($data['keyword']) ? $data['keyword'] : '' ?>">
       </form>
       <div class="div-link">
         <ul class="navbar-nav">

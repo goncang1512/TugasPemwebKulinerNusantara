@@ -83,7 +83,7 @@
         </div>
     </div>
 
-        <div class="container3">
+        <div class="container3" style="margin-bottom: 10px;">
             <h2>Kamu menyukai resep ini ?</h1>
             <div class="bintang">
                 <a style="color:yellow"href="index.php?resep=<?= $data["resep"]["slug"] ?>&resep_id=<?=$data["resep"]["id"] ?>&user_id=<?=$data["user"]["id"]?>&rating=1"><i class="bi bi-star-fill"></i></a>

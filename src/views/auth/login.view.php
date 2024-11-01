@@ -11,7 +11,7 @@
             </div>
             <div class="d-flex justify-content-between">
                 <input id="remember-me" type="checkbox" name="remember" value="1">
-                <label for="remember-me" style="color: white;">Ingat aku</label>
+                <label for="remember-me" style="color: white;">Ingat saya</label>
             </div>
             <button type="submit" name="submit" value="login">Masuk</button>
         </form> 
