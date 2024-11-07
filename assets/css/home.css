@@ -1,9 +1,7 @@
-
 .carousel-item {
   height: 92vh; /* Tinggi container sesuai dengan 92% dari tinggi viewport */
   width: 100%; /* Lebar container 100% */
 }
-
 
 .carousel {
   height: 92vh;
@@ -93,12 +91,6 @@
   height: 10px;
 }
 
-.body-star {
-  display: flex;
-  flex-direction: column;
-  line-height: 1px;
-}
-
 /* Rempah Rempah */
 .rempah-rempah {
   color: #2f852f;
@@ -117,7 +109,7 @@
   justify-content: center;
 }
 
-.card {
+.card-home {
   width: 18rem;
 }
 

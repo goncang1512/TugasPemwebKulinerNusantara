@@ -28,6 +28,7 @@
 
 <?php if ($pathname === $_ENV["BASE_URL"] || $pathname === $_ENV["BASE_URL"]."api/" || $pathname === $_ENV["BASE_URL"]."index.php" ||  $pathname === $_ENV["BASE_URL"]."api/index.php"): ?>
     <link rel="stylesheet" href="<?= BASE_URL."assets/css/home.css"?>">
+    <link rel="stylesheet" href="<?= BASE_URL."assets/css/hero.css"?>">
 <?php endif;?>
 
 <?php if (strpos($pathname, $_ENV["BASE_URL"].'pages/upload/') === 0):?>

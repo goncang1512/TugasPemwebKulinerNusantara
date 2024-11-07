@@ -1,6 +1,6 @@
 <?php
 
-include_once("./src/app/app.php");
+include_once(__DIR__."/src/app/app.php");
 
 use App\Connection;
 use Model\Rating;

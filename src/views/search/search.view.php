@@ -1,5 +1,5 @@
 <main>
-    <div class="container-resep" style="padding: 10px;">
+    <div class="container-makanan container-main">
         <?php if(empty($data["resep"])) :?>
             <div style="display: flex; color: red; width: 100%; justify-content:center; padding-top: 20px;">
                 <p>Resep "<?= $_GET["keyword"]?>" tidak ada.</p>
