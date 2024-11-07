@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chewy&family=Fascinate+Inline&family=Ruslan+Display&display=swap");
+
+.hero-section {
+  display: flex;
+  background-color: white;
+  height: 100vh;
+}
+
+.hero-first {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.judul-hero {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 4rem;
+}
+
+.parag-hero {
+  font-size: 1.5rem;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+.container-button-resep {
+  display: flex;
+  gap: 30px;
+  padding: 50px;
+}
+
+.button-see-resep {
+  width: 80px;
+  height: 250px;
+  background-color: #00a862;
+  border-radius: 60px;
+  position: relative;
+  border: none;
+}
+
+.image-button-resep {
+  width: 150px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* HERO SECOND */
+.hero-second {
+  flex: 1;
+  position: relative;
+}
+
+.hero-section {
+  overflow: hidden;
+}
+
+.table-oracle {
+  background-color: #30be64;
+  width: 900px;
+  height: 900px;
+  border-radius: 100%;
+  position: absolute;
+  right: -24%;
+  top: -15%;
+  z-index: 1;
+}
+
+.image-oracle {
+  z-index: 777;
+  position: absolute;
+  display: flex;
+  top: -27%;
+  left: 10%;
+  align-items: center;
+  transition-duration: 3000ms;
+  /* gap: 10rem; */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-oracle-satu {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-oracle-dua {
+  display: flex;
+  align-items: center;
+}
+
+.gambar-oracle {
+  width: 700px;
+  rotate: 25deg;
+  transition-duration: 3000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 45vh;
+  }
+
+  .judul-hero {
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+
+  .parag-hero {
+    font-size: 0.7rem;
+  }
+
+  .image-button-resep {
+    width: 60px;
+  }
+
+  .button-see-resep {
+    width: 40px;
+    height: 100px;
+  }
+
+  .container-button-resep {
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .table-oracle {
+    width: 340px;
+    height: 340px;
+    right: -80%;
+    top: -6%;
+  }
+
+  .gambar-oracle {
+    width: 230px;
+  }
+
+  .image-oracle {
+    top: -5%;
+    left: 0px;
+  }
+
+  .name-food {
+    font-size: 0.5rem;
+  }
+}
