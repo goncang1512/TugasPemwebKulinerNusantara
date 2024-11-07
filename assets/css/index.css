@@ -9,9 +9,16 @@ body {
   position: fixed;
   width: 100%;
   z-index: 999;
+  padding: 7px 80px;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-content-project {
+  padding-top: 0px;
+}
+
+.give-padding {
   padding-top: 70px;
 }
 
@@ -67,6 +74,259 @@ body {
   align-items: center;
   gap: 20px;
 }
+
+/* footer */
+
+footer {
+  background-color: #2f852f; /* Warna latar belakang footer */
+  color: black; /* Warna teks */
+  padding: 20px 0; /* Jarak atas dan bawah */
+}
+
+.footer-container {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: space-between; /* Ruang antara elemen */
+  align-items: center; /* Menjaga elemen di tengah secara vertikal */
+  max-width: 1500px; /* Lebar maksimum */
+  margin: auto; /* Mengatur margin otomatis untuk tengah */
+  padding: 0 20px; /* Jarak horizontal */
+}
+
+.footer-logo .logo {
+  width: 10px; /* Atur lebar logo */
+}
+
+.footer-text {
+  display: flex; /* Menggunakan flexbox untuk item di dalamnya */
+  flex-direction: row; /* Mengatur arah kolom */
+  align-items: center; /* Teks di tengah */
+  gap: 230px;
+}
+
+.footer-item {
+  text-align: center; /* Teks di tengah untuk setiap item */
+  margin: 10px 0; /* Jarak antara item */
+}
+
+.footer-links {
+  margin-top: 5px; /* Jarak atas untuk tautan */
+}
+
+.footer-links a {
+  color: white; /* Warna tautan */
+  text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.footer-links a:hover {
+  text-decoration: dotted; /* Garis bawah saat hover */
+}
+
+.footer-social {
+  text-align: right; /* Teks di kanan */
+}
+
+.footer-social .social-logo {
+  width: 30px; /* Atur lebar logo Instagram */
+  vertical-align: middle; /* Mengatur posisi logo dengan teks */
+}
+
+.footer-social a {
+  color: white; /* Warna tautan */
+  text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.footer-social a:hover {
+  text-decoration: underline; /* Garis bawah saat hover */
+}
+.social-line {
+  position: absolute; /* Mengatur posisi absolute untuk garis */
+  left: 0; /* Menempel di sisi kiri */
+  right: 0; /* Menempel di sisi kanan */
+  height: 0.5px; /* Tinggi garis */
+  background-color: white; /* Warna garis */
+  margin-bottom: 10px; /* Jarak bawah untuk garis */
+  margin-left: 350px;
+}
+
+.nav-item a {
+  color: black;
+}
+
+.in-link a {
+  color: #22c55e;
+}
+
+.in-link a:hover {
+  color: #22c55e;
+}
+
+.drop-item {
+  display: none;
+}
+
+.item-desktop {
+  display: flex;
+}
+
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+  /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .navbar-mobile {
+    background-color: #e9ecef;
+    border-radius: 10px;
+  }
+
+  .drop-item {
+    display: flex;
+  }
+
+  .item-desktop {
+    display: none;
+  }
+
+  .form-search {
+    width: 100%;
+  }
+
+  .form-search input {
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .div-link {
+    align-items: center;
+    width: 100%;
+  }
+
+  .icon-profile {
+    display: none;
+  }
+
+  .footer-container {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom di layar kecil */
+    align-items: center; /* Menjaga elemen di tengah secara horizontal */
+  }
+
+  .footer-social {
+    text-align: center; /* Teks di tengah */
+    margin-top: 10px; /* Jarak atas untuk sosial */
+  }
+
+  .navbar-nav {
+    background-color: #e5e7eb;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+
+  .nav-item {
+    padding-left: 10px;
+  }
+
+  .bg-nav-item {
+    background-color: #22c55e;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .bg-nav-item-mobile {
+    background-color: #22c55e;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .in-link-mobile a {
+    color: white;
+  }
+
+  .bg-nav-item:hover a {
+    color: white;
+  }
+
+  .bg-nav-item a {
+    color: white;
+  }
+
+  .navbar {
+    padding: 10px 10px;
+  }
+}
+
+.button-save {
+  font-size: 25px;
+  color: black;
+  background: transparent;
+  border: none;
+}
+
+/* CARD STYLE */
+.title-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.body-rating {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.button-go {
+  background-color: #22c55e;
+  width: max-content;
+  height: max-content;
+  text-decoration: none;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(0, 0, 0, 0.3);
+}
+
+.button-go:hover {
+  background-color: #3a975c;
+}
+
+.body-star {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dropdown-item:active {
+  background-color: #22c55e;
+}
+
+.container-main {
+  padding: 20px 80px;
+}
+
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+  /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .container-main {
+    padding: 10px 10px;
+  }
+}
+
+/* AKHIR CARD STYLE */
 
 /* footer */
 
