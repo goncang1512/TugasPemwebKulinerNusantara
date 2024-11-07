@@ -300,10 +300,6 @@ footer {
   gap: 10px;
 }
 
-.card {
-  width: 100%;
-}
-
 .card-body {
   display: flex;
   flex-direction: column;
@@ -375,7 +371,7 @@ footer {
 
 /* Tipografi */
 .footer {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .footer-title {
@@ -395,12 +391,11 @@ footer {
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    
+
     margin-left: 100px;
   }
 
   .footer-section {
-  
     margin-bottom: 20px;
   }
 }
@@ -413,9 +408,6 @@ footer {
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
-  .card {
-    width: 48.5%;
-  }
 }
 
 /* AKHIR CARD STYLE */
