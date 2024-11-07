@@ -1,9 +1,9 @@
 <main class="main-container">
     <!-- LOGIN PAGE -->
     <div class="container">
-        <img class="image" src="<?= BASE_URL."assets/images/logo-width.png"?>" alt="Logo Resep Nusantara">
         <p class="d-flex w-100 justify-content-center" style="color: red;"><?= $data["errMsg"]?></p>
         <form action="" method="POST" class="registrasi">
+        <img class="image" src="<?= BASE_URL."assets/images/logo-width.png"?>" alt="Logo Resep Nusantara">
             <input name="email" type="email" placeholder="Email">
             <div class="mata">
                 <input id="inputpassword" name="password" type="password" placeholder="Password">
@@ -14,7 +14,7 @@
                 <label for="remember-me" style="color: white;">Ingat saya</label>
             </div>
             <button type="submit" name="submit" value="login">Masuk</button>
+        <p class="belum">Belum punya <a href="<?= BASE_URL."pages/register"?>">akun</a></p>
         </form> 
-        <p class="pt-2">Belum punya <a href="<?= BASE_URL."pages/register"?>">akun</a></p>
-    </div> 
+    </div> 
 </main>
