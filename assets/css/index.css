@@ -9,9 +9,16 @@ body {
   position: fixed;
   width: 100%;
   z-index: 999;
+  padding: 7px 80px;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-content-project {
+  padding-top: 0px;
+}
+
+.give-padding {
   padding-top: 70px;
 }
 
@@ -153,9 +160,30 @@ footer {
   color: #22c55e;
 }
 
+.drop-item {
+  display: none;
+}
+
+.item-desktop {
+  display: flex;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .navbar-mobile {
+    background-color: #e9ecef;
+    border-radius: 10px;
+  }
+
+  .drop-item {
+    display: flex;
+  }
+
+  .item-desktop {
+    display: none;
+  }
+
   .form-search {
     width: 100%;
   }
@@ -206,12 +234,26 @@ footer {
     border-radius: 10px;
   }
 
+  .bg-nav-item-mobile {
+    background-color: #22c55e;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .in-link-mobile a {
+    color: white;
+  }
+
   .bg-nav-item:hover a {
     color: white;
   }
 
   .bg-nav-item a {
     color: white;
+  }
+
+  .navbar {
+    padding: 10px 10px;
   }
 }
 
@@ -255,12 +297,11 @@ footer {
 
 .body-star {
   display: flex;
-  flex-direction: column;
-  line-height: 1px;
+  gap: 10px;
 }
 
 .card {
-  width: 24.4%;
+  width: 100%;
 }
 
 .card-body {
@@ -273,11 +314,15 @@ footer {
   background-color: #22c55e;
 }
 
+.container-main {
+  padding: 20px 80px;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
-  .card {
-    width: 48.5%;
+  .container-main {
+    padding: 10px 10px;
   }
 }
 

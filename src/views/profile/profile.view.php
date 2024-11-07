@@ -5,21 +5,19 @@
         </div>
         <div class="data-user">
             <h1 class="name-user">Selamat datang, <?= $data["user"]["username"]?>!</h1>
-            <h6>email: <?= $data["user"]["email"]?></h6>
-            <button onclick="handleRouter('index.php?q=logout')" class="btn btn-danger">Logout</button>
         </div>
     </div>
 
     <!-- Content USER -->
     <div class="container-content">
-        <div>
+        <div style="display: flex; align-items: center; gap: 10px;">
             <button id="button-resep" type="button" class="button-prof">Resep</button>
             <button id="button-simpan" type="button" class="button-prof">Simpan</button>
         </div>
         <div class="my-content-container">
 
             <!-- CONTAINER RESEP MAKANAN -->
-            <div class="container-resep">
+            <div id="my-resep" class="container-makanan">
                 <?php 
                     foreach($data["resep"] as $resep) {
                         component("card", [
@@ -33,7 +31,7 @@
             </div>
 
             <!-- CONTAINER SIMPAN RESEP -->
-            <div class="container-simpan">
+            <div id="my-save" class="container-none">
             </div>
         </div>
     </div>
