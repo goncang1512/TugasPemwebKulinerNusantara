@@ -28,18 +28,31 @@ class Rating extends Connection {
     }
 
     public function addRating() {
-        $sql = "INSERT INTO rating (user_id, resep_id, rating) VALUES (:user_id, :resep_id, :rating)";
+        $sqlRating = 'SELECT * FROM rating where user_id = :user_id AND resep_id = :resep_id';
+        $hlm = $this->pdo->prepare($sqlRating);
+        $hlm->execute([':user_id' => $_GET['user_id'], ':resep_id' => $_GET['resep_id']]);
+        $rating = $hlm->fetch();
 
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([
-                ":user_id" => $_GET["user_id"],
-                ":resep_id" => $_GET["resep_id"],
-                ":rating" => $_GET["rating"]
-            ]);
+        if($rating) {
+            $sql = "UPDATE rating SET rating = :rating WHERE user_id = :user_id AND resep_id = :resep_id";
 
-        $publisher_id = $this->pdo->lastInsertId();
-
-        return $publisher_id;
+            $stmt = $this->pdo->prepare($sql);
+            $hasil = $stmt->execute([
+                    ":user_id" => $_GET["user_id"],
+                    ":resep_id" => $_GET["resep_id"],
+                    ":rating" => $_GET["rating"]
+                ]);
+        } else {
+            $sql = "INSERT INTO rating (user_id, resep_id, rating) VALUES (:user_id, :resep_id, :rating)";
+    
+            $stmt = $this->pdo->prepare($sql);
+            $hasil = $stmt->execute([
+                    ":user_id" => $_GET["user_id"],
+                    ":resep_id" => $_GET["resep_id"],
+                    ":rating" => $_GET["rating"]
+                ]);
+        }
+        return $hasil;
     }
 }
 

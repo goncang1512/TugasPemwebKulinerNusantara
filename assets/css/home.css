@@ -1,4 +1,11 @@
 
+
+.carousel-item {
+  height: 92vh; /* Tinggi container sesuai dengan 92% dari tinggi viewport */
+  width: 100%; /* Lebar container 100% */
+}
+
+
 .carousel {
   height: 92vh;
 }
@@ -45,6 +52,7 @@
   margin-bottom: 10px;
 }
 
+/* rekomendasi makanan dan rating */
 .resep-kuliner {
   color: #2f852f;
   text-align: center;
@@ -52,7 +60,6 @@
   margin-bottom: 70px;
 }
 
-/* rekomendasi makanan dan rating */
 .rekomendasi-makanan {
   padding: 20px;
   display: flex;
