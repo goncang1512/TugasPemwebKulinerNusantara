@@ -1,8 +1,8 @@
 <main class="main-container">
     <div class="container">
-        <img class="image" src="<?= BASE_URL."assets/images/logo-width.png"?>" alt="Logo Resep Nusantara">
-        <p class="w-100 d-flex justify-content-center" style="color: red;"><?= $data["errMsg"]?></p>
+        <p class="w-150 d-flex justify-content-center" style="color: red;"><?= $data["errMsg"]?></p>
         <form action="" method="POST" class="registrasi">
+        <img class="image" src="<?= BASE_URL."assets/images/logo-width.png"?>" alt="Logo Resep Nusantara">
             <input name="username" type="text" placeholder="Username" 
             value="<?= isset($data["value"]["username"]) ? $data["value"]["username"] : '' ?>" required/>
             <input name="email" type="email" placeholder="Email"
@@ -19,7 +19,7 @@
                 <img id="mata-re" src="https://cdn-icons-png.flaticon.com/128/159/159604.png" alt="">
             </div>
             <button name="submit" value="register" type="submit">Daftar</button>
-        </form> 
-        <p class="pt-2">Sudah punya <a href="<?= BASE_URL."pages/login"?>">akun</a></p>
-    </div>
+            <p class="belum">Sudah punya <a href="<?= BASE_URL."pages/login"?>">akun</a></p>
+            </form> 
+        </div>
 </main>
