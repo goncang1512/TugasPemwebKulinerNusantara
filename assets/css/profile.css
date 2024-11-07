@@ -4,8 +4,11 @@
   gap: 10px;
 }
 
+.nav-bg {
+  background-color: white;
+}
+
 .top-profile h1 {
-  background-color: #d9d9d9;
   padding: 4px 10px;
   border-radius: 8px;
 }
@@ -47,17 +50,13 @@
   min-height: 320px;
 }
 
-.container-resep,
-.container-simpan {
-  flex-wrap: wrap;
+.container-makanan {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
 
-.container-resep {
-  display: flex;
-}
-
-.container-simpan {
+.container-none {
   display: none;
 }
 
@@ -84,5 +83,10 @@
   .name-user {
     font-size: 20px;
     margin-right: 10px;
+  }
+
+  .container-makanan {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
   }
 }
