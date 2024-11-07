@@ -1,5 +1,4 @@
 
-
 .carousel-item {
   height: 92vh; /* Tinggi container sesuai dengan 92% dari tinggi viewport */
   width: 100%; /* Lebar container 100% */
@@ -31,8 +30,11 @@
   width: max-content;
 }
 
+.seluruh {
+  padding: 20px 80px;
+}
 .daerah-item {
-  padding-left: 100px;
+  padding-left: 20px;
   background-color: white;
   padding: 10px;
   border-radius: 10px;
@@ -40,16 +42,16 @@
   border: 1px solid rgb(0, 0, 0, 0.3);
   line-height: 1px;
   width: 18rem;
-  padding: 10px;
   border-radius: 10px;
   text-align: center;
+  font-size: 30px;
 }
 
 .daerah-item img {
   height: 150px;
   border-radius: 5px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /* rekomendasi makanan dan rating */
@@ -61,14 +63,21 @@
 }
 
 .rekomendasi-makanan {
-  padding: 20px;
+  padding: 20px auto;
+  padding: 15px;
+  max-width: 800px;
+  border-radius: 10px;
   display: flex;
   width: max-content;
   gap: 10px;
 }
 
 .container-scroll {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 5px;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .container-scroll::-webkit-scrollbar-track {
@@ -115,7 +124,6 @@
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
-
   .carousel {
     height: 100%;
   }
@@ -128,3 +136,48 @@
     height: 100%;
   }
 }
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000px;
+  width: 80%;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.popup-content {
+  position: relative;
+  padding: 20px;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+
+.popup:target {
+  display: block;
+}
+
+.close {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  text-decoration: none;
+  color: #000;
+}
+
