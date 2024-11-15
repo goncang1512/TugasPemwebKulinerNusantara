@@ -42,6 +42,8 @@
   border-radius: 60px;
   position: relative;
   border: none;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-button-resep {
@@ -65,12 +67,13 @@
 
 .table-oracle {
   background-color: #30be64;
-  width: 900px;
-  height: 900px;
+  width: 56.25rem;
+  height: 56.25rem;
   border-radius: 100%;
   position: absolute;
-  right: -24%;
-  top: -15%;
+  right: -40%;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1;
 }
 
@@ -82,7 +85,6 @@
   left: 10%;
   align-items: center;
   transition-duration: 3000ms;
-  /* gap: 10rem; */
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -97,7 +99,9 @@
 }
 
 .gambar-oracle {
-  width: 700px;
+  width: 43.75rem;
+  /* height: 43.75rem; */
+  height: 100%;
   rotate: 25deg;
   transition-duration: 3000ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -106,6 +110,10 @@
 @media (max-width: 768px) {
   .hero-section {
     height: 45vh;
+  }
+
+  .button-see-resep:active {
+    transform: scale(1.1);
   }
 
   .judul-hero {
@@ -132,22 +140,54 @@
   }
 
   .table-oracle {
-    width: 340px;
-    height: 340px;
+    width: 21.25rem;
+    height: 21.25rem;
     right: -80%;
-    top: -6%;
   }
 
   .gambar-oracle {
-    width: 230px;
+    width: 14.375rem;
+    /* height: 14.375rem; */
+    height: 100%;
   }
 
   .image-oracle {
     top: -5%;
-    left: 0px;
+    left: 0.6rem;
   }
 
   .name-food {
     font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 1024) {
+  .image-oracle {
+    top: -30%;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-oracle {
+    top: -5%;
+    left: 0.6rem;
+  }
+
+  .gambar-oracle {
+    width: 14.375rem;
+    /* height: 14.375rem; */
+    height: 100%;
+  }
+
+  .table-oracle {
+    width: 21.25rem;
+    height: 21.25rem;
+    right: -80%;
+  }
+}
+
+@media (min-width: 678px) {
+  .button-see-resep:hover {
+    transform: scale(1.1);
   }
 }
