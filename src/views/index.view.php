@@ -242,3 +242,6 @@ $asal_makanan = [
     </section>
 </div>
 </main>
+
+<?php include_once(APP_PATH . 'includes/footer.php')?>
+

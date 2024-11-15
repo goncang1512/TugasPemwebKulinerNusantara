@@ -55,7 +55,7 @@ $session = getSession();
                                     </a>
                                 </li>
                                 <li>
-                                    <button onclick="handleRouter('index.php?q=logout')"
+                                    <button onclick="handleRouter('<?= BASE_URL.'pages/logout.php'?>')"
                                         class="dropdown-item d-flex justify-content-between" type="button">
                                         Logout <i style="padding-right: 6px;" class="bi bi-box-arrow-right"></i>
                                     </button>
