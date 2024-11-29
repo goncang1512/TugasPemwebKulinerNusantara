@@ -88,6 +88,14 @@
         ?>
     </div>
 
+    <?php if(isset($data['resep']['vidio'])):?>
+        <div style="padding-top: 20px; display: flex; justify-content: center;">
+            <video poster="<?= $data['resep']['gambar']?>" width="720" height="480" style="border: 1px solid #a9e5a9; border-radius: 10px;" controls>
+                <source src="<?= $data['resep']['vidio']?>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    <?php endif;?>
 
     <div class="container3" style="margin-bottom: 50px;">
         <h2>Kamu menyukai resep ini ?</h1>
@@ -130,17 +138,23 @@
         </form>
     </div>
 
+    <div id="komentar"></div>
     <div class="container-komentar">
         <h3 style="border-bottom: 1px solid black; width: max-content; margin-bottom: 40px; margin-top: 40px;">
             <?= $jumlahKomentar?> Komentar</h3>
         <div style="display: flex; flex-direction: column; gap: 10px;">
             <?php foreach($data['comment'] as  $index => $comment):?>
-            <div class="comment-card-<?= $comment['id']?>" id="<?= $comment['id']?>" style='display: flex;'>
+            <div key="<?= $comment['id']?>" class="comment-card-<?= $comment['id']?>" id="<?= $comment['id']?>" style='display: flex;'>
                 <img class="profile-picture" src="<?= $_ENV['BASE_URL'] . 'assets/avatar/'.$comment['avatar'] ?>"
                     alt="">
                 <div class="chat-bubble">
                     <div class="message-content">
-                        <p class="sender-name"><?= $comment['username']?></p>
+                        <div style="display: flex; justify-content: space-between;">
+                            <p class="sender-name"><?= $comment['username']?></p>
+                            <?php if($data['user'] ? $data['user']['id']  == $comment['user_id']: null):?>
+                                <button onclick="handleRouter('<?= BASE_URL.'pages/detail/index.php?resep='. $_GET['resep'].'&quest=delete&comment_id='.$comment['id']?>')" style="background-color: transparent; border: none;"><i class="bi bi-trash3"></i></button>
+                            <?php endif;?>
+                        </div>
                         <p class="message-text"><?= $comment['comment']?></p>
                         <p class="timestamp">April 5, 2024</p>
                     </div>

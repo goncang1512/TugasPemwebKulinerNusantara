@@ -5,11 +5,17 @@ $("document").ready(function () {
 });
 
 function getSaves() {
+  $("#my-save #container-spinner").show();
   $.ajax({
     url: "index.php?q=getsave",
     type: "GET",
     success: function (res) {
+      $("#my-save #container-spinner").hide();
       $("#my-save").html(res);
+    },
+    error: () => {
+      $("#my-save #container-spinner").hide();
+      $("#my-save").html("<p>Tidak ada content</p>");
     },
   });
 }

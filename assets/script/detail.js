@@ -56,12 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// const urlHash = window.location.hash;
-// if (urlHash) {
-//   const slieUrl = urlHash.slice(1);
-//   const commentCard = document.querySelector(`.comment-card-${slieUrl}`);
-
-//   if (commentCard) {
-//     commentCard.style.paddingTop = "100px";
-//   }
-// }
+const urlHash = window.location.hash;
+if (urlHash) {
+  window.addEventListener("scroll", () => {
+    if (window.location.hash) {
+      history.pushState(
+        "",
+        document.title,
+        window.location.pathname + window.location.search
+      );
+    }
+  });
+}

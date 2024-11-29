@@ -4,11 +4,11 @@ $image = [
         'md' => '-5%',
         'lg' => ''
     ]], 
-    ['id' => 2, 'nama' => 'Pecel', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-kedua.png', 'rotate' => '403deg', 'gambar_rotate' => '-43deg', 'position' => '-55%', 'mobile' => '-30%', 'responsive' => [
+    ['id' => 2, 'nama' => 'Pecel', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-kedua.png', 'rotate' => '403deg', 'gambar_rotate' => '-43deg', 'position' => '-55%', 'mobile' => '-25%', 'responsive' => [
         'md' => '-30%',
         'lg' => ''
     ]], 
-    ['id' => 3, 'nama' => 'Sate', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-ketiga.png', 'rotate' => '503deg', 'gambar_rotate' => '-142deg', 'position' => '-40%', 'mobile' => '-18%', 'responsive' => [
+    ['id' => 3, 'nama' => 'Sate', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-ketiga.png', 'rotate' => '503deg', 'gambar_rotate' => '-142deg', 'position' => '-40%', 'mobile' => '-13%', 'responsive' => [
         'md' => '-18%',
         'lg' => ''
     ]]

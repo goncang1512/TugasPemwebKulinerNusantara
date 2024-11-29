@@ -21,9 +21,33 @@ class Cloudinary {
         }
     }
 
-    public function delete($public_id) {
+    public function vidio($filePath) {
         try {
-            $result = (new UploadApi())->destroy($public_id);
+            $result = (new UploadApi())->upload($filePath, [
+                "folder" => "resep-vidio",
+                'resource_type' => 'video',
+                'chunk_size' => 6000000,
+                'eager' => [
+                [
+                    'width' => 720, // Resolusi video (ubah sesuai kebutuhan)
+                    'height' => 480,
+                    'crop' => 'limit',
+                    'quality' => 'auto', // Optimasi kualitas secara otomatis
+                    'format' => 'mp4' // Format file
+                ]
+            ]
+            ]);
+            return $result; 
+        } catch (\Exception $e) {
+            return 'Error: ' . $e->getMessage();
+        }
+    }
+
+    public function delete($public_id, $resourceType = 'image') {
+        try {
+            $result = (new UploadApi())->destroy($public_id, [
+                'resource_type' => $resourceType
+            ]);
             return $result;
         } catch (\Exception $e) {
             return 'Error: ' . $e->getMessage();
