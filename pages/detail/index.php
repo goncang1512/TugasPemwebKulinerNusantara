@@ -1,5 +1,5 @@
 <?php
-include_once '../../src/app/app.php';
+include_once __DIR__.'/../../src/app/app.php';
 
 use App\Connection;
 use Model\Rating;
@@ -42,7 +42,13 @@ if ($pdo) {
         $resep->addRating();
     } elseif (isset($_POST['quest']) && $_POST['quest'] == 'addComment') {
         $comment = $comment->addComment($_POST['user_id'], $_POST['resep_id'], $_POST['comment']);
-        header('Location: ' . $_SERVER['HTTP_REFERER']."#$comment");
+        header('Location: ' . $_SERVER['HTTP_REFERER']."#komentar");
+    }
+
+    if(isset($_GET['quest']) && $_GET['quest'] == 'delete') {
+        $comment = $comment->deleteComment($_GET['comment_id']);
+        
+        header('Location: ' . $_SERVER['HTTP_REFERER']."#komentar");
     }
 }
 

@@ -3,14 +3,23 @@
 include_once(__DIR__."/src/app/app.php");
 
 use App\Connection;
+use Controller\ResepCtrl;
 use Model\Rating;
 use Controller\SaveCtrl;
 
 $save = new SaveCtrl();
 $pdo = Connection::get()->connect();
 $rating = new Rating();
+$resep = new ResepCtrl();
 
 $session = getSession();
+
+if(isset($_GET["q"]) && $_GET["q"] == "delete") {
+    $result = $resep->deleteOne($_GET["resep_id"]);
+
+    header("location:".$_SERVER['HTTP_REFERER']);
+    exit();
+}
 
 if($pdo){
 
@@ -41,7 +50,7 @@ if($pdo){
 
         echo json_encode(["result" => $res]);
         exit();
-    }
+    } 
 }
 
 view("index", [

@@ -19,6 +19,7 @@ $result = $resep->createTables();
 $resSave = $save->tableSave();
 $ratingCr = $rating->ratingTable();
 $commentMod = $comment->createComment();
+// $columnVidio = $resep->addColumn();
 
 if ($result && $resUser && $resSave && $ratingCr && $commentMod) {
     echo "Tabel berhasil dibuat.";

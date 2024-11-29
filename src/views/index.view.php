@@ -33,10 +33,6 @@ $asal_makanan = [
 ?>
 
 <main class="utama">
-    <!-- <div style="overflow-x: hidden;">
-        <img style="width: 100vw" src="<?= BASE_URL."assets/images/home.png"?>" alt="">
-    </div> -->
-
     <div>
         <?php component('hero')?>
     </div>

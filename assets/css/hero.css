@@ -4,6 +4,7 @@
   display: flex;
   background-color: white;
   height: 100vh;
+  overflow: hidden;
 }
 
 .hero-first {
@@ -61,10 +62,6 @@
   position: relative;
 }
 
-.hero-section {
-  overflow: hidden;
-}
-
 .table-oracle {
   background-color: #30be64;
   width: 56.25rem;
@@ -109,7 +106,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    height: 45vh;
+    height: 40vh;
   }
 
   .button-see-resep:active {

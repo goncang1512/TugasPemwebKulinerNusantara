@@ -69,4 +69,18 @@ class Comment
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function deleteComment($comment_id) {
+        $sql = "DELETE FROM comment WHERE id = :comment_id";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':comment_id', $comment_id, \PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            return "Resep dengan ID $comment_id telah dihapus.";
+        } else {
+            return 'Gagal menghapus resep.';
+        }
+    }
 }
