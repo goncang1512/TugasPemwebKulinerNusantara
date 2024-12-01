@@ -315,48 +315,52 @@ footer {
 }
 
 /* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
-  /* Untuk Style Responsive Mobile Tulis di dalam sini */
-  .container-main {
-    padding: 10px 10px;
-  }
+/* Global Style */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-/* AKHIR CARD STYLE */
+.container-main {
+  padding: 20px;
+}
 
-/* footer */
-
-/* Penggunaan Warna */
+/* Footer Styling */
 .footer {
   background-color: #007c39;
   color: #fff;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+  flex: 1;
+  min-width: 200px; /* Minimum width untuk menjaga layout */
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .footer-link {
   color: #fff;
   text-decoration: none;
-}
-
-/* Tata Letak dan Struktur */
-.footer-content {
-  display: flex;
-  padding: 40px;
-}
-
-.footer-section {
-  margin-right: 40px;
-}
-
-.footer-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-  margin-left: 400px;
-}
-
-.footer-link {
-  display: block;
+  font-size: 16px;
   margin-bottom: 5px;
-  margin-left: 400px;
+  display: block;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }
 
 .footer-bottom {
@@ -369,45 +373,18 @@ footer {
   font-size: 14px;
 }
 
-/* Tipografi */
-.footer {
-  font-family: "Roboto", sans-serif;
-}
-
-.footer-title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.footer-link {
-  font-size: 16px;
-}
-
-.footer-copyright {
-  font-size: 14px;
-}
-
-/* Responsivitas */
+/* Responsive Styling */
 @media (max-width: 768px) {
+  .container-main {
+    padding: 10px;
+  }
+
   .footer-content {
     flex-direction: column;
-
-    margin-left: 100px;
+    align-items: flex-start;
   }
 
   .footer-section {
     margin-bottom: 20px;
   }
 }
-
-/* Interaktivitas */
-.footer-link i {
-  margin-left: 5px;
-}
-
-/* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
-  /* Untuk Style Responsive Mobile Tulis di dalam sini */
-}
-
-/* AKHIR CARD STYLE */
