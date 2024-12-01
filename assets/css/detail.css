@@ -2,15 +2,48 @@
 @media (max-width: 768px) {
   .atas {
     flex-direction: column;
+    align-items: center; 
   }
   .gambar1 {
     width: 100%;
+    height: auto; /* Maintain aspect ratio */
   }
   .atas p {
-    width: 100%;
+    width: 90%; /* Reduce width for better fit */
   }
   .container-timer {
-    margin: 0px 20px;
+    margin: 0;
+    padding: 10px; /* Add padding for mobile */
+  }
+  .button {
+    flex-direction: column; /* Stack button and timer on mobile */
+    align-items: center;
+  }
+  .bintang {
+    margin-left: 0; /* Center stars on mobile */
+    justify-content: center; /* Center-align stars */
+  }
+  .containerbahan, .containercara, .container3, .container-ulasan {
+    padding: 15px;
+  }
+  .isi-ulasan {
+    width: 100%; /* Full width for text area */
+  }
+  .chat-bubble {
+    max-width: 100%; /* Allow chat bubble to use full width */
+  }
+}
+
+/* Additional Media Queries for larger devices */
+@media (max-width: 1024px) {
+  .gambar1 {
+    width: 70%; /* Adjust for tablet */
+  }
+  .deskripsi1 {
+    font-size: 5px; /* Smaller font size on tablets */
+  }
+  .judul-bika {
+    font-size: 36px; /* Smaller title on tablets */
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -166,7 +199,7 @@ ul {
 .bintang{
   font-size: 50px;
   color: #cb9d06;
-  margin-left: 500px;
+  margin-left: 430px;
   
 }
 .bintang :hover{

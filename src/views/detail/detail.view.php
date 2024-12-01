@@ -103,15 +103,15 @@
             </div>
         </div>
 
-        <div class="container-ulasan">
+        <div class="container-ulasan"> 
             <h3>Berikan Ulasanmu</h3>
-            <div class="isi-ulasan">
+            <form action="" method="POST" class="isi-ulasan">
                 <div>
                     <p style="margin-top:10px">*komentar</p>
                 </div>
                 <textarea style="margin-bottom-10px" name="komentar" id=""></textarea>
                 <button class="tombol-ulasan"style="margin-top:10px;width:60px;">Kirim</button>
-            </div>
+        </form>
         </div>
 
         <div class="container-komentar">
