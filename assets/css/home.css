@@ -38,7 +38,7 @@
 .container-scroll {
   max-width: 1900px;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: 0 50px;
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
@@ -93,7 +93,7 @@
 .geser {
   max-width: 1900px;
   margin: 0 auto;
-  padding: 0 94px;
+  padding: 0 50px;
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
