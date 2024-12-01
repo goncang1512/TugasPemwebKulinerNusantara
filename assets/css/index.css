@@ -9,9 +9,16 @@ body {
   position: fixed;
   width: 100%;
   z-index: 999;
+  padding: 7px 80px;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-content-project {
+  padding-top: 0px;
+}
+
+.give-padding {
   padding-top: 70px;
 }
 
@@ -153,9 +160,30 @@ footer {
   color: #22c55e;
 }
 
+.drop-item {
+  display: none;
+}
+
+.item-desktop {
+  display: flex;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .navbar-mobile {
+    background-color: #e9ecef;
+    border-radius: 10px;
+  }
+
+  .drop-item {
+    display: flex;
+  }
+
+  .item-desktop {
+    display: none;
+  }
+
   .form-search {
     width: 100%;
   }
@@ -206,12 +234,26 @@ footer {
     border-radius: 10px;
   }
 
+  .bg-nav-item-mobile {
+    background-color: #22c55e;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .in-link-mobile a {
+    color: white;
+  }
+
   .bg-nav-item:hover a {
     color: white;
   }
 
   .bg-nav-item a {
     color: white;
+  }
+
+  .navbar {
+    padding: 10px 10px;
   }
 }
 
@@ -255,12 +297,7 @@ footer {
 
 .body-star {
   display: flex;
-  flex-direction: column;
-  line-height: 1px;
-}
-
-.card {
-  width: 24.4%;
+  gap: 10px;
 }
 
 .card-body {
@@ -273,12 +310,104 @@ footer {
   background-color: #22c55e;
 }
 
+.container-main {
+  padding: 20px 80px;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   /* Untuk Style Responsive Mobile Tulis di dalam sini */
-  .card {
-    width: 48.5%;
+  .container-main {
+    padding: 10px 10px;
   }
+}
+
+/* AKHIR CARD STYLE */
+
+/* footer */
+
+/* Penggunaan Warna */
+.footer {
+  background-color: #007c39;
+  color: #fff;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Tata Letak dan Struktur */
+.footer-content {
+  display: flex;
+  padding: 40px;
+}
+
+.footer-section {
+  margin-right: 40px;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-left: 400px;
+}
+
+.footer-link {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 400px;
+}
+
+.footer-bottom {
+  background-color: #005a28;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+/* Tipografi */
+.footer {
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-link {
+  font-size: 16px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+
+    margin-left: 100px;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
+
+/* Interaktivitas */
+.footer-link i {
+  margin-left: 5px;
+}
+
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+  /* Untuk Style Responsive Mobile Tulis di dalam sini */
 }
 
 /* AKHIR CARD STYLE */

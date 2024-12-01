@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: auto;
+}
+
 /* MEDIA RESPONSIVE */
 @media (max-width: 768px) {
   .atas {
@@ -13,33 +17,41 @@
     margin: 0px 20px;
   }
 }
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* \judul */
 .judul-bika {
-  font-size: 40px;
-  font-weight: 500; /* Perbaiki font-weight tanpa px */ 
-  margin-left: 20px;  
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  text-align: left;
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .atas {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 100px;
-  margin-left: 20px;
-  flex-direction: row;
-  gap: 10px;
+  align-items: stretch;
 }
-
+.deskripsi1 {
+  display: flex;
+  align-items: start;
+  font-size: 100px;
+  padding-left: 20px;
+  text-align: start;
+  height: 385px;
+}
 .gambar1 {
-  width: 35%;
-  height: 300px;
+  width: 50%;
+  height: 50%;
   border-radius: 20px;
+  margin-right: 10px;
 }
 
 .atas p {
   font-size: 20px;
-  background-color: #edecec;
+  background-color: #f2fff2;
   padding: 10px;
   width: 65%;
   border-radius: 10px;
@@ -51,15 +63,13 @@
   background-color: #f2fff2;
   display: flex;
   flex-direction: column;
-  margin: 0px 225px;
   border-radius: 8px;
   overflow: hidden;
   border: 2px solid #a9e5a9;
   margin-bottom: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
   margin-top: 50px;
   color: #2f852f;
+  width: 100%;
 }
 
 .waktu1 {
@@ -75,7 +85,7 @@
   padding-right: 60px;
 }
 
-.container2 {
+.containerbahan {
   max-width: 1480px;
   margin: 0;
   background-color: #f2fff2;
@@ -83,12 +93,23 @@
   border-radius: 10px;
   padding: 20px;
   width: 100%;
-  margin-left: 20px;
+}
+
+.containercara {
+  max-width: 1480px;
+  margin: 0;
+  background-color: #f2fff2;
+  border: 2px solid #a9e5a9;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  margin-top: 40px;
 }
 
 h2 {
   text-align: center;
   color: #2f852f;
+  margin-bottom: 40px;
 }
 
 .section {
@@ -117,6 +138,7 @@ ul {
   gap: 40px;
   align-items: center;
   padding-bottom: 20px;
+  border: #2f852f;
 }
 
 .btn:hover {
@@ -129,6 +151,8 @@ ul {
   align-items: center;
   gap: 10px;
   padding-bottom: 15px;
+  padding-top: 15px;
+  border: 1px solid #a9e5a9;
 }
 .container3 {
   max-width: 1480px;
@@ -138,14 +162,112 @@ ul {
   border-radius: 10px;
   padding: 20px;
   width: 100%;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
-.bintang{
+.bintang {
   font-size: 50px;
-  color: #F4E212;
-  margin-left: 560px;
+  color: #cb9d06;
+  margin-left: 500px;
 }
-.bintang :hover{
+.bintang :hover {
   color: grey;
+}
+
+.bahan-bahan-resep-bahan {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.column-resep {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cara-membuat {
+  display: grid;
+  padding-left: 230px;
+  padding-right: 230px;
+  text-align: justify;
+}
+
+.container-ulasan {
+  margin: 0;
+  background-color: #f2fff2;
+  border: 2px solid #a9e5a9;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  margin-top: 40px;
+}
+.isi-ulasan {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.tombol-ulasan {
+  background-color: white;
+}
+.tombol-ulasan:hover {
+  background-color: #666;
+  color: white;
+}
+
+.chat-bubble {
+  display: flex;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 20px 0px 20px;
+  max-width: 50%;
+  min-width: 30%;
+  position: relative;
+}
+
+.chat-bubble::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #e0e0e0;
+}
+
+.profile-picture {
+  width: 36px;
+  height: 36px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sender-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.message-text {
+  font-size: 14px;
+  color: #333;
+  padding-top: 15px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+  text-align: right;
+  width: 100%;
 }

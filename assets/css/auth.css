@@ -5,13 +5,17 @@
 }
 
 .image {
-  width: 200px;
+  width: 150px;
+    display: block;
+    margin: 0 auto;
+  
 }
 .container {
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 200;
 }
 .registrasi {
   display: flex;
@@ -56,4 +60,19 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.mata{
+  display: flex;
+  position: relative;
+}
+
+.mata img {
+  width: 20px;
+  position:absolute;
+  right: 10px; ;
+  top: 8px;
+  cursor: pointer;
+}
+.belum {
+  text-align: center;
 }

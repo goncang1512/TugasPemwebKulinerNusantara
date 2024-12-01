@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chewy&family=Fascinate+Inline&family=Ruslan+Display&display=swap");
+
+.hero-section {
+  display: flex;
+  background-color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-first {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.judul-hero {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 4rem;
+}
+
+.parag-hero {
+  font-size: 1.5rem;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+.container-button-resep {
+  display: flex;
+  gap: 30px;
+  padding: 50px;
+}
+
+.button-see-resep {
+  width: 80px;
+  height: 250px;
+  background-color: #00a862;
+  border-radius: 60px;
+  position: relative;
+  border: none;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-button-resep {
+  width: 150px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* HERO SECOND */
+.hero-second {
+  flex: 1;
+  position: relative;
+}
+
+.table-oracle {
+  background-color: #30be64;
+  width: 56.25rem;
+  height: 56.25rem;
+  border-radius: 100%;
+  position: absolute;
+  right: -40%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.image-oracle {
+  z-index: 777;
+  position: absolute;
+  display: flex;
+  top: -27%;
+  left: 10%;
+  align-items: center;
+  transition-duration: 3000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-oracle-satu {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-oracle-dua {
+  display: flex;
+  align-items: center;
+}
+
+.gambar-oracle {
+  width: 43.75rem;
+  /* height: 43.75rem; */
+  height: 100%;
+  rotate: 25deg;
+  transition-duration: 3000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 40vh;
+  }
+
+  .button-see-resep:active {
+    transform: scale(1.1);
+  }
+
+  .judul-hero {
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+
+  .parag-hero {
+    font-size: 0.7rem;
+  }
+
+  .image-button-resep {
+    width: 60px;
+  }
+
+  .button-see-resep {
+    width: 40px;
+    height: 100px;
+  }
+
+  .container-button-resep {
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .table-oracle {
+    width: 21.25rem;
+    height: 21.25rem;
+    right: -80%;
+  }
+
+  .gambar-oracle {
+    width: 14.375rem;
+    /* height: 14.375rem; */
+    height: 100%;
+  }
+
+  .image-oracle {
+    top: -5%;
+    left: 0.6rem;
+  }
+
+  .name-food {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 1024) {
+  .image-oracle {
+    top: -30%;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-oracle {
+    top: -5%;
+    left: 0.6rem;
+  }
+
+  .gambar-oracle {
+    width: 14.375rem;
+    /* height: 14.375rem; */
+    height: 100%;
+  }
+
+  .table-oracle {
+    width: 21.25rem;
+    height: 21.25rem;
+    right: -80%;
+  }
+}
+
+@media (min-width: 678px) {
+  .button-see-resep:hover {
+    transform: scale(1.1);
+  }
+}

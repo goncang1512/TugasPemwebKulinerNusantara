@@ -74,6 +74,8 @@ const uploadResep = async (data) => {
       throw new Error(res.message);
     }
 
+    console.log(res);
+
     window.location.href = `${BASE_URL}pages/profile`;
     buttonText.style.display = "block";
     buttonLoading.style.display = "none";
@@ -81,6 +83,7 @@ const uploadResep = async (data) => {
     errMsg.innerText = error.message;
     buttonText.style.display = "block";
     buttonLoading.style.display = "none";
+    console.log(error);
   }
 };
 
@@ -94,8 +97,8 @@ const updateResep = async (data, resep_id) => {
     });
 
     if (!response.ok) {
-      const errorText = await response.text(); // Read response as text
-      throw new Error(errorText); // Throw error with response message
+      const errorText = await response.text();
+      throw new Error(errorText);
     }
 
     const res = await response.json();

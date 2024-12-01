@@ -1,5 +1,5 @@
 <?php
-include_once("../../src/app/app.php");
+include_once(__DIR__."/../../src/app/app.php");
 
 use Controller\ResepCtrl;
 use Controller\SaveCtrl;

@@ -11,6 +11,11 @@
                     </div>
                 </label>
                 <input id="upload-food" name="gambar" type="file" accept=".jpg, .jpeg, .png" hidden>
+                <div class="input-group flex-nowrap" style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                    <label for="vidio">Vidio</label>
+                    <input name="vidio" type="file" id="vidio" class="form-control" placeholder="Nama Makanan" aria-label="Nama Makanan" accept=".mp4" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;" 
+                     >
+                </div>
             </div>
             <div class="table-input-judul"> 
                 <div class="input-group flex-nowrap" style="display: flex; flex-direction: column; gap: 10px;">
@@ -27,7 +32,7 @@
         </div>
 
         <div class="d-flex gap-4 flex-column flex-md-row" style="padding-top: 20px;">
-            <table class="" style="width: 100%; flex: 1;">
+            <table class="data-resep" style="width: 100%; flex: 1;">
                 <tr>
                     <td><label for="waktu_persiapan">Waktu persiapan</label></td>
                     <td>
@@ -109,13 +114,13 @@
         <?php if(isset($_GET["resep_id"])):?>
             <input type="text" name="resep_id" value="<?= $_GET["resep_id"] ?>" readonly hidden>
         <?php endif;?>
-        <div class="d-flex justify-content-center pt-4">
-            <button type="submit" class="button-upload p-2">
+        <div class="d-flex justify-content-center justify-content-md-end pt-4">
+            <button type="submit" class="button-upload">
                 <div class="loader">
                     <span class="loader-text">Loading...</span>
                 </div>
                 <span class="button-text">
-                    Submit
+                    Unggah
                 </span>
             </button>
         </div>

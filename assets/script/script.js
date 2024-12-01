@@ -33,3 +33,43 @@ const save = async (link, resep_id) => {
     console.error(error);
   }
 };
+
+const pathname = window.location.pathname;
+
+if (pathname === BASE_URL) {
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    const navItem = document.querySelector(".nav-item-beranda");
+
+    if (window.scrollY > 10) {
+      navbar.classList.add("bg-body-tertiary", "shadow-sm");
+      navItem.classList.add("bg-nav-item", "in-link");
+      navItem.classList.remove("bg-nav-item-mobile", "in-link-mobile");
+    } else {
+      navItem.style.color = "black";
+      navbar.classList.remove("bg-body-tertiary", "shadow-sm");
+      navItem.classList.remove("bg-nav-item", "in-link");
+      navItem.classList.add("bg-nav-item-mobile", "in-link-mobile");
+    }
+  });
+}
+
+const imageRotate = document.querySelector(".image-oracle");
+const gambarRotate = document.querySelectorAll(".gambar-oracle");
+const buttonRotate = (
+  rotate,
+  gambar_rotate,
+  position,
+  position_mobile,
+  responsive
+) => {
+  const screen = window.innerWidth;
+
+  const currentPosition =
+    screen <= 768 ? position_mobile : screen <= 1024 ? responsive : position;
+  imageRotate.style.rotate = `${rotate}`;
+  imageRotate.style.top = `${currentPosition}`;
+  gambarRotate.forEach((image) => {
+    image.style.rotate = `${gambar_rotate}`;
+  });
+};
