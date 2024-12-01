@@ -1,25 +1,13 @@
-.carousel-item {
-  height: 92vh; /* Tinggi container sesuai dengan 92% dari tinggi viewport */
-  width: 100%; /* Lebar container 100% */
-}
 
-.carousel {
-  height: 92vh;
-}
-
-.carousel-item img {
-  height: 92vh;
-  object-fit: cover;
-}
 
 .Welcome {
-  color: #2f852f;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  color: #2f852f; /*warna tulisn*/
+  text-align: center; /*posisi tulisan ke tengah*/
+  margin-top: 30px; /* Jarak atas tulisan*/
+  margin-bottom: 20px; /* Jarak bawah tulisan*/
 }
 
-/* Rekomendasi makanan */
+/* Makanan Makanan Rekomendasi */
 .daerah {
   display: flex;
   justify-content: space-around;
@@ -28,9 +16,6 @@
   width: max-content;
 }
 
-.seluruh {
-  padding: 20px 80px;
-}
 .daerah-item {
   padding-left: 20px;
   background-color: white;
@@ -40,8 +25,6 @@
   border: 1px solid rgb(0, 0, 0, 0.3);
   line-height: 1px;
   width: 18rem;
-  border-radius: 10px;
-  text-align: center;
   font-size: 30px;
 }
 
@@ -49,7 +32,7 @@
   height: 150px;
   border-radius: 5px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 20PX;
 }
 
 /* rekomendasi makanan dan rating */
@@ -61,12 +44,9 @@
 }
 
 .rekomendasi-makanan {
-  padding: 20px auto;
   padding: 15px;
-  max-width: 800px;
   border-radius: 10px;
   display: flex;
-  width: max-content;
   gap: 10px;
 }
 
@@ -81,6 +61,7 @@
 .container-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .container-scroll::-webkit-scrollbar-thumb {
   background: rgb(197, 197, 197);
 }
@@ -90,6 +71,57 @@
   border-radius: 100px;
   height: 10px;
 }
+
+
+
+/* REKOMENDASI MAKANAN DAN RATING */
+
+.resep-kuliner {
+  color: #2f852f;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.rekomendasi-makanan {
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.rekomendasi-makanan .card {
+  flex: 0 0 auto;
+}
+
+.geser {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.geser::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.geser::-webkit-scrollbar-thumb {
+  background: rgb(197, 197, 197);
+}
+
+.geser::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 100px;
+  height: 10px;
+}
+
 
 /* Rempah Rempah */
 .rempah-rempah {
@@ -105,12 +137,8 @@
 .rempah {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
   justify-content: center;
-}
-
-.card-home {
-  width: 18rem;
 }
 
 /* MEDIA RESPONSIVE */
@@ -141,7 +169,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 1000px;
   width: 80%;
-  max-width: 1000px;
+  max-width: 500px;
   text-align: left;
 }
 
@@ -155,10 +183,9 @@
 }
 
 .popup-content p {
-  line-height: 1.5;
+  line-height: 1.5
   margin-bottom: 15px;
 }
-
 
 .popup:target {
   display: block;
@@ -172,4 +199,3 @@
   text-decoration: none;
   color: #000;
 }
-

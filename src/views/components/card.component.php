@@ -119,7 +119,7 @@ $pathname = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     </div>
 </div>
 <?php elseif($props["status"] == "notlogin") : ?>
-<div class="card">
+<div class="card" style="<?= $pathname == $_ENV['BASE_URL'] ? 'width: 18rem' : 'width: 100%;' ?>">
     <img src="<?= $props['resep']['gambar'] ?>" class="card-img-top" alt=""
         style="height: 13rem; object-fit: cover;">
     <div class="card-body">

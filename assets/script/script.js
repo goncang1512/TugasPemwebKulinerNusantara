@@ -56,8 +56,17 @@ if (pathname === BASE_URL) {
 
 const imageRotate = document.querySelector(".image-oracle");
 const gambarRotate = document.querySelectorAll(".gambar-oracle");
-const buttonRotate = (rotate, gambar_rotate, position, position_mobile) => {
-  const currentPosition = window.innerWidth <= 768 ? position_mobile : position;
+const buttonRotate = (
+  rotate,
+  gambar_rotate,
+  position,
+  position_mobile,
+  responsive
+) => {
+  const screen = window.innerWidth;
+
+  const currentPosition =
+    screen <= 768 ? position_mobile : screen <= 1024 ? responsive : position;
   imageRotate.style.rotate = `${rotate}`;
   imageRotate.style.top = `${currentPosition}`;
   gambarRotate.forEach((image) => {

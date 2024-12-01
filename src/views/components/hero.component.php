@@ -1,8 +1,18 @@
 <?php
 $image = [
-    ['id' => 1, 'nama' => 'Clorot', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-pertama.png', 'rotate' => '335deg', 'gambar_rotate' => '25deg', 'position' => '-27%', 'mobile' => '-5%'], 
-    ['id' => 2, 'nama' => 'Pecel', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-kedua.png', 'rotate' => '403deg', 'gambar_rotate' => '-43deg', 'position' => '-55%', 'mobile' => '-30%'], 
-    ['id' => 3, 'nama' => 'Sate', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-ketiga.png', 'rotate' => '503deg', 'gambar_rotate' => '-142deg', 'position' => '-40%', 'mobile' => '-20%']];
+    ['id' => 1, 'nama' => 'Clorot', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-pertama.png', 'rotate' => '335deg', 'gambar_rotate' => '25deg', 'position' => '-27%', 'mobile' => '-5%', 'responsive' => [
+        'md' => '-5%',
+        'lg' => ''
+    ]], 
+    ['id' => 2, 'nama' => 'Pecel', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-kedua.png', 'rotate' => '403deg', 'gambar_rotate' => '-43deg', 'position' => '-55%', 'mobile' => '-25%', 'responsive' => [
+        'md' => '-30%',
+        'lg' => ''
+    ]], 
+    ['id' => 3, 'nama' => 'Sate', 'image' => $_ENV['BASE_URL'] . 'assets/images/resep-ketiga.png', 'rotate' => '503deg', 'gambar_rotate' => '-142deg', 'position' => '-40%', 'mobile' => '-13%', 'responsive' => [
+        'md' => '-18%',
+        'lg' => ''
+    ]]
+];
 ?>
 
 <div class="hero-section">
@@ -12,7 +22,7 @@ $image = [
         <div class="container-button-resep">
             <?php foreach($image as $data):?>
             <button
-                onclick="buttonRotate('<?= $data['rotate'] ?>', '<?= $data['gambar_rotate'] ?>', '<?= $data['position'] ?>', '<?= $data['mobile']?>')"
+                onclick="buttonRotate('<?= $data['rotate'] ?>', '<?= $data['gambar_rotate'] ?>', '<?= $data['position'] ?>', '<?= $data['mobile'] ?>', '<?= $data['responsive']['lg'] ?>')"
                 class="button-see-resep">
                 <img class="image-button-resep" src="<?= $data['image'] ?>" alt="" />
                 <p class="name-food" style="color: white; padding-top: 20px; font-weight: 500;"><?= $data['nama'] ?></p>

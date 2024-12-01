@@ -1,10 +1,10 @@
 <main class="main-profile">
     <div class="top-profile">
         <div>
-            <img class="avatar-profile" src="<?= BASE_URL?>assets/avatar/<?= $data["user"]["avatar"]?>" alt="">
+            <img class="avatar-profile" src="<?= BASE_URL ?>assets/avatar/<?= $data['user']['avatar'] ?>" alt="">
         </div>
         <div class="data-user">
-            <h1 class="name-user">Selamat datang, <?= $data["user"]["username"]?>!</h1>
+            <h1 class="name-user">Selamat datang, <?= $data['user']['username'] ?>!</h1>
         </div>
     </div>
 
@@ -18,20 +18,25 @@
 
             <!-- CONTAINER RESEP MAKANAN -->
             <div id="my-resep" class="container-makanan">
-                <?php 
-                    foreach($data["resep"] as $resep) {
-                        component("card", [
-                        "resep" => $resep, 
-                        "user" => $data["user"], 
-                        "save" => $data["save"],
-                        "status" => "card"
-                        ]);
-                    }
+                <?php
+                foreach ($data['resep'] as $resep) {
+                    component('card', [
+                        'resep' => $resep,
+                        'user' => $data['user'],
+                        'save' => $data['save'],
+                        'status' => 'card',
+                    ]);
+                }
                 ?>
             </div>
 
             <!-- CONTAINER SIMPAN RESEP -->
-            <div id="my-save" class="container-none">
+            <div id="my-save" class="container-none container-save">
+                <div id="container-spinner">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
