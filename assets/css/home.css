@@ -35,25 +35,13 @@
   margin-bottom: 20PX;
 }
 
-/* rekomendasi makanan dan rating */
-.resep-kuliner {
-  color: #2f852f;
-  text-align: center;
-  margin-top: 70px;
-  margin-bottom: 70px;
-}
-
-.rekomendasi-makanan {
-  padding: 15px;
-  border-radius: 10px;
-  display: flex;
-  gap: 10px;
-}
-
 .container-scroll {
   max-width: 1900px;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -73,14 +61,19 @@
 }
 
 
-
-/* REKOMENDASI MAKANAN DAN RATING */
-
+/* rekomendasi makanan dan rating */
 .resep-kuliner {
   color: #2f852f;
   text-align: center;
   margin-top: 70px;
   margin-bottom: 70px;
+}
+
+.rekomendasi-makanan {
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .rekomendasi-makanan {
@@ -100,7 +93,7 @@
 .geser {
   max-width: 1900px;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 94px;
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
