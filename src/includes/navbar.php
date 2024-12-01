@@ -12,7 +12,7 @@ $session = getSession();
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse navbar-mobile p-2" id="navbarSupportedContent">
-            <form action="<?= getenv('BASE_URL') . 'pages/search/index.php' ?>" method="GET" class="form-search">
+            <form action="<?= getenv('BASE_URL') . 'pages/search/index.php' ?>" method="GET" class="form-search" style="background-color: white">
                 <button class="button-search" type="submit"><i class="bi bi-search"></i></button>
                 <input class="input-search" name="keyword" type="search" placeholder="Telusuri" aria-label="Search"
                     value="<?php echo isset($data['keyword']) ? $data['keyword'] : ''; ?>">

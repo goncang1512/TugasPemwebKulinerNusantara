@@ -33,12 +33,12 @@ $image = [
     <div class="hero-second">
         <div class="image-oracle" style="rotate: 335deg;">
             <div class="image-oracle-satu">
-                <img class="gambar-oracle" src="<?= $_ENV['BASE_URL'] . 'assets/images/new-pertama.png' ?>"
+                <img class="gambar-oracle" src="<?= $_ENV['BASE_URL'] . 'assets/Images/new-pertama.png' ?>"
                     alt="">
                 <div style="display: flex;">
-                    <img class="gambar-oracle" src="<?= $_ENV['BASE_URL'] . 'assets/images/new-kedua.png' ?>"
+                    <img class="gambar-oracle" src="<?= $_ENV['BASE_URL'] . 'assets/Images/new-kedua.png' ?>"
                         alt="">
-                    <img class="gambar-oracle" src="<?= $_ENV['BASE_URL'] . 'assets/images/new-ketiga.png' ?>"
+                    <img class="gambar-oracle" src="<?= $_ENV['BASE_URL'] . 'assets/Images/new-ketiga.png' ?>"
                         alt="">
                 </div>
             </div>

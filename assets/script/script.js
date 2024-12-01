@@ -1,6 +1,6 @@
 AOS.init();
 
-const BASE_URL = "/TugasPemwebKulinerNusantara/";
+const BASE_URL = "/";
 
 const handleRouter = (link) => {
   window.location.href = link;

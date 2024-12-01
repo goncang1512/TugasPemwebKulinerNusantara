@@ -2,7 +2,7 @@
 $pathname = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 define("APP_NAME", dirname(__FILE__)."/../");
-define("BASE_URL","/TugasPemwebKulinerNusantara/");
+define("BASE_URL","/");
 define("APP_PATH", dirname(__DIR__) . '/');
 define("ROUTES", dirname(__DIR__,2));
 
