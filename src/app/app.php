@@ -12,10 +12,6 @@ include_once(APP_PATH  . 'app/env.php');
 use App\DotEnv;
 
 (new DotEnv(ROUTES.'/.env'))->load();
+
 define("BASE_URL", $_ENV["BASE_URL"]);
 
-if ($pathname === BASE_URL || $pathname === BASE_URL."index.php") {
-    (new DotEnv(ROUTES.'/.env'))->load();
-} else {
-    (new DotEnv(ROUTES.'/.env'))->load();
-}

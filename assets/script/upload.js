@@ -74,8 +74,6 @@ const uploadResep = async (data) => {
       throw new Error(res.message);
     }
 
-    console.log(res);
-
     window.location.href = `${BASE_URL}pages/profile`;
     buttonText.style.display = "block";
     buttonLoading.style.display = "none";
