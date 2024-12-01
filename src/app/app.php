@@ -11,7 +11,7 @@ include_once(APP_PATH  . 'app/env.php');
 
 use App\DotEnv;
 
+// ENV SETTING
 (new DotEnv(ROUTES.'/.env'))->load();
-
 define("BASE_URL", $_ENV["BASE_URL"]);
 
