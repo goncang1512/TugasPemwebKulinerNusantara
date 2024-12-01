@@ -1,22 +1,71 @@
-* {
-  scroll-behavior: auto;
+/* Perbaikan Responsivitas untuk Gambar dan Layout */
+@media (max-width: 768px) {
+  
+  .atas {
+    flex-direction: column; /* Ubah arah kolom untuk mobile */
+    align-items: center; /* Pusatkan elemen */ 
+    width:170%;
+  }
+
+  .gambar1 {
+    width: 90%; /* Sesuaikan lebar gambar untuk layar kecil */
+    height: auto; /* Pertahankan rasio aspek */
+    border-radius: 10px; /* Tambahkan sudut melengkung */
+    margin-bottom: 20px; /* Beri jarak antara gambar dan teks */
+  }
+
+  .atas p {
+    width: 90%; /* Kurangi lebar paragraf agar sesuai layar */
+    font-size: 16px; /* Sesuaikan ukuran font agar lebih terbaca */
+    text-align: justify; /* Rata kanan-kiri teks */
+    margin: 0; /* Hapus margin untuk lebih rapi */
+    padding: 10px; /* Tambah padding untuk jarak yang lebih baik */
+  }
+
+  .container-timer {
+    width: 90%; /* Sesuaikan lebar untuk layar kecil */
+    margin: 20px auto; /* Tambahkan margin otomatis agar rata tengah */
+  }
+
+  .button {
+    flex-direction: column; /* Stack tombol secara vertikal */
+    align-items: center; /* Pusatkan tombol */
+    gap: 15px; /* Beri jarak antar tombol */
+  }
+
+  .bintang {
+    justify-content: center; /* Atur bintang di tengah */
+    margin: 0; /* Hapus margin kiri */
+    font-size: 40px; /* Sesuaikan ukuran bintang untuk layar kecil */
+  }
+  .atas
+  .containerbahan,
+  .containercara,
+  .container3,
+  .container-ulasan {
+    width: 90%;
+    margin: 20px auto; /* Tambahkan margin otomatis untuk rata tengah */
+    padding: 15px; /* Kurangi padding untuk layar kecil */
+  }
+
+  .isi-ulasan {
+    width: 100%; /* Teks ulasan menggunakan lebar penuh */
+  }
+
+  .chat-bubble {
+    max-width: 100%; /* Chat bubble menggunakan lebar penuh */
+  }
+
+  /* Perbaikan untuk bagian deskripsi resep */
+  .deskripsi1 {
+    font-size: 18px; /* Ukuran font lebih kecil untuk mobile */
+    padding-left: 0; /* Hapus padding samping untuk lebih rapi */
+    padding-right: 0; /* Hapus padding samping untuk lebih rapi */
+    text-align: justify; /* Rata kanan-kiri teks */
+    width: 100%; /* Lebar penuh untuk tampilan lebih baik */
+  }
 }
 
-/* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
-  .atas {
-    flex-direction: column;
-  }
-  .gambar1 {
-    width: 100%;
-  }
-  .atas p {
-    width: 100%;
-  }
-  .container-timer {
-    margin: 0px 20px;
-  }
-}
 @import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* \judul */
