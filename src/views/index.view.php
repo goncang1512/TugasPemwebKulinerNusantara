@@ -6,28 +6,28 @@ $asal_makanan = [
         "gambar" => "https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/11/1.-Batagor.webp"
     ],
     [
-        "asal" => "Papua Barat",
-        "gambar" => "https://images.tokopedia.net/blog-tokopedia-com/uploads/2018/09/makanan-khas-Papua-Barat-3-Tribunnews.jpg"
+        "asal" => "Aceh",
+        "gambar" => "https://www.astronauts.id/blog/wp-content/uploads/2023/12/makanan-khas-daerah-aceh-mie-aceh-1024x678.jpg"
     ],
     [
-        "asal" => "Papua Barat",
-        "gambar" => "https://images.tokopedia.net/blog-tokopedia-com/uploads/2018/09/makanan-khas-Papua-Barat-3-Tribunnews.jpg"
+        "asal" => "Sumatera Utara",
+        "gambar" => "https://www.astronauts.id/blog/wp-content/uploads/2023/12/makanan-khas-daerah-sumatera-utara-bika-ambon-1024x678.jpg"
     ],
     [
-        "asal" => "Papua Barat",
-        "gambar" => "https://images.tokopedia.net/blog-tokopedia-com/uploads/2018/09/makanan-khas-Papua-Barat-3-Tribunnews.jpg"
+        "asal" => "Riau",
+        "gambar" => "https://www.astronauts.id/blog/wp-content/uploads/2023/12/1123052022-gulai-belacan-64c26ea408a8b54a806d6933.jpeg"
     ],
     [
-        "asal" => "Kalimantan Barat",
-        "gambar" => "https://images.bisnis.com/posts/2023/05/07/1653214/2._10_makanan_khas_kalimantan_barat,_apa_saja__-_chai_kwe_(instagram.com_kulinerkalimantanbarat).jpg"
+        "asal" => "Jambi",
+        "gambar" => "https://www.astronauts.id/blog/wp-content/uploads/2023/12/makanan-khas-daerah-jambi-tempoyak-ikan-patin-1024x678.jpg"
     ],
     [
-        "asal" => "Jawa Barat",
-        "gambar" => "https://www.eatnow.id/wp-content/uploads/2022/12/nagasari-600x400.webp"
+        "asal" => "Sumatera Selatan",
+        "gambar" => "https://www.astronauts.id/blog/wp-content/uploads/2023/12/pempek-makanan-khas-daerah-sumatera-selatan-1024x678.jpg"
     ],
     [
-        "asal" => "Kalimantan Timur",
-        "gambar" => "https://www.eatnow.id/wp-content/uploads/2022/12/ayam-cincane-600x400.webp"
+        "asal" => "Lampung",
+        "gambar" => "https://www.astronauts.id/blog/wp-content/uploads/2023/12/seruit-makanan-khas-daerah-lampung-1024x678.jpg"
     ]
 ];
 ?>
