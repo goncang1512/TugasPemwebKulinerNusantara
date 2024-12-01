@@ -11,6 +11,11 @@
                     </div>
                 </label>
                 <input id="upload-food" name="gambar" type="file" accept=".jpg, .jpeg, .png" hidden>
+                <div class="input-group flex-nowrap" style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                    <label for="vidio">Vidio</label>
+                    <input name="vidio" type="file" id="vidio" class="form-control" placeholder="Nama Makanan" aria-label="Nama Makanan" accept=".mp4" aria-describedby="addon-wrapping" style="width: 100%; border-radius: 5px;" 
+                     >
+                </div>
             </div>
             <div class="table-input-judul"> 
                 <div class="input-group flex-nowrap" style="display: flex; flex-direction: column; gap: 10px;">

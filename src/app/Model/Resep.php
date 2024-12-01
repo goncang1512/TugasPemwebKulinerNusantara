@@ -3,14 +3,17 @@
 namespace Model;
 use App\Connection;
 
-class Resep extends Connection {
+class Resep extends Connection
+{
     private $pdo;
 
-    public function __construct() {   
+    public function __construct()
+    {
         $this->pdo = Connection::get()->connect();
     }
 
-    public function createTables() {
+    public function createTables()
+    {
         $sql = 'CREATE TABLE IF NOT EXISTS  resep (
             id SERIAL PRIMARY KEY,
             judul VARCHAR(255) NOT NULL,
@@ -27,6 +30,8 @@ class Resep extends Connection {
             kategori VARCHAR(255) NOT NULL,
             gambar VARCHAR(255) NOT NULL,
             gambar_id VARCHAR(255) NOT NULL,
+            vidio VARCHAR(255),
+            vidio_id VARCHAR(255),
             user_id INT NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -37,7 +42,8 @@ class Resep extends Connection {
         return $this;
     }
 
-    private function createSlug($title) {
+    private function createSlug($title)
+    {
         $slug = strtolower($title);
         $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
         $slug = preg_replace('/[\s-]+/', '-', $slug);
@@ -45,20 +51,23 @@ class Resep extends Connection {
         return $slug;
     }
 
-    public function tableExists($tableName) {
+    public function tableExists($tableName)
+    {
         $stmt = $this->pdo->query("SELECT table_name FROM information_schema.tables WHERE table_name = '$tableName'");
         $result = $stmt->fetch();
         return $result['table_exists'] !== null;
     }
 
-    public function ambilData() {
-        $stmt = $this->pdo->query("SELECT * FROM resep ORDER BY created_at DESC");
+    public function ambilData()
+    {
+        $stmt = $this->pdo->query('SELECT * FROM resep ORDER BY created_at DESC');
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function ambilSatu($resep_id) {
-        $sql = "SELECT * FROM resep WHERE slug = :id";
+    public function ambilSatu($resep_id)
+    {
+        $sql = 'SELECT * FROM resep WHERE slug = :id';
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':id' => $resep_id]);
         $result = $stmt->fetch();
@@ -66,8 +75,9 @@ class Resep extends Connection {
         return $result;
     }
 
-    public function getOneById($resep_id) {
-        $sql = "SELECT * FROM resep WHERE id = :id";
+    public function getOneById($resep_id)
+    {
+        $sql = 'SELECT * FROM resep WHERE id = :id';
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':id' => $resep_id]);
         $result = $stmt->fetch();
@@ -75,64 +85,70 @@ class Resep extends Connection {
         return $result;
     }
 
-    public function getByTitle($title) {
-        $sql = "SELECT * FROM resep WHERE judul = :title";
+    public function getByTitle($title)
+    {
+        $sql = 'SELECT * FROM resep WHERE judul = :title';
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([":title" => $title]);
+        $stmt->execute([':title' => $title]);
         $result = $stmt->fetch();
 
         return $result;
     }
 
-    public function deleteOneData($resep_id) {
-        $sql = "DELETE FROM resep WHERE id = :id";
+    public function deleteOneData($resep_id)
+    {
+        $sql = 'DELETE FROM resep WHERE id = :id';
         $stmt = $this->pdo->prepare($sql);
-        
+
         $stmt->bindParam(':id', $resep_id, \PDO::PARAM_INT);
 
         if ($stmt->execute()) {
             return "Resep dengan ID $resep_id telah dihapus.";
         } else {
-            return "Gagal menghapus resep.";
+            return 'Gagal menghapus resep.';
         }
     }
 
-    public function uploadResep($data, $image) {
-        $sql = "INSERT INTO resep (judul, slug, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, user_id, gambar, gambar_id) 
-        VALUES (:judul, :slug, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori,:user_id, :gambar, :gambar_id)";
+    public function uploadResep($data, $image, $vidio)
+    {
+        $sql = "INSERT INTO resep (judul, slug, deskripsi, bahan_bahan, langkah_langkah, waktu_persiapan, waktu_memasak, total_waktu, porsi, kesulitan, asal_makanan, kategori, user_id, gambar, gambar_id, vidio, vidio_id)
+        VALUES (:judul, :slug, :deskripsi, :bahan_bahan, :langkah_langkah, :waktu_persiapan, :waktu_memasak, :total_waktu, :porsi, :kesulitan, :asal_makanan, :kategori,:user_id, :gambar, :gambar_id, :vidio, :vidio_id)";
 
         $stmt = $this->pdo->prepare($sql);
-        $slug = $this->createSlug($data["judul"]);
+        $slug = $this->createSlug($data['judul']);
 
         $stmt->execute([
-                ':judul' => $data["judul"],
-                ':slug' => $slug,
-                ':deskripsi' => $data["deskripsi"],
-                ':bahan_bahan' => $data["bahan_bahan"],
-                ':langkah_langkah' => $data["langkah_langkah"],
-                ':waktu_persiapan' => $data["waktu_persiapan"],
-                ':waktu_memasak' => $data["waktu_memasak"],
-                ':total_waktu' => $data["total_waktu"],
-                ':porsi' => $data["porsi"],
-                ':kesulitan' => $data["kesulitan"],
-                ':asal_makanan' => $data["asal_makanan"],
-                ':kategori' => $data["kategori"],
-                ':user_id' => $_POST['user_id'],
-                ':gambar' => $image["url_secure"],
-                ':gambar_id' => $image["public_id"],
-            ]);
+            ':judul' => $data['judul'],
+            ':slug' => $slug,
+            ':deskripsi' => $data['deskripsi'],
+            ':bahan_bahan' => $data['bahan_bahan'],
+            ':langkah_langkah' => $data['langkah_langkah'],
+            ':waktu_persiapan' => $data['waktu_persiapan'],
+            ':waktu_memasak' => $data['waktu_memasak'],
+            ':total_waktu' => $data['total_waktu'],
+            ':porsi' => $data['porsi'],
+            ':kesulitan' => $data['kesulitan'],
+            ':asal_makanan' => $data['asal_makanan'],
+            ':kategori' => $data['kategori'],
+            ':user_id' => $_POST['user_id'],
+            ':gambar' => $image['url_secure'],
+            ':gambar_id' => $image['public_id'],
+            ':vidio' => $vidio['url_secure'] ?? null,
+            ':vidio_id' => $vidio['public_id'] ?? null
+        ]);
 
         $publisher_id = $this->pdo->lastInsertId();
 
         return [
-            "status" => 201,
-            "message" => "Berhasil di upload",
-            "data" => $publisher_id
-            ]; 
+            'status' => 201,
+            'message' => 'Berhasil di upload',
+            'data' => $publisher_id,
+        ];
     }
 
-    public function search(string $keyword) {
-        $pattern = "%".$keyword."%";
+    public function search(string $keyword)
+    {
+        $pattern = '%' . $keyword . '%';
         $sql = "SELECT r.id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
                 u.id AS user_id, u.username, u.email, u.avatar,
                 COALESCE(SUM(rating.rating), 0) AS total_rating,
@@ -149,7 +165,8 @@ class Resep extends Connection {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function findByUserId($user_id) {
+    public function findByUserId($user_id)
+    {
         $sql = "SELECT r.id, r.judul, r.gambar, r.slug, r.user_id AS make_id,
                 u.id AS user_id, u.username, u.email, u.avatar,
                 COALESCE(SUM(rating.rating), 0) AS total_rating,
@@ -167,9 +184,10 @@ class Resep extends Connection {
         return $result;
     }
 
-    public function update($data, $resep_id) {
-        $sql = "UPDATE resep SET 
-            judul = :judul, 
+    public function update($data, $resep_id)
+    {
+        $sql = "UPDATE resep SET
+            judul = :judul,
             slug = :slug,
             deskripsi = :deskripsi,
             waktu_persiapan = :waktu_persiapan,
@@ -185,55 +203,77 @@ class Resep extends Connection {
 
         $stmt = $this->pdo->prepare($sql);
 
-        $slug = $this->createSlug($data["judul"]);
+        $slug = $this->createSlug($data['judul']);
         $result = $stmt->execute([
-                ':judul' => $data["judul"],
-                ':slug' => $slug,
-                ':deskripsi' => $data["deskripsi"],
-                ':bahan_bahan' => $data["bahan_bahan"],
-                ':langkah_langkah' => $data["langkah_langkah"],
-                ':waktu_persiapan' => $data["waktu_persiapan"],
-                ':waktu_memasak' => $data["waktu_memasak"],
-                ':total_waktu' => $data["total_waktu"],
-                ':porsi' => $data["porsi"],
-                ':kesulitan' => $data["kesulitan"],
-                ':asal_makanan' => $data["asal_makanan"],
-                ':kategori' => $data["kategori"],
-                ':resep_id' => $resep_id
-            ]);
-        if($result) {
+            ':judul' => $data['judul'],
+            ':slug' => $slug,
+            ':deskripsi' => $data['deskripsi'],
+            ':bahan_bahan' => $data['bahan_bahan'],
+            ':langkah_langkah' => $data['langkah_langkah'],
+            ':waktu_persiapan' => $data['waktu_persiapan'],
+            ':waktu_memasak' => $data['waktu_memasak'],
+            ':total_waktu' => $data['total_waktu'],
+            ':porsi' => $data['porsi'],
+            ':kesulitan' => $data['kesulitan'],
+            ':asal_makanan' => $data['asal_makanan'],
+            ':kategori' => $data['kategori'],
+            ':resep_id' => $resep_id,
+        ]);
+        if ($result) {
             http_response_code(200);
             return [
-                    "status" => 200,
-                    "message" => "Berhasil update resep"
-                ];
+                'status' => 200,
+                'message' => 'Berhasil update resep',
+            ];
         } else {
             http_response_code(400);
             return [
-                    "status" => 400,
-                    "message" => "Gagal update resep"
-                ];
+                'status' => 400,
+                'message' => 'Gagal update resep',
+            ];
         }
     }
 
-    public function updateGambar($gambar, $gambar_id, $resep_id) {
-        $sql = "UPDATE resep SET gambar = :gambar, gambar_id = :gambar_id WHERE id = :resep_id";
+    public function updateGambar($gambar, $gambar_id, $resep_id)
+    {
+        $sql = 'UPDATE resep SET gambar = :gambar, gambar_id = :gambar_id WHERE id = :resep_id';
 
         $stmt = $this->pdo->prepare($sql);
-        $result = $stmt->execute([":gambar" => $gambar, ":gambar_id" => $gambar_id, ":resep_id" => $resep_id]);
+        $result = $stmt->execute([':gambar' => $gambar, ':gambar_id' => $gambar_id, ':resep_id' => $resep_id]);
 
-        if($result) {
+        if ($result) {
             http_response_code(200);
             return [
-                    "status" => 200,
-                    "message" => "Berhasil update resep"
-                ];
+                'status' => 200,
+                'message' => 'Berhasil update resep',
+            ];
         } else {
             http_response_code(422);
             return [
-                    "status" => 422,
-                    "message" => "Gagal update resep"
-                ];
+                'status' => 422,
+                'message' => 'Gagal update resep',
+            ];
+        }
+    }
+
+    public function udpateVidio($vidio, $vidio_id, $resep_id) {
+        $sql = 'UPDATE resep SET vidio = :vidio, vidio_id = :vidio_id WHERE id = :resep_id';
+
+        $stmt = $this->pdo->prepare($sql);
+        $result = $stmt->execute([':vidio' => $vidio, ':vidio_id' => $vidio_id, ':resep_id' => $resep_id]);
+
+        if ($result) {
+            http_response_code(200);
+            return [
+                'status' => 200,
+                'message' => 'Berhasil update resep',
+            ];
+        } else {
+            http_response_code(422);
+            return [
+                'status' => 422,
+                'message' => 'Gagal update resep',
+            ];
         }
     }
 }

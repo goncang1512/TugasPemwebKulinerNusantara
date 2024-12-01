@@ -17,7 +17,9 @@ if(!$session) {
 $msgError = "";
 
 if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
+    ob_start();
     header('Content-Type: application/json');
+
     $_POST["waktu_memasak"] = $_POST["jam"] . ":" . $_POST["menit"] . ":" . $_POST["detik"];
     $result = $resepWr->cekData($_POST, $_FILES);
 
@@ -28,11 +30,12 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
         echo json_encode(["message" => $msgError]);
         exit();
     } else {
-        $hasil = $resep->unggahResep($_POST, $_FILES["gambar"]["tmp_name"]);
+        $hasil = $resep->unggahResep($_POST, $_FILES["gambar"]["tmp_name"], $_FILES['vidio']['tmp_name']);
 
         if ($hasil["status"] == 201) {
             http_response_code(201);
-            echo json_encode(["message" => "Berhasil di upload"]);
+            ob_end_clean();
+            echo json_encode(["message" => "Berhasil di upload", 'data' => $hasil]);
             exit();
         } else if($hasil["status"] == 422) {
             $msgError = $hasil["message"];
@@ -53,7 +56,7 @@ if(isset($_POST["upload"]) && $_POST["upload"] == "unggah") {
 
     $_POST["waktu_memasak"] = $_POST["jam"] . ":" . $_POST["menit"] . ":" . $_POST["detik"];
     try {
-        $res = $resep->updateResep($_POST, $_GET["resep_id"], isset($_FILES["gambar"]) ?$_FILES : null);
+        $res = $resep->updateResep($_POST, $_GET["resep_id"], isset($_FILES) ? $_FILES : null);
         echo json_encode([
             "status" => $res["status"],
             "message" => $res["message"],

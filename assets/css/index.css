@@ -300,10 +300,6 @@ footer {
   gap: 10px;
 }
 
-.card {
-  width: 100%;
-}
-
 .card-body {
   display: flex;
   flex-direction: column;
@@ -324,6 +320,94 @@ footer {
   .container-main {
     padding: 10px 10px;
   }
+}
+
+/* AKHIR CARD STYLE */
+
+/* footer */
+
+/* Penggunaan Warna */
+.footer {
+  background-color: #007c39;
+  color: #fff;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Tata Letak dan Struktur */
+.footer-content {
+  display: flex;
+  padding: 40px;
+}
+
+.footer-section {
+  margin-right: 40px;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-left: 400px;
+}
+
+.footer-link {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 400px;
+}
+
+.footer-bottom {
+  background-color: #005a28;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+/* Tipografi */
+.footer {
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-link {
+  font-size: 16px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+
+    margin-left: 100px;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
+
+/* Interaktivitas */
+.footer-link i {
+  margin-left: 5px;
+}
+
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+  /* Untuk Style Responsive Mobile Tulis di dalam sini */
 }
 
 /* AKHIR CARD STYLE */

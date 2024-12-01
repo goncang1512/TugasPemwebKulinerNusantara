@@ -11,13 +11,22 @@ class ResepCtrl extends Resep {
         $this->cloud = new Cloudinary();  
     }
 
-    public function unggahResep($data, $image) {
+    public function unggahResep($data, $image, $video) {
         $image = $this->cloud->unggah($image);
         $image = [
             "public_id" => $image["public_id"],
             "url_secure" => $image["secure_url"]
+        ];
+        
+        if($video) {
+            $vidio = $this->cloud->vidio($video);
+            $vidio = [
+                'public_id' => $vidio['public_id'],
+                'url_secure' => $vidio['secure_url']
             ];
-        $hasil = $this->uploadResep($data, $image);
+        }
+
+        $hasil = $this->uploadResep($data, $image, $vidio);
 
         return $hasil;
     }
@@ -45,8 +54,13 @@ class ResepCtrl extends Resep {
 
         if($oneData) {
             $public_id = $oneData['gambar_id'];
+            $vidio_id = $oneData['vidio_id'];
 
             $this->cloud->delete($public_id);
+            
+            if($vidio_id) {
+                $this->cloud->delete($vidio_id, 'video');
+            }
 
             $data = $this->deleteOneData($resep_id);
             return $data;
@@ -70,6 +84,15 @@ class ResepCtrl extends Resep {
             }
             $image = $this->cloud->unggah($file["gambar"]["tmp_name"]);
             $this->updateGambar($image["secure_url"], $image["public_id"], $resep_id);
+        } 
+
+        if(!empty($file['vidio']['tmp_name'])) {
+            if(isset($resep['vidio_id'])) {
+                $this->cloud->delete($resep['vidio_id'], 'video');
+            }
+
+            $video = $this->cloud->vidio($file['vidio']['tmp_name']);
+            $this->udpateVidio($video['secure_url'], $video['public_id'], $resep_id);
         }
 
         $result = $this->update($data, $resep_id);

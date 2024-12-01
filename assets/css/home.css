@@ -35,8 +35,19 @@
   margin-bottom: 20PX;
 }
 
-.daerah-item p {
-  color: black;
+/* rekomendasi makanan dan rating */
+.resep-kuliner {
+  color: #2f852f;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.rekomendasi-makanan {
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .container-scroll {
@@ -130,6 +141,22 @@
   justify-content: center;
 }
 
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+  /* Untuk Style Responsive Mobile Tulis di dalam sini */
+  .carousel {
+    height: 100%;
+  }
+
+  .rempah-rempah {
+    flex-direction: column;
+  }
+
+  .carousel-item img {
+    height: 100%;
+  }
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -171,16 +198,4 @@
   font-size: 24px;
   text-decoration: none;
   color: #000;
-}
-
-/* MEDIA RESPONSIVE */
-@media (max-width: 768px) {
-  /* Untuk style responsive mobile di tulis di dalam sini */
-  .rekomendasi-makanan {
-    flex-direction: row; /* Pastikan tetap horizontal */
-  }
-
-  .rekomendasi-makanan .card {
-    min-width: 120px; /* Sesuaikan ukuran elemen */
-  }
 }
